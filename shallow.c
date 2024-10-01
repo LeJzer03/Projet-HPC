@@ -251,6 +251,73 @@ double interpolate_data(const struct data *data, double x, double y)
   return val;
 }
 
+double bilinear_interpolation_with_edge_handling(const struct data *data, double x, double y) 
+{
+    // Find the indices of the surrounding grid points
+    int i = (int)(x / data->dx);  // Grid point to the left
+    int j = (int)(y / data->dy);  // Grid point below
+
+    // Ensure indices are within bounds, but stop at second to last point
+    if (i < 0) i = 0;
+    if (i > data->nx - 2) i = data->nx - 2; // Stop at second to last to have right neighbor
+    if (j < 0) j = 0;
+    if (j > data->ny - 2) j = data->ny - 2; // Stop at second to last to have top neighbor
+
+    // Calculate the positions of the surrounding grid points
+    double x1 = i * data->dx;
+    double x2 = (i + 1) * data->dx;
+    double y1 = j * data->dy;
+    double y2 = (j + 1) * data->dy;
+
+    // Check if point is on the edges or inside the grid
+    int on_left_edge = (i == 0);
+    int on_right_edge = (i == data->nx - 2);
+    int on_bottom_edge = (j == 0);
+    int on_top_edge = (j == data->ny - 2);
+
+    // Retrieve the available values
+    double fP1 = GET(data, i, j);         // Bottom-left (P1)
+    double fP2 = GET(data, i + 1, j);     // Bottom-right (P2)
+    double fP3 = GET(data, i, j + 1);     // Top-left (P3)
+    double fP4 = GET(data, i + 1, j + 1); // Top-right (P4)
+
+    // Handle cases where point is on an edge
+    double denom = (x2 - x1) * (y2 - y1);  // Denominator for bilinear interpolation
+
+    // Interpolation value
+    double fxy;
+
+    // Case 1: On a corner
+    if (on_left_edge && on_bottom_edge) {
+        fxy = (fP1 + fP2 + fP3) / 3.0;  // Average of three points (P1, P2, P3)
+    } else if (on_right_edge && on_bottom_edge) {
+        fxy = (fP1 + fP2 + fP4) / 3.0;  // Average of three points (P1, P2, P4)
+    } else if (on_left_edge && on_top_edge) {
+        fxy = (fP1 + fP3 + fP4) / 3.0;  // Average of three points (P1, P3, P4)
+    } else if (on_right_edge && on_top_edge) {
+        fxy = (fP2 + fP3 + fP4) / 3.0;  // Average of three points (P2, P3, P4)
+    }
+    // Case 2: On an edge
+    else if (on_left_edge) {
+        fxy = (fP1 * (y2 - y) + fP3 * (y - y1)) / (y2 - y1);  // Linear interpolation vertically
+    } else if (on_right_edge) {
+        fxy = (fP2 * (y2 - y) + fP4 * (y - y1)) / (y2 - y1);  // Linear interpolation vertically
+    } else if (on_bottom_edge) {
+        fxy = (fP1 * (x2 - x) + fP2 * (x - x1)) / (x2 - x1);  // Linear interpolation horizontally
+    } else if (on_top_edge) {
+        fxy = (fP3 * (x2 - x) + fP4 * (x - x1)) / (x2 - x1);  // Linear interpolation horizontally
+    }
+    // Case 3: Inside the grid (regular bilinear interpolation)
+    else {
+        fxy = (fP1 * (x2 - x) * (y2 - y) +
+               fP2 * (x - x1) * (y2 - y) +
+               fP3 * (x2 - x) * (y - y1) +
+               fP4 * (x - x1) * (y - y1)) / denom;
+    }
+
+    return fxy;
+}
+
 int main(int argc, char **argv)
 {
   if(argc != 2) {
@@ -290,7 +357,8 @@ int main(int argc, char **argv)
     for(int i = 0; i < nx; i++) {
       double x = i * param.dx;
       double y = j * param.dy;
-      double val = interpolate_data(&h, x, y);
+      //double val = interpolate_data(&h, x, y);   //bilinear_interpolation_with_edge_handling
+      double val = bilinear_interpolation_with_edge_handling(&h, x, y);
       SET(&h_interp, i, j, val);
     }
   }
