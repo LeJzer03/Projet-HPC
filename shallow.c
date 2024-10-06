@@ -351,15 +351,23 @@ int main(int argc, char **argv)
   init_data(&v, nx, ny + 1, param.dx, param.dy, 0.);
 
   // interpolate bathymetry
-  struct data h_interp;
-  init_data(&h_interp, nx, ny, param.dx, param.dy, 0.);
+
+  // struct data h_interp;
+  // init_data(&h_interp, nx, ny, param.dx, param.dy, 0.);
+  struct data h_interp_u, h_interp_v;
+  init_data(&h_interp_u, nx, ny, param.dx, param.dy, 0.);
+  init_data(&h_interp_v, nx, ny, param.dx, param.dy, 0.);
   for(int j = 0; j < ny; j++) {
     for(int i = 0; i < nx; i++) {
-      double x = i * param.dx;
-      double y = j * param.dy;
+      double xu = i * param.dx;
+      double yu = (j+1/2) * param.dy;
+      double xv = (i+1/2) * param.dx;
+      double yv = j * param.dy;
       //double val = interpolate_data(&h, x, y);   //bilinear_interpolation_with_edge_handling
-      double val = bilinear_interpolation_with_edge_handling(&h, x, y);
-      SET(&h_interp, i, j, val);
+      double val_u = bilinear_interpolation_with_edge_handling(&h, xu, yu);
+      double val_v = bilinear_interpolation_with_edge_handling(&h, xv, yv);
+      SET(&h_interp_u, i, j, val_u);
+      SET(&h_interp_v, i, j, val_v);
     }
   }
 
@@ -412,11 +420,9 @@ int main(int argc, char **argv)
     for(int i = 0; i < nx; i++) {
       for(int j = 0; j < ny ; j++) {
         // TODO: this does not evaluate h at the correct locations
-        double h_ij = GET(&h_interp, i, j);
-        double c1 = param.dt * h_ij;
         double eta_ij = GET(&eta, i, j)
-          - c1 / param.dx * (GET(&u, i + 1, j) - GET(&u, i, j))
-          - c1 / param.dy * (GET(&v, i, j + 1) - GET(&v, i, j));
+          - param.dt / param.dx * (GET(&h_interp_u, i+1,j)*GET(&u, i + 1, j) - GET(&h_interp_u, i,j)*GET(&u, i, j))
+          - param.dt / param.dy * (GET(&h_interp_v, i,j+1)*GET(&v, i, j + 1) - GET(&h_interp_v, i,j)*GET(&v, i, j));
         SET(&eta, i, j, eta_ij);
       }
     }
@@ -451,7 +457,9 @@ int main(int argc, char **argv)
   printf("\nDone: %g seconds (%g MUpdates/s)\n", time,
          1e-6 * (double)eta.nx * (double)eta.ny * (double)nt / time);
 
-  free_data(&h_interp);
+  //free_data(&h_interp);
+  free_data(&h_interp_u);
+  free_data(&h_interp_v);
   free_data(&eta);
   free_data(&u);
   free_data(&v);
