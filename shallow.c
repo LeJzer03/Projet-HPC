@@ -269,12 +269,6 @@ double bilinear_interpolation_with_edge_handling(const struct data *data, double
     double y1 = j * data->dy;
     double y2 = (j + 1) * data->dy;
 
-    // Check if point is on the edges or inside the grid
-    int on_left_edge = (i == 0);
-    int on_right_edge = (i == data->nx - 2);
-    int on_bottom_edge = (j == 0);
-    int on_top_edge = (j == data->ny - 2);
-
     // Retrieve the available values
     double fP1 = GET(data, i, j);         // Bottom-left (P1)
     double fP2 = GET(data, i + 1, j);     // Bottom-right (P2)
@@ -288,23 +282,23 @@ double bilinear_interpolation_with_edge_handling(const struct data *data, double
     double fxy;
 
     // Case 1: On a corner
-    if (on_left_edge && on_bottom_edge) {
+    if ((i==0) && (j==0)) {
         fxy = (fP1 + fP2 + fP3) / 3.0;  // Average of three points (P1, P2, P3)
-    } else if (on_right_edge && on_bottom_edge) {
+    } else if ((i==data->nx-2) && (j==0)) {
         fxy = (fP1 + fP2 + fP4) / 3.0;  // Average of three points (P1, P2, P4)
-    } else if (on_left_edge && on_top_edge) {
+    } else if ((i==0) && (j==data->ny - 2)) {
         fxy = (fP1 + fP3 + fP4) / 3.0;  // Average of three points (P1, P3, P4)
-    } else if (on_right_edge && on_top_edge) {
+    } else if ((i==data->nx-2) && (j==data->ny - 2)) {
         fxy = (fP2 + fP3 + fP4) / 3.0;  // Average of three points (P2, P3, P4)
     }
     // Case 2: On an edge
-    else if (on_left_edge) {
+    else if ((i==0)) {
         fxy = (fP1 * (y2 - y) + fP3 * (y - y1)) / (y2 - y1);  // Linear interpolation vertically
-    } else if (on_right_edge) {
+    } else if ((i==data->nx-2)) {
         fxy = (fP2 * (y2 - y) + fP4 * (y - y1)) / (y2 - y1);  // Linear interpolation vertically
-    } else if (on_bottom_edge) {
+    } else if ((j==0)) {
         fxy = (fP1 * (x2 - x) + fP2 * (x - x1)) / (x2 - x1);  // Linear interpolation horizontally
-    } else if (on_top_edge) {
+    } else if ((j==data->ny - 2)) {
         fxy = (fP3 * (x2 - x) + fP4 * (x - x1)) / (x2 - x1);  // Linear interpolation horizontally
     }
     // Case 3: Inside the grid (regular bilinear interpolation)
@@ -318,7 +312,7 @@ double bilinear_interpolation_with_edge_handling(const struct data *data, double
     return fxy;
 }
 
-/***
+
 double interpolate_data_perso(const struct data *data, double x, double y)
 {
   int i = (int)(x / data->dx);
@@ -349,7 +343,7 @@ double interpolate_data_perso(const struct data *data, double x, double y)
       / (data->dx * data->dy);
   return interpolated_value;
 }
-***/
+
 
 int main(int argc, char **argv)
 {
@@ -392,7 +386,7 @@ int main(int argc, char **argv)
     for(int j = 0 ; j < ny ; j++){
       double x = i * param.dx;
       double y = (j+1/2) * param.dy;
-      double h_u = bilinear_interpolation_with_edge_handling(&h, x, y);
+      double h_u = interpolate_data_perso(&h, x, y);
       SET(&h_interp_u, i, j, h_u);
     }
   }
@@ -400,7 +394,7 @@ int main(int argc, char **argv)
     for(int j = 0 ; j < ny+1 ; j++){
       double x = (i+1/2) * param.dx;
       double y = j * param.dy;
-      double h_v = bilinear_interpolation_with_edge_handling(&h, x, y);
+      double h_v = interpolate_data_perso(&h, x, y);
       SET(&h_interp_v, i, j, h_v);
     }
   }
