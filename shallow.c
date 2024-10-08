@@ -318,6 +318,39 @@ double bilinear_interpolation_with_edge_handling(const struct data *data, double
     return fxy;
 }
 
+/***
+double interpolate_data_perso(const struct data *data, double x, double y)
+{
+  int i = (int)(x / data->dx);
+  int j = (int)(y / data->dy);
+  if(i < 0) i = 0;
+  else if(i > data->nx - 2) i = data->nx - 2;  //"-2" for still being in the grid while looking for the value above
+  if(j < 0) j = 0;
+  else if(j > data->ny - 2) j = data->ny - 2;
+
+  // Calculate the positions of the surrounding grid points
+  double x_coord = i * data->dx;
+  double x1_coord = (i + 1) * data->dx;
+  double y_coord = j * data->dy;
+  double y1_coord = (j + 1) * data->dy;  
+  
+  //get the values around the given point /test
+  double i_j_val  = GET(data, i, j);
+  double i1_j_val  = GET(data, i+1, j);
+  double i_j1_val  = GET(data, i, j+1);
+  double i1_j1_val  = GET(data, i+1, j+1);
+  
+  //given the formula for bilinear interpolation
+  double interpolated_value = 
+      (i_j_val * (x1_coord - x) * (y1_coord - y) +
+       i1_j_val * (x - x_coord) * (y1_coord - y) +
+       i_j1_val * (x1_coord - x) * (y - y_coord) +
+       i1_j1_val * (x - x_coord) * (y - y_coord))
+      / (data->dx * data->dy);
+  return interpolated_value;
+}
+***/
+
 int main(int argc, char **argv)
 {
   if(argc != 2) {
