@@ -382,16 +382,16 @@ int main(int argc, char **argv)
   struct data h_interp_u, h_interp_v;
   init_data(&h_interp_u, nx + 1, ny, param.dx, param.dy, 0.);
   init_data(&h_interp_v, nx, ny + 1, param.dx, param.dy, 0.);
-  for(int i = 0 ; i < nx + 1 ; i++){
-    for(int j = 0 ; j < ny ; j++){
+  for(int j = 0 ; j < ny ; j++){
+    for(int i = 0 ; i < nx+1 ; i++){
       double x = i * param.dx;
       double y = (j+1/2) * param.dy;
       double h_u = interpolate_data_perso(&h, x, y);
       SET(&h_interp_u, i, j, h_u);
     }
   }
-  for(int i = 0 ; i < nx ; i++){
-    for(int j = 0 ; j < ny+1 ; j++){
+  for(int j = 0 ; j < ny+1 ; j++){
+    for(int i = 0 ; i < nx ; i++){
       double x = (i+1/2) * param.dx;
       double y = j * param.dy;
       double h_v = interpolate_data_perso(&h, x, y);
@@ -446,8 +446,8 @@ int main(int argc, char **argv)
     }
 
     // update eta
-    for(int i = 0; i < nx; i++) {
-      for(int j = 0; j < ny ; j++) {
+    for(int j = 0; j < ny; j++) {
+      for(int i = 0; i < nx ; i++) {
         // TODO: this does not evaluate h at the correct locations
     
       //double val = interpolate_data(&h, x, y);   //bilinear_interpolation_with_edge_handling
@@ -460,8 +460,8 @@ int main(int argc, char **argv)
     }
 
     // update u and v
-    for(int i = 0; i < nx; i++) {
-      for(int j = 0; j < ny; j++) {
+    for(int j = 0; j < ny; j++) {
+      for(int i = 0; i < nx; i++) {
         double c1 = param.dt * param.g;
         double c2 = param.dt * param.gamma;
         double eta_ij = GET(&eta, i, j);
