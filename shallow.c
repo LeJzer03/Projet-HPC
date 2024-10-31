@@ -251,66 +251,6 @@ double interpolate_data(const struct data *data, double x, double y)
   return val;
 }
 
-double bilinear_interpolation_with_edge_handling(const struct data *data, double x, double y) 
-{
-    // Find the indices of the surrounding grid points
-    int i = (int)(x / data->dx);  // Grid point to the left
-    int j = (int)(y / data->dy);  // Grid point below
-
-    // Ensure indices are within bounds, but stop at second to last point
-    if (i < 0) i = 0;
-    if (i > data->nx - 2) i = data->nx - 2; // Stop at second to last to have right neighbor
-    if (j < 0) j = 0;
-    if (j > data->ny - 2) j = data->ny - 2; // Stop at second to last to have top neighbor
-
-    // Calculate the positions of the surrounding grid points
-    double x1 = i * data->dx;
-    double x2 = (i + 1) * data->dx;
-    double y1 = j * data->dy;
-    double y2 = (j + 1) * data->dy;
-
-    // Retrieve the available values
-    double fP1 = GET(data, i, j);         // Bottom-left (P1)
-    double fP2 = GET(data, i + 1, j);     // Bottom-right (P2)
-    double fP3 = GET(data, i, j + 1);     // Top-left (P3)
-    double fP4 = GET(data, i + 1, j + 1); // Top-right (P4)
-
-    // Handle cases where point is on an edge
-    double denom = (x2 - x1) * (y2 - y1);  // Denominator for bilinear interpolation
-
-    // Interpolation value
-    double fxy;
-
-    // Case 1: On a corner
-    if ((i==0) && (j==0)) {
-        fxy = (fP1 + fP2 + fP3) / 3.0;  // Average of three points (P1, P2, P3)
-    } else if ((i==data->nx-2) && (j==0)) {
-        fxy = (fP1 + fP2 + fP4) / 3.0;  // Average of three points (P1, P2, P4)
-    } else if ((i==0) && (j==data->ny - 2)) {
-        fxy = (fP1 + fP3 + fP4) / 3.0;  // Average of three points (P1, P3, P4)
-    } else if ((i==data->nx-2) && (j==data->ny - 2)) {
-        fxy = (fP2 + fP3 + fP4) / 3.0;  // Average of three points (P2, P3, P4)
-    }
-    // Case 2: On an edge
-    else if ((i==0)) {
-        fxy = (fP1 * (y2 - y) + fP3 * (y - y1)) / (y2 - y1);  // Linear interpolation vertically
-    } else if ((i==data->nx-2)) {
-        fxy = (fP2 * (y2 - y) + fP4 * (y - y1)) / (y2 - y1);  // Linear interpolation vertically
-    } else if ((j==0)) {
-        fxy = (fP1 * (x2 - x) + fP2 * (x - x1)) / (x2 - x1);  // Linear interpolation horizontally
-    } else if ((j==data->ny - 2)) {
-        fxy = (fP3 * (x2 - x) + fP4 * (x - x1)) / (x2 - x1);  // Linear interpolation horizontally
-    }
-    // Case 3: Inside the grid (regular bilinear interpolation)
-    else {
-        fxy = (fP1 * (x2 - x) * (y2 - y) +
-               fP2 * (x - x1) * (y2 - y) +
-               fP3 * (x2 - x) * (y - y1) +
-               fP4 * (x - x1) * (y - y1)) / denom;
-    }
-
-    return fxy;
-}
 
 
 double interpolate_data_perso(const struct data *data, double x, double y)
@@ -347,6 +287,33 @@ double interpolate_data_perso(const struct data *data, double x, double y)
 
 int main(int argc, char **argv)
 {
+  MPI_Init(&argc, &argv); // Initialize MPI
+
+  int world_size, rank ; // Number of processes, rank of the process
+  MPI_Comm_size(MPI_COMM_WORLD, &world_size); // Get the number of processes
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank); // Get the rank of the process
+
+  // Create Cartesian topology
+
+  //Create the dimensions of the grid
+  int dims[2] = {0, 0}; // Initialize dimensions to 0 //NB: gotta change to have potentially more than 2D more than a 2D grid?  
+  MPI_Dims_create(world_size, 2, dims); // Create dimensions for 2D grid with world_size nodes. Dims is the array of size 2 to store the dimensions. NB: the function will try to find the best dimensions for the grid 
+
+
+  //Create the actual topology (environment)
+
+  int periods[2] = {0, 0}; // Non-periodic grid (boundaries not connected)
+  int reorder = 1; // Allow processes to be re-ordered (usefull for finding neighbors)
+  MPI_Comm cart_comm; // Cartesian communicator
+  MPI_Cart_create(MPI_COMM_WORLD, 2, dims, periods, reorder, &cart_comm);
+  // Get Cartesian rank and coordinates
+  int cart_rank;
+  int coords[2];
+  MPI_Comm_rank(cart_comm, &cart_rank);
+  MPI_Cart_coords(cart_comm, cart_rank, 2, coords); 
+
+  printf("Rank = %d, Cartesian Rank = %d, Coords = (%d, %d)\n", rank, cart_rank, coords[0], coords[1]);
+
   if(argc != 2) {
     printf("Usage: %s parameter_file\n", argv[0]);
     return 1;
@@ -371,6 +338,10 @@ int main(int argc, char **argv)
   printf(" - grid size: %g m x %g m (%d x %d = %d grid points)\n",
          hx, hy, nx, ny, nx * ny);
   printf(" - number of time steps: %d\n", nt);
+
+  // Calculate local domain sizes for each node //Added
+  int local_nx = nx / dims[0];
+  int local_ny = ny / dims[1];
 
   struct data eta, u, v;
   init_data(&eta, nx, ny, param.dx, param.dx, 0.);
@@ -399,6 +370,8 @@ int main(int argc, char **argv)
     }
   }
   
+
+
 
   double start = GET_TIME();
 
@@ -448,8 +421,7 @@ int main(int argc, char **argv)
     // update eta
     for(int j = 0; j < ny; j++) {
       for(int i = 0; i < nx ; i++) {
-        // TODO: this does not evaluate h at the correct locations
-    
+
       //double val = interpolate_data(&h, x, y);   //bilinear_interpolation_with_edge_handling
 
         double eta_ij = GET(&eta, i, j)
@@ -494,6 +466,8 @@ int main(int argc, char **argv)
   free_data(&eta);
   free_data(&u);
   free_data(&v);
+
+  MPI_Finalize(); // Finalize MPI
 
   return 0;
 }
