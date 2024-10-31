@@ -393,8 +393,8 @@ int main(int argc, char **argv)
 
   for(int j = 0; j < local_ny; j++) {
     for(int i = 0; i < local_nx + 1; i++) {
-      double x = (coords[0] * local_nx + i) * param.dx;
-      double y = (coords[1] * local_ny + j + 0.5) * param.dy;
+      double x = (coords[0] * local_nx + i) * param.dx; //coords changed depending on the node (I think)
+      double y = (coords[1] * local_ny + j + 1/2) * param.dy; //coords changed depending on the node (I think)
       double h_u = interpolate_data_perso(&h, x, y);
       SET(&local_h_interp_u, i, j, h_u);
     }
@@ -402,17 +402,21 @@ int main(int argc, char **argv)
 
   for(int j = 0; j < local_ny + 1; j++) {
     for(int i = 0; i < local_nx; i++) {
-      double x = (coords[0] * local_nx + i + 0.5) * param.dx;
+      double x = (coords[0] * local_nx + i + 1/2) * param.dx;
       double y = (coords[1] * local_ny + j) * param.dy;
       double h_v = interpolate_data_perso(&h, x, y);
       SET(&local_h_interp_v, i, j, h_v);
     }
   }
   
-  
+///////////////////////////////
+/***
+Pas encore travaillé sur cette partie
+***/
+///////////////////////////////
   double start = GET_TIME();
 
-  for(int n = 0; n < nt; n++) {
+  for(int n = 0; n < nt; n++) { // general time loop 
 
     if(n && (n % (nt / 10)) == 0) {
       double time_sofar = GET_TIME() - start;
@@ -420,6 +424,7 @@ int main(int argc, char **argv)
       printf("Computing step %d/%d (ETA: %g seconds)     \r", n, nt, eta);
       fflush(stdout);
     }
+
 
     // output solution
     if(param.sampling_rate && !(n % param.sampling_rate)) {
