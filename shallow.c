@@ -303,7 +303,7 @@ int main(int argc, char **argv)
   //Create the actual topology (environment)
 
   int periods[2] = {0, 0}; // Non-periodic grid (boundaries not connected)
-  int reorder = 1; // Allow processes to be re-ordered (usefull for finding neighbors)
+  int reorder = 0; // Allow processes to be re-ordered (if 1) (usefull for finding neighbors) //why is it put at 0 in the class example?
   MPI_Comm cart_comm; // Cartesian communicator
   MPI_Cart_create(MPI_COMM_WORLD, 2, dims, periods, reorder, &cart_comm);
   // Get Cartesian rank and coordinates
@@ -316,15 +316,23 @@ int main(int argc, char **argv)
 
   if(argc != 2) {
     printf("Usage: %s parameter_file\n", argv[0]);
+    MPI_Finalize();
     return 1;
   }
 
   struct parameters param;
-  if(read_parameters(&param, argv[1])) return 1;
+  if(read_parameters(&param, argv[1])) {
+    MPI_Finalize();
+    return 1;
+  }
   print_parameters(&param);
 
   struct data h;
-  if(read_data(&h, param.input_h_filename)) return 1;
+  if(read_data(&h, param.input_h_filename)) {
+    MPI_Finalize();
+    return 1;
+  }
+
 
   // infer size of domain from input elevation data
   double hx = h.nx * h.dx;
@@ -343,13 +351,21 @@ int main(int argc, char **argv)
   int local_nx = nx / dims[0];
   int local_ny = ny / dims[1];
 
+  /*****
   struct data eta, u, v;
   init_data(&eta, nx, ny, param.dx, param.dx, 0.);
   init_data(&u, nx + 1, ny, param.dx, param.dy, 0.);
   init_data(&v, nx, ny + 1, param.dx, param.dy, 0.);
+  *****/
+
+  struct data local_eta, local_u, local_v; //shoiuld be local for each node (also applied to the following modification (h_interp_u, h_interp_v))
+  init_data(&local_eta, local_nx, local_ny, param.dx, param.dx, 0.);
+  init_data(&local_u, local_nx + 1, local_ny, param.dx, param.dy, 0.);
+  init_data(&local_v, local_nx, local_ny + 1, param.dx, param.dy, 0.);
 
   // interpolate bathymetry
 
+  /****** 
   struct data h_interp_u, h_interp_v;
   init_data(&h_interp_u, nx + 1, ny, param.dx, param.dy, 0.);
   init_data(&h_interp_v, nx, ny + 1, param.dx, param.dy, 0.);
@@ -369,10 +385,31 @@ int main(int argc, char **argv)
       SET(&h_interp_v, i, j, h_v);
     }
   }
+  ******/
+
+  struct data local_h_interp_u, local_h_interp_v;
+  init_data(&local_h_interp_u, local_nx + 1, local_ny, param.dx, param.dy, 0.);
+  init_data(&local_h_interp_v, local_nx, local_ny + 1, param.dx, param.dy, 0.);
+
+  for(int j = 0; j < local_ny; j++) {
+    for(int i = 0; i < local_nx + 1; i++) {
+      double x = (coords[0] * local_nx + i) * param.dx;
+      double y = (coords[1] * local_ny + j + 0.5) * param.dy;
+      double h_u = interpolate_data_perso(&h, x, y);
+      SET(&local_h_interp_u, i, j, h_u);
+    }
+  }
+
+  for(int j = 0; j < local_ny + 1; j++) {
+    for(int i = 0; i < local_nx; i++) {
+      double x = (coords[0] * local_nx + i + 0.5) * param.dx;
+      double y = (coords[1] * local_ny + j) * param.dy;
+      double h_v = interpolate_data_perso(&h, x, y);
+      SET(&local_h_interp_v, i, j, h_v);
+    }
+  }
   
-
-
-
+  
   double start = GET_TIME();
 
   for(int n = 0; n < nt; n++) {
