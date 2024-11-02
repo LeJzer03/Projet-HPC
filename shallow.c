@@ -348,8 +348,8 @@ int main(int argc, char **argv)
   printf(" - number of time steps: %d\n", nt);
 
   // Calculate local domain sizes for each node //Added
-  int local_nx = nx / dims[0];
-  int local_ny = ny / dims[1];
+  int local_nx = (coords[0] == dims[0]) ? nx / dims[0] + nx%dims[0];
+  int local_ny = (coords[1] == dims[1]) ? ny / dims[1] + ny%dims[1];
 
   /*****
   struct data eta, u, v;
