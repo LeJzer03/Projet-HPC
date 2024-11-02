@@ -296,7 +296,7 @@ int main(int argc, char **argv)
   // Create Cartesian topology
 
   //Create the dimensions of the grid
-  int dims[2] = {0, 0}; // Initialize dimensions to 0 //NB: gotta change to have potentially more than 2D more than a 2D grid?  
+  int dims[2] = {0, 0}; // Initialize dimensions to 0 
   MPI_Dims_create(world_size, 2, dims); // Create dimensions for 2D grid with world_size nodes. Dims is the array of size 2 to store the dimensions. NB: the function will try to find the best dimensions for the grid 
 
 
@@ -409,14 +409,45 @@ int main(int argc, char **argv)
     }
   }
   
-///////////////////////////////
-/***
-Pas encore travaillé sur cette partie
-***/
-///////////////////////////////
+
   double start = GET_TIME();
 
+
+  int up, down, left, right; // Numéro des voisins
+  MPI_Cart_shift(cart_comm, 0, 1, &left, &right); 
+  MPI_Cart_shift(cart_comm, 1, 1, &down, &up); 
+  // Contient "MPI_PROC_NULL" si le voisin en question n'existe pas (frontière)
+
+  // Vu les formules, on a juste besoin des eta en i - 1 et j - 1 et des u en i + 1 et v en j + 1
+  //(à revoir)
+  double * buffer_send_right = (right == MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
+  double * buffer_send_up = (up == MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
+
+  double * buffer_send_left_u = (left == MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
+  double * buffer_send_down_v = (down == MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
+
+  // Devient NULL si le voisin n'existe pas (pour une meilleure performance)
+  double * buffer_recv_left = (left == MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
+  double * buffer_recv_down = (down == MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
+  double * buffer_recv_right_u = (left == MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
+  double * buffer_recv_up_v = (down == MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
+
+  if( (!buffer_send_right && right != MPI_PROC_NULL) || (!buffer_send_up && up != MPI_PROC_NULL) || 
+    (!buffer_recv_down && down != MPI_PROC_NULL) || (!buffer_recv_left && left != MPI_PROC_NULL)){
+    printf("Error: Could not initiate buffers\n");
+    free(buffer_recv_down);
+    free(buffer_recv_left);
+    free(buffer_send_right);
+    free(buffer_send_up);
+    return 1;
+  }
+
   for(int n = 0; n < nt; n++) { // general time loop 
+
+
+  /*
+  TODO : fill, send and receive buffers and find a way to collect the data from all the different processes
+  */
 
     if(n && (n % (nt / 10)) == 0) {
       double time_sofar = GET_TIME() - start;
@@ -428,6 +459,9 @@ Pas encore travaillé sur cette partie
 
     // output solution
     if(param.sampling_rate && !(n % param.sampling_rate)) {
+
+
+
       write_data_vtk(&eta, "water elevation", param.output_eta_filename, n);
       //write_data_vtk(&u, "x velocity", param.output_u_filename, n);
       //write_data_vtk(&v, "y velocity", param.output_v_filename, n);
@@ -435,20 +469,22 @@ Pas encore travaillé sur cette partie
 
     // impose boundary conditions
     double t = n * param.dt;
-    if(param.source_type == 1) {
+
+    // Not sure the changes made to the initial conditions so as to fit the envirement will work
+    if(param.source_type == 1 && up == MPI_PROC_NULL) {
       // sinusoidal velocity on top boundary
       double A = 5;
       double f = 1. / 20.;
-      for(int i = 0; i < nx; i++) {
-        SET(&v, i, ny, A * sin(2 * M_PI * f * t));
-        SET(&v, i, 0, 0.);
+      for(int i = 0; i < local_nx; i++) {
+        SET(&local_v, i, local_ny, A * sin(2 * M_PI * f * t));
+        SET(&local_v, i, 0, 0.);
       }
-      for(int j = 0; j < ny; j++) {
-          SET(&u, 0, j, 0.);
-          SET(&u, nx, j, 0.);
+      for(int j = 0; j < local_ny; j++) {
+          SET(&local_u, 0, j, 0.);
+          SET(&local_u, local_nx, j, 0.);
       }
     }
-    else if(param.source_type == 2) {
+    else if(param.source_type == 2 && (coords[0]*(local_nx+1) > nx/2 && coords[0]*(local_nx) <= nx/2 && coords[1]*(local_ny+1)>ny/2 && coords[0]*(local_ny) <= ny/2)){
       // sinusoidal elevation in the middle of the domain
       double A = 5;
       double f = 1. / 20.;
@@ -461,15 +497,18 @@ Pas encore travaillé sur cette partie
     }
 
     // update eta
-    for(int j = 0; j < ny; j++) {
-      for(int i = 0; i < nx ; i++) {
+    // Not sure if the conditions added to get the right values work
+    for(int j = 0; j < local_ny; j++) {
+      for(int i = 0; i < local_nx ; i++) {
 
       //double val = interpolate_data(&h, x, y);   //bilinear_interpolation_with_edge_handling
+        double u_1 = (i == local_nx-1 && right != MPI_PROC_NULL) ? buffer_recv_right_u[j] : GET(&local_u, i + 1, j);
+        double v_1 = (j == local_ny-1 && up != MPI_PROC_NULL) ? buffer_recv_up_v[i] : GET(&local_v, i, j + 1);
 
-        double eta_ij = GET(&eta, i, j)
-          - param.dt / param.dx * (GET(&h_interp_u,i+1,j)*GET(&u, i + 1, j) - GET(&h_interp_u,i,j)*GET(&u, i, j))
-          - param.dt / param.dy * (GET(&h_interp_v,i,j+1)*GET(&v, i, j + 1) - GET(&h_interp_v,i,j)*GET(&v, i, j));
-        SET(&eta, i, j, eta_ij);
+        double eta_ij = GET(&local_eta, i, j)
+          - param.dt / param.dx * (GET(&local_h_interp_u, i + 1, j)*u_1 - GET(&local_h_interp_u,i,j)*GET(&local_u, i, j))
+          - param.dt / param.dy * (GET(&local_h_interp_v,i,j+1)*v_1 - GET(&local_h_interp_v,i,j)*GET(&local_v, i, j));
+        SET(&local_eta, i, j, eta_ij);
       }
     }
 
@@ -478,15 +517,15 @@ Pas encore travaillé sur cette partie
       for(int i = 0; i < nx; i++) {
         double c1 = param.dt * param.g;
         double c2 = param.dt * param.gamma;
-        double eta_ij = GET(&eta, i, j);
-        double eta_imj = GET(&eta, (i == 0) ? 0 : i - 1, j);
-        double eta_ijm = GET(&eta, i, (j == 0) ? 0 : j - 1);
-        double u_ij = (1. - c2) * GET(&u, i, j)
+        double eta_ij = GET(&local_eta, i, j);
+        double eta_imj = (coords[0]*local_nx == 0) ? GET(&local_eta, (i == 0) ? 0 : i - 1, j) : buffer_recv_left[j];
+        double eta_ijm = (coords[1]*local_ny == 0) ? GET(&local_eta, i, (j == 0) ? 0 : j-1 ) : buffer_recv_down[i];
+        double u_ij = (1. - c2) * GET(&local_u, i, j)
           - c1 / param.dx * (eta_ij - eta_imj);
-        double v_ij = (1. - c2) * GET(&v, i, j)
+        double v_ij = (1. - c2) * GET(&local_v, i, j)
           - c1 / param.dy * (eta_ij - eta_ijm);
-        SET(&u, i, j, u_ij);
-        SET(&v, i, j, v_ij);
+        SET(&local_u, i, j, u_ij);
+        SET(&local_v, i, j, v_ij);
       }
     }
 
@@ -503,11 +542,20 @@ Pas encore travaillé sur cette partie
   printf("\nDone: %g seconds (%g MUpdates/s)\n", time,
          1e-6 * (double)eta.nx * (double)eta.ny * (double)nt / time);
 
-  free_data(&h_interp_u);
-  free_data(&h_interp_v);
-  free_data(&eta);
-  free_data(&u);
-  free_data(&v);
+  free_data(&local_h_interp_u);
+  free_data(&local_h_interp_v);
+  free_data(&local_eta);
+  free_data(&local_u);
+  free_data(&local_v);
+
+  free(buffer_recv_down);
+  free(buffer_recv_left);
+  free(buffer_recv_up_v);
+  free(buffer_recv_right_u);
+  free(buffer_send_down_v);
+  free(buffer_send_left_u);
+  free(buffer_send_right);
+  free(buffer_send_up);
 
   MPI_Finalize(); // Finalize MPI
 
