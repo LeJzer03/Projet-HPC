@@ -429,25 +429,26 @@ int main(int argc, char **argv)
   // Devient NULL si le voisin n'existe pas (pour une meilleure performance)
   double * buffer_recv_left = (left == MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
   double * buffer_recv_down = (down == MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
+
   double * buffer_recv_right_u = (left == MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
   double * buffer_recv_up_v = (down == MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
 
-  if( (!buffer_send_right && right != MPI_PROC_NULL) || (!buffer_send_up && up != MPI_PROC_NULL) || 
-    (!buffer_recv_down && down != MPI_PROC_NULL) || (!buffer_recv_left && left != MPI_PROC_NULL)){
+  if( ((!buffer_send_right || !buffer_recv_right_u) && right != MPI_PROC_NULL) || ((!buffer_send_up || !buffer_recv_up_v) && up != MPI_PROC_NULL) || 
+    ((!buffer_recv_down||!buffer_send_down_v) && down != MPI_PROC_NULL) || ((!buffer_recv_left|| !buffer_send_left_u) && left != MPI_PROC_NULL)){
     printf("Error: Could not initiate buffers\n");
     free(buffer_recv_down);
     free(buffer_recv_left);
+    free(buffer_recv_up_v);
+    free(buffer_recv_right_u);
+    free(buffer_send_down_v);
+    free(buffer_send_left_u);
     free(buffer_send_right);
     free(buffer_send_up);
+
     return 1;
   }
 
   for(int n = 0; n < nt; n++) { // general time loop 
-
-
-  /*
-  TODO : fill, send and receive buffers and find a way to collect the data from all the different processes
-  */
 
     if(n && (n % (nt / 10)) == 0) {
       double time_sofar = GET_TIME() - start;
@@ -456,11 +457,10 @@ int main(int argc, char **argv)
       fflush(stdout);
     }
 
-
     // output solution
     if(param.sampling_rate && !(n % param.sampling_rate)) {
 
-
+      // Je sais pas comment on va faire pour écrire toutes les données dans un seul et même fichier
 
       write_data_vtk(&eta, "water elevation", param.output_eta_filename, n);
       //write_data_vtk(&u, "x velocity", param.output_u_filename, n);
@@ -496,12 +496,43 @@ int main(int argc, char **argv)
       exit(0);
     }
 
+
+    // Fill buffers
+    for(int i = 0; i < local_nx; i++){
+      if(down != MPI_PROC_NULL)
+        buffer_send_down_v[i] = GET(&local_v,i,0);
+      if(up != MPI_PROC_NULL )
+        buffer_send_up[i] = GET(&local_eta,i,local_ny-1);
+    }
+    for(int j = 0 ; j < local_ny; j++){
+      if(left != MPI_PROC_NULL)
+        buffer_send_left_u[j] = GET(&local_u,0,j);
+      if(right != MPI_PROC_NULL)
+      buffer_send_right[j] = GET(&local_eta,local_nx-1,j);
+    }
+    // Send and receive buffers
+    MPI_Request requests[8];  // To keep track of send and receive requests
+
+    MPI_Isend(buffer_send_up, local_nx, MPI_DOUBLE, up, 0, cart_comm, &requests[0]);
+    MPI_Isend(buffer_send_down_v, local_nx, MPI_DOUBLE, down, 1, cart_comm, &requests[1]);
+    MPI_Isend(buffer_send_left_u, local_ny, MPI_DOUBLE, left, 2, cart_comm, &requests[2]);
+    MPI_Isend(buffer_send_right, local_ny, MPI_DOUBLE, right, 3, cart_comm, &requests[3]);
+
+    MPI_Irecv(buffer_recv_up_v, local_nx, MPI_DOUBLE, up, 0, cart_comm, &requests[4]);
+    MPI_Irecv(buffer_recv_down,local_nx,MPI_DOUBLE,down,1,cart_comm,&requests[5]);
+    MPI_Irecv(buffer_recv_left,local_ny,MPI_DOUBLE,left,2,cart_comm,&requests[6]);
+    MPI_Irecv(buffer_recv_right_u,local_ny,MPI_DOUBLE,right,3,cart_comm,&requests[7]);
+
+    // Synchronization
+    MPI_Waitall(8, requests, MPI_STATUSES_IGNORE);
+    
     // update eta
     // Not sure if the conditions added to get the right values work
     for(int j = 0; j < local_ny; j++) {
       for(int i = 0; i < local_nx ; i++) {
 
       //double val = interpolate_data(&h, x, y);   //bilinear_interpolation_with_edge_handling
+
         double u_1 = (i == local_nx-1 && right != MPI_PROC_NULL) ? buffer_recv_right_u[j] : GET(&local_u, i + 1, j);
         double v_1 = (j == local_ny-1 && up != MPI_PROC_NULL) ? buffer_recv_up_v[i] : GET(&local_v, i, j + 1);
 
