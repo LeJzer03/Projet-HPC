@@ -312,7 +312,7 @@ int main(int argc, char **argv)
   MPI_Comm_rank(cart_comm, &cart_rank);
   MPI_Cart_coords(cart_comm, cart_rank, 2, coords); 
 
-  printf("Rank = %d, Cartesian Rank = %d, Coords = (%d, %d)\n", rank, cart_rank, coords[0], coords[1]);
+  printf("Rank = %d, Cartesian Rank = %d, Coords = (%d, %d)\n", rank, cart_rank, coords[0], coords[1]); //for testing
 
   if(argc != 2) {
     printf("Usage: %s parameter_file\n", argv[0]);
@@ -394,7 +394,7 @@ int main(int argc, char **argv)
   for(int j = 0; j < local_ny; j++) {
     for(int i = 0; i < local_nx + 1; i++) {
       double x = (coords[0] * local_nx + i) * param.dx; //coords changed depending on the node (I think)
-      double y = (coords[1] * local_ny + j + 1/2) * param.dy; //coords changed depending on the node (I think)
+      double y = (coords[1] * local_ny + j + 0.5) * param.dy; //coords changed depending on the node (I think)
       double h_u = interpolate_data_perso(&h, x, y);
       SET(&local_h_interp_u, i, j, h_u);
     }
@@ -402,7 +402,7 @@ int main(int argc, char **argv)
 
   for(int j = 0; j < local_ny + 1; j++) {
     for(int i = 0; i < local_nx; i++) {
-      double x = (coords[0] * local_nx + i + 1/2) * param.dx;
+      double x = (coords[0] * local_nx + i + 0.5) * param.dx;
       double y = (coords[1] * local_ny + j) * param.dy;
       double h_v = interpolate_data_perso(&h, x, y);
       SET(&local_h_interp_v, i, j, h_v);
@@ -420,18 +420,28 @@ int main(int argc, char **argv)
 
   // Vu les formules, on a juste besoin des eta en i - 1 et j - 1 et des u en i + 1 et v en j + 1
   //(à revoir)
-  double * buffer_send_right = (right == MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
-  double * buffer_send_up = (up == MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
+  double * buffer_send_right = (right != MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
+  double * buffer_send_up = (up != MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
 
-  double * buffer_send_left_u = (left == MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
-  double * buffer_send_down_v = (down == MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
+  double * buffer_send_left_u = (left != MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
+  double * buffer_send_down_v = (down != MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
 
   // Devient NULL si le voisin n'existe pas (pour une meilleure performance)
-  double * buffer_recv_left = (left == MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
-  double * buffer_recv_down = (down == MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
+  double * buffer_recv_left = (left != MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
+  double * buffer_recv_down = (down != MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
 
-  double * buffer_recv_right_u = (left == MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
-  double * buffer_recv_up_v = (down == MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
+  double * buffer_recv_right_u = (left != MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
+  double * buffer_recv_up_v = (down != MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
+
+  /*
+   * construction : 
+   * if (voisins existent) ET [(buffer envoi=0) OU (buffer reception=0)] alors on a une erreur
+   * 
+   if (((right != MPI_PROC_NULL) && (!buffer_send_right || !buffer_recv_right_u)) ||
+    ((up != MPI_PROC_NULL) && (!buffer_send_up || !buffer_recv_up_v)) ||
+    ((down != MPI_PROC_NULL) && (!buffer_recv_down || !buffer_send_down_v)) ||
+    ((left != MPI_PROC_NULL) && (!buffer_recv_left || !buffer_send_left_u)))
+   */
 
   if( ((!buffer_send_right || !buffer_recv_right_u) && right != MPI_PROC_NULL) || ((!buffer_send_up || !buffer_recv_up_v) && up != MPI_PROC_NULL) || 
     ((!buffer_recv_down||!buffer_send_down_v) && down != MPI_PROC_NULL) || ((!buffer_recv_left|| !buffer_send_left_u) && left != MPI_PROC_NULL)){
@@ -457,10 +467,11 @@ int main(int argc, char **argv)
       fflush(stdout);
     }
 
-    // output solution
-    if(param.sampling_rate && !(n % param.sampling_rate)) {
 
-      // Je sais pas comment on va faire pour écrire toutes les données dans un seul et même fichier
+    // output solution
+
+    
+    if(param.sampling_rate && !(n % param.sampling_rate)) {
 
       write_data_vtk(&eta, "water elevation", param.output_eta_filename, n);
       //write_data_vtk(&u, "x velocity", param.output_u_filename, n);
