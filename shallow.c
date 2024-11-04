@@ -347,18 +347,26 @@ int main(int argc, char **argv)
          hx, hy, nx, ny, nx * ny);
   printf(" - number of time steps: %d\n", nt);
 
-  // Calculate local domain sizes for each node //Added
+  
+  /**
+  //pas sur de la formulation que t'as mit (J)
   int local_nx = (coords[0] == dims[0]) ? nx / dims[0] + nx%dims[0];
   int local_ny = (coords[1] == dims[1]) ? ny / dims[1] + ny%dims[1];
+  */
+
+  // Calculate local domain sizes for each node. Distributing the remaining points to the first nodes
+  int local_nx = nx / dims[0] + (coords[0] < nx % dims[0]);
+  int local_ny = ny / dims[1] + (coords[1] < ny % dims[1]);
 
   /*****
+   * OLD CODE
   struct data eta, u, v;
   init_data(&eta, nx, ny, param.dx, param.dx, 0.);
   init_data(&u, nx + 1, ny, param.dx, param.dy, 0.);
   init_data(&v, nx, ny + 1, param.dx, param.dy, 0.);
   *****/
 
-  struct data local_eta, local_u, local_v; //shoiuld be local for each node (also applied to the following modification (h_interp_u, h_interp_v))
+  struct data local_eta, local_u, local_v; //should be local for each node (also applied to the following modification (h_interp_u, h_interp_v))
   init_data(&local_eta, local_nx, local_ny, param.dx, param.dx, 0.);
   init_data(&local_u, local_nx + 1, local_ny, param.dx, param.dy, 0.);
   init_data(&local_v, local_nx, local_ny + 1, param.dx, param.dy, 0.);
@@ -366,6 +374,7 @@ int main(int argc, char **argv)
   // interpolate bathymetry
 
   /****** 
+   * OLD CODE
   struct data h_interp_u, h_interp_v;
   init_data(&h_interp_u, nx + 1, ny, param.dx, param.dy, 0.);
   init_data(&h_interp_v, nx, ny + 1, param.dx, param.dy, 0.);
@@ -391,6 +400,7 @@ int main(int argc, char **argv)
   init_data(&local_h_interp_u, local_nx + 1, local_ny, param.dx, param.dy, 0.);
   init_data(&local_h_interp_v, local_nx, local_ny + 1, param.dx, param.dy, 0.);
 
+  //verif si pas out of bounds car local_n est la taille de l'array local (1->n) et non les indices (0->n-1)
   for(int j = 0; j < local_ny; j++) {
     for(int i = 0; i < local_nx + 1; i++) {
       double x = (coords[0] * local_nx + i) * param.dx; //coords changed depending on the node (I think)
@@ -419,7 +429,7 @@ int main(int argc, char **argv)
   // Contient "MPI_PROC_NULL" si le voisin en question n'existe pas (frontière)
 
   // Vu les formules, on a juste besoin des eta en i - 1 et j - 1 et des u en i + 1 et v en j + 1
-  //(à revoir)
+  //(à revoir) 
   double * buffer_send_right = (right != MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
   double * buffer_send_up = (up != MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
 
@@ -433,18 +443,11 @@ int main(int argc, char **argv)
   double * buffer_recv_right_u = (left != MPI_PROC_NULL ? malloc(sizeof(double)*local_ny) : NULL);
   double * buffer_recv_up_v = (down != MPI_PROC_NULL ? malloc(sizeof(double)*local_nx) : NULL);
 
-  /*
-   * construction : 
-   * if (voisins existent) ET [(buffer envoi=0) OU (buffer reception=0)] alors on a une erreur
-   * 
-   if (((right != MPI_PROC_NULL) && (!buffer_send_right || !buffer_recv_right_u)) ||
-    ((up != MPI_PROC_NULL) && (!buffer_send_up || !buffer_recv_up_v)) ||
-    ((down != MPI_PROC_NULL) && (!buffer_recv_down || !buffer_send_down_v)) ||
-    ((left != MPI_PROC_NULL) && (!buffer_recv_left || !buffer_send_left_u)))
-   */
 
-  if( ((!buffer_send_right || !buffer_recv_right_u) && right != MPI_PROC_NULL) || ((!buffer_send_up || !buffer_recv_up_v) && up != MPI_PROC_NULL) || 
-    ((!buffer_recv_down||!buffer_send_down_v) && down != MPI_PROC_NULL) || ((!buffer_recv_left|| !buffer_send_left_u) && left != MPI_PROC_NULL)){
+  if( ((!buffer_send_right || !buffer_recv_right_u) && right != MPI_PROC_NULL) || 
+    ((!buffer_send_up || !buffer_recv_up_v) && up != MPI_PROC_NULL) || 
+    ((!buffer_recv_down||!buffer_send_down_v) && down != MPI_PROC_NULL) || 
+    ((!buffer_recv_left|| !buffer_send_left_u) && left != MPI_PROC_NULL)){
     printf("Error: Could not initiate buffers\n");
     free(buffer_recv_down);
     free(buffer_recv_left);
@@ -457,6 +460,7 @@ int main(int argc, char **argv)
 
     return 1;
   }
+
 
   for(int n = 0; n < nt; n++) { // general time loop 
 
@@ -484,28 +488,44 @@ int main(int argc, char **argv)
     // Not sure the changes made to the initial conditions so as to fit the envirement will work
     if(param.source_type == 1 && up == MPI_PROC_NULL) {
       // sinusoidal velocity on top boundary
+      /*
+      OLD CODE
+      for(int i = 0; i < nx; i++) {
+        for(int j = 0; j < ny; j++) {
+          SET(&u, 0, j, 0.);
+          SET(&u, nx, j, 0.);
+          SET(&v, i, 0, 0.);
+          SET(&v, i, ny, A * sin(2 * M_PI * f * t));
+      */
       double A = 5;
       double f = 1. / 20.;
-      for(int i = 0; i < local_nx; i++) {
-        SET(&local_v, i, local_ny, A * sin(2 * M_PI * f * t));
-        SET(&local_v, i, 0, 0.);
+      for (int i = 0; i < local_nx; i++) {
+          SET(&local_v, i, local_ny - 1, A * sin(2 * M_PI * f * t)); //local_ny-1 au lieu de ny
+          SET(&local_v, i, 0, 0.);
       }
-      for(int j = 0; j < local_ny; j++) {
+      for (int j = 0; j < local_ny; j++) {
           SET(&local_u, 0, j, 0.);
-          SET(&local_u, local_nx, j, 0.);
+          SET(&local_u, local_nx - 1, j, 0.); //local_nx-1 au lieu de nx
       }
     }
-    else if(param.source_type == 2 && (coords[0]*(local_nx+1) > nx/2 && coords[0]*(local_nx) <= nx/2 && coords[1]*(local_ny+1)>ny/2 && coords[0]*(local_ny) <= ny/2)){
-      // sinusoidal elevation in the middle of the domain
+    else if (param.source_type == 2 &&
+              (coords[0] * local_nx <= nx / 2 && (coords[0] + 1) * local_nx > nx / 2 &&
+                coords[1] * local_ny <= ny / 2 && (coords[1] + 1) * local_ny > ny / 2)) {
+      // Sinusoidal elevation in the middle of the domain (condition checked for each node if it contains the middle point)
       double A = 5;
       double f = 1. / 20.;
-      SET(&eta, nx / 2, ny / 2, A * sin(2 * M_PI * f * t));
+      int local_i = nx / 2 - coords[0] * local_nx;
+      int local_j = ny / 2 - coords[1] * local_ny;
+      SET(&local_eta, local_i, local_j, A * sin(2 * M_PI * f * t)); //set the value of the middle point
     }
+
     else {
       // TODO: add other sources
       printf("Error: Unknown source type %d\n", param.source_type);
       exit(0);
     }
+
+// ARRETE ICI POUR LE MOMENT  (J)
 
 
     // Fill buffers
