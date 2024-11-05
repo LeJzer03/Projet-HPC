@@ -19,7 +19,7 @@ y = np.linspace(0, (ny-1)*dy, ny)
 X, Y = np.meshgrid(x, y)
 
 # Define the terrain: Example: A central peak using a Gaussian function
-h_values = 20.0 - 10.0 * np.exp(-((X - 2000)**2 + (Y - 2000)**2) / (500**2))
+h_values = 25.0 - 15.0 * np.exp(-((X - 2000)**2 + (Y - 2000)**2) / (600**2))
 
 #h_values = 20.0 + 0.01 * X  # Depth increases with x
 #h_values = 20.0 + 2.0 * np.random.rand(ny, nx)
@@ -35,3 +35,4 @@ with open('custom_terrain.dat', 'wb') as f:
     
     # Write the depth values in row-major order (flattened array)
     h_values.flatten().tofile(f)
+
