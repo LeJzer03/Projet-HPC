@@ -287,33 +287,6 @@ double interpolate_data_perso(const struct data *data, double x, double y)
 
 int main(int argc, char **argv)
 {
-  MPI_Init(&argc, &argv); // Initialize MPI
-
-  int world_size, rank ; // Number of processes, rank of the process
-  MPI_Comm_size(MPI_COMM_WORLD, &world_size); // Get the number of processes
-  MPI_Comm_rank(MPI_COMM_WORLD, &rank); // Get the rank of the process
-
-  // Create Cartesian topology
-
-  //Create the dimensions of the grid
-  int dims[2] = {0, 0}; // Initialize dimensions to 0 //NB: gotta change to have potentially more than 2D more than a 2D grid?  
-  MPI_Dims_create(world_size, 2, dims); // Create dimensions for 2D grid with world_size nodes. Dims is the array of size 2 to store the dimensions. NB: the function will try to find the best dimensions for the grid 
-
-
-  //Create the actual topology (environment)
-
-  int periods[2] = {0, 0}; // Non-periodic grid (boundaries not connected)
-  int reorder = 1; // Allow processes to be re-ordered (usefull for finding neighbors)
-  MPI_Comm cart_comm; // Cartesian communicator
-  MPI_Cart_create(MPI_COMM_WORLD, 2, dims, periods, reorder, &cart_comm);
-  // Get Cartesian rank and coordinates
-  int cart_rank;
-  int coords[2];
-  MPI_Comm_rank(cart_comm, &cart_rank);
-  MPI_Cart_coords(cart_comm, cart_rank, 2, coords); 
-
-  printf("Rank = %d, Cartesian Rank = %d, Coords = (%d, %d)\n", rank, cart_rank, coords[0], coords[1]);
-
   if(argc != 2) {
     printf("Usage: %s parameter_file\n", argv[0]);
     return 1;
@@ -370,9 +343,6 @@ int main(int argc, char **argv)
     }
   }
   
-
-
-
   double start = GET_TIME();
 
   for(int n = 0; n < nt; n++) {
@@ -466,8 +436,5 @@ int main(int argc, char **argv)
   free_data(&eta);
   free_data(&u);
   free_data(&v);
-
-  MPI_Finalize(); // Finalize MPI
-
   return 0;
 }
