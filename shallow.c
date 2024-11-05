@@ -4,6 +4,7 @@
 #include <math.h>
 #include <string.h>
 #include <time.h>
+#include <mpi.h>
 
 #if defined(_OPENMP)
 #include <omp.h>
@@ -373,6 +374,8 @@ int main(int argc, char **argv)
     }
   }
 
+
+
   double start = GET_TIME();
 
   int up, down, left, right;
@@ -405,6 +408,8 @@ int main(int argc, char **argv)
     return 1;
   }
 
+
+
   for(int n = 0; n < nt; n++) {
     if(n && (n % (nt / 10)) == 0) {
       double time_sofar = GET_TIME() - start;
@@ -413,22 +418,56 @@ int main(int argc, char **argv)
       fflush(stdout);
     }
 
-    if(param.sampling_rate && !(n % param.sampling_rate)) {
-      write_data_vtk(&local_eta, "water elevation", param.output_eta_filename, n);
+    if (param.sampling_rate && !(n % param.sampling_rate)) {
+        // Allocate memory for the gathered data on the root process
+        double *global_eta = NULL;
+        int global_nx = nx * ny; // Total number of grid points
+        if (rank == 0) {
+            printf("je suis dans la boucle rank ==0");
+            global_eta = (double *)malloc(global_nx * sizeof(double));
+            if (!global_eta) {
+                printf("Error: Could not allocate memory for global_eta\n");
+                MPI_Abort(MPI_COMM_WORLD, 1);
+            }
+        }
+      
+  
+      // Gather local_eta data from all processes to the root process
+      MPI_Gather(local_eta.values, local_nx * local_ny, MPI_DOUBLE,
+                  global_eta, local_nx * local_ny, MPI_DOUBLE,
+                  0, MPI_COMM_WORLD);
+      printf("je suis après le gather");
+
+      // Write the gathered data to a VTK file on the root process
+      if (rank == 0) {
+          struct data global_eta_data;
+          global_eta_data.nx = nx;
+          global_eta_data.ny = ny;
+          global_eta_data.dx = param.dx;
+          global_eta_data.dy = param.dy;
+          global_eta_data.values = global_eta;
+  
+          write_data_vtk(&global_eta_data, "water elevation", param.output_eta_filename, n);
+  
+          free(global_eta);
+          printf ("je suis apres le VTK");
+      }
     }
 
     double t = n * param.dt;
 
-    if(param.source_type == 1 && up == MPI_PROC_NULL) {
-      double A = 5;
-      double f = 1. / 20.;
-      for(int i = 0; i < local_nx; i++) {
-        SET(&local_v, i, local_ny - 1, A * sin(2 * M_PI * f * t));
-        SET(&local_v, i, 0, 0.);
-      }
-      for(int j = 0; j < local_ny; j++) {
-        SET(&local_u, 0, j, 0.);
-        SET(&local_u, local_nx - 1, j, 0.);
+    if(param.source_type == 1) {
+      if(up == MPI_PROC_NULL) {
+        double A = 5;
+        double f = 1. / 20.;
+        for(int i = 0; i < local_nx; i++) {
+          SET(&local_v, i, local_ny - 1, A * sin(2 * M_PI * f * t));
+          SET(&local_v, i, 0, 0.);
+        }
+        for(int j = 0; j < local_ny; j++) {
+          SET(&local_u, 0, j, 0.);
+          SET(&local_u, local_nx - 1, j, 0.);
+        }
       }
     } else if(param.source_type == 2 &&
               (coords[0] * local_nx <= nx / 2 && (coords[0] + 1) * local_nx > nx / 2 &&
@@ -456,18 +495,41 @@ int main(int argc, char **argv)
       if(right != MPI_PROC_NULL)
         buffer_send_right[j] = GET(&local_eta, local_nx - 1, j);
     }
-
+  
     MPI_Request requests[8];
 
-    MPI_Isend(buffer_send_up, local_nx, MPI_DOUBLE, up, 0, cart_comm, &requests[0]);
-    MPI_Isend(buffer_send_down_v, local_nx, MPI_DOUBLE, down, 1, cart_comm, &requests[1]);
-    MPI_Isend(buffer_send_left_u, local_ny, MPI_DOUBLE, left, 2, cart_comm, &requests[2]);
-    MPI_Isend(buffer_send_right, local_ny, MPI_DOUBLE, right, 3, cart_comm, &requests[3]);
+     if (up != MPI_PROC_NULL) {
+        MPI_Isend(buffer_send_up, local_nx, MPI_DOUBLE, up, 0, cart_comm, &requests[0]);
+        MPI_Irecv(buffer_recv_up_v, local_nx, MPI_DOUBLE, up, 1, cart_comm, &requests[4]);
+    } else {
+        requests[0] = MPI_REQUEST_NULL;
+        requests[4] = MPI_REQUEST_NULL;
+    }
+    
+    if (down != MPI_PROC_NULL) {
+        MPI_Isend(buffer_send_down_v, local_nx, MPI_DOUBLE, down, 1, cart_comm, &requests[1]);
+        MPI_Irecv(buffer_recv_down, local_nx, MPI_DOUBLE, down, 0, cart_comm, &requests[5]);
+    } else {
+        requests[1] = MPI_REQUEST_NULL;
+        requests[5] = MPI_REQUEST_NULL;
+    }
+    
+    if (left != MPI_PROC_NULL) {
+        MPI_Isend(buffer_send_left_u, local_ny, MPI_DOUBLE, left, 2, cart_comm, &requests[2]);
+        MPI_Irecv(buffer_recv_left, local_ny, MPI_DOUBLE, left, 3, cart_comm, &requests[6]);
+    } else {
+        requests[2] = MPI_REQUEST_NULL;
+        requests[6] = MPI_REQUEST_NULL;
+    }
+    
+    if (right != MPI_PROC_NULL) {
+        MPI_Isend(buffer_send_right, local_ny, MPI_DOUBLE, right, 3, cart_comm, &requests[3]);
+        MPI_Irecv(buffer_recv_right_u, local_ny, MPI_DOUBLE, right, 2, cart_comm, &requests[7]);
+    } else {
+        requests[3] = MPI_REQUEST_NULL;
+        requests[7] = MPI_REQUEST_NULL;
+    }
 
-    MPI_Irecv(buffer_recv_up_v, local_nx, MPI_DOUBLE, up, 0, cart_comm, &requests[4]);
-    MPI_Irecv(buffer_recv_down, local_nx, MPI_DOUBLE, down, 1, cart_comm, &requests[5]);
-    MPI_Irecv(buffer_recv_left, local_ny, MPI_DOUBLE, left, 2, cart_comm, &requests[6]);
-    MPI_Irecv(buffer_recv_right_u, local_ny, MPI_DOUBLE, right, 3, cart_comm, &requests[7]);
 
     MPI_Waitall(8, requests, MPI_STATUSES_IGNORE);
 
@@ -499,8 +561,11 @@ int main(int argc, char **argv)
       }
     }
   }
-
-  write_manifest_vtk("water elevation", param.output_eta_filename, param.dt, nt, param.sampling_rate);
+  
+  if (rank == 0) {
+    write_manifest_vtk("water elevation", param.output_eta_filename, param.dt, nt, param.sampling_rate);
+  }
+  
 
   double time = GET_TIME() - start;
   printf("\nDone: %g seconds (%g MUpdates/s)\n", time, 1e-6 * (double)local_eta.nx * (double)local_eta.ny * (double)nt / time);
@@ -576,9 +641,11 @@ int main(int argc, char **argv)
   //write_manifest_vtk("y velocity", param.output_v_filename,
   //                   param.dt, nt, param.sampling_rate);
 
+  /*
   double time = GET_TIME() - start;
   printf("\nDone: %g seconds (%g MUpdates/s)\n", time,
          1e-6 * (double)eta.nx * (double)eta.ny * (double)nt / time);
+  */
 
   free_data(&local_h_interp_u);
   free_data(&local_h_interp_v);
@@ -599,4 +666,3 @@ int main(int argc, char **argv)
 
   return 0;
 }
-
