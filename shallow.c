@@ -299,6 +299,10 @@ int main(int argc, char **argv)
   int dims[2] = {0, 0}; // Initialize dimensions to 0
   MPI_Dims_create(world_size, 2, dims); // Create dimensions for 2D grid
 
+  if (rank == 0) {
+    printf("World size = %d, Grid dimensions = (%d, %d)\n", world_size, dims[0], dims[1]);
+  }
+
   int periods[2] = {0, 0}; // Non-periodic grid
   int reorder = 0; // No reordering of processes
   MPI_Comm cart_comm; // Cartesian communicator
@@ -327,7 +331,6 @@ int main(int argc, char **argv)
     print_parameters(&param);
   } 
   
-
   struct data h;
   if(read_data(&h, param.input_h_filename)) {
     MPI_Finalize();
@@ -348,7 +351,6 @@ int main(int argc, char **argv)
     printf(" - number of time steps: %d\n", nt);
   }
   
-
   // Calculate local domain sizes for each node
   int local_nx = nx / dims[0] + (coords[0] < nx % dims[0]);
   int local_ny = ny / dims[1] + (coords[1] < ny % dims[1]);
@@ -416,7 +418,6 @@ int main(int argc, char **argv)
   }
 
 
-
   for(int n = 0; n < nt; n++) {
     if(n && (n % (nt / 10)) == 0) {
       double time_sofar = GET_TIME() - start;
@@ -425,10 +426,26 @@ int main(int argc, char **argv)
       fflush(stdout);
     }
 
+    // Fill buffers
+    // pas exactement sur de ou mettre cette partie
+    for(int i = 0; i < local_nx; i++){
+      if(down != MPI_PROC_NULL)
+        buffer_send_down_v[i] = GET(&local_v,i,0);
+      if(up != MPI_PROC_NULL )
+        buffer_send_up[i] = GET(&local_eta,i,local_ny-1);
+    }
+    for(int j = 0 ; j < local_ny; j++){
+      if(left != MPI_PROC_NULL)
+        buffer_send_left_u[j] = GET(&local_u,0,j);
+      if(right != MPI_PROC_NULL)
+      buffer_send_right[j] = GET(&local_eta,local_nx-1,j);
+    }
+
+    //output data each sampling rate steps
     if (param.sampling_rate && !(n % param.sampling_rate)) {
         // Allocate memory for the gathered data on the root process
         double *global_eta = NULL;
-        int global_nx = nx * ny; // Total number of grid points
+        int global_nx = nx * ny; // Total number of grid points for the big starting grid
         if (rank == 0) {
             global_eta = (double *)malloc(global_nx * sizeof(double));
             if (!global_eta) {
@@ -438,7 +455,7 @@ int main(int argc, char **argv)
         }
       
   
-      // Gather local_eta data from all processes to the root process
+      // Gather local_eta data from all processes to the root process (0)
       MPI_Gather(local_eta.values, local_nx * local_ny, MPI_DOUBLE,
                   global_eta, local_nx * local_ny, MPI_DOUBLE,
                   0, MPI_COMM_WORLD);
@@ -461,19 +478,21 @@ int main(int argc, char **argv)
     double t = n * param.dt;
 
     if(param.source_type == 1) {
-      if (coords[1] == 0) {
-        double A = 5;
-        double f = 1. / 20.;
-        for(int i = 0; i < local_nx; i++) {
-          SET(&local_v, i, local_ny - 1, A * sin(2 * M_PI * f * t));
-          SET(&local_v, i, 0, 0.);
+        if (coords[0] == 0) { // Check if the process is in the top row
+            double A = 5;
+            double f = 1. / 20.;
+            for(int i = 0; i < local_nx; i++) {
+                SET(&local_v, i, local_ny - 1, 0.); // Top boundary
+                SET(&local_v, i, 0, A * sin(2 * M_PI * f * t)); // Bottom boundary
+            }
         }
         for(int j = 0; j < local_ny; j++) {
-          SET(&local_u, 0, j, 0.);  
-          SET(&local_u, local_nx - 1, j, 0.);
+            SET(&local_u, 0, j, 0.); // Left boundary
+            SET(&local_u, local_nx - 1, j, 0.); // Right boundary
         }
-      }
-    } else if(param.source_type == 2 &&
+    }
+      
+    else if(param.source_type == 2 &&
               (coords[0] * local_nx <= nx / 2 && (coords[0] + 1) * local_nx > nx / 2 &&
                coords[1] * local_ny <= ny / 2 && (coords[1] + 1) * local_ny > ny / 2)) {
       double A = 5;
@@ -564,26 +583,13 @@ int main(int argc, char **argv)
         SET(&local_v, i, j, v_ij);
       }
     }
+
+
   }
   
 
-
   double time = GET_TIME() - start;
   printf("\nDone: %g seconds (%g MUpdates/s)\n", time, 1e-6 * (double)local_eta.nx * (double)local_eta.ny * (double)nt / time);
-
-  // Fill buffers
-  for(int i = 0; i < local_nx; i++){
-    if(down != MPI_PROC_NULL)
-      buffer_send_down_v[i] = GET(&local_v,i,0);
-    if(up != MPI_PROC_NULL )
-      buffer_send_up[i] = GET(&local_eta,i,local_ny-1);
-  }
-  for(int j = 0 ; j < local_ny; j++){
-    if(left != MPI_PROC_NULL)
-      buffer_send_left_u[j] = GET(&local_u,0,j);
-    if(right != MPI_PROC_NULL)
-    buffer_send_right[j] = GET(&local_eta,local_nx-1,j);
-  }
 
 
 
