@@ -63,6 +63,7 @@ int read_parameters(struct parameters *param, const char *filename)
 
 void print_parameters(const struct parameters *param)
 {
+
   printf("Parameters:\n");
   printf(" - grid spacing (dx, dy): %g m, %g m\n", param->dx, param->dy);
   printf(" - time step (dt): %g s\n", param->dt);
@@ -322,7 +323,10 @@ int main(int argc, char **argv)
     MPI_Finalize();
     return 1;
   }
-  print_parameters(&param);
+  if(rank == 0){
+    print_parameters(&param);
+  } 
+  
 
   struct data h;
   if(read_data(&h, param.input_h_filename)) {
@@ -339,8 +343,11 @@ int main(int argc, char **argv)
   if(ny <= 0) ny = 1;
   int nt = floor(param.max_t / param.dt);
 
-  printf(" - grid size: %g m x %g m (%d x %d = %d grid points)\n", hx, hy, nx, ny, nx * ny);
-  printf(" - number of time steps: %d\n", nt);
+  if (rank == 0) {
+    printf(" - grid size: %g m x %g m (%d x %d = %d grid points)\n", hx, hy, nx, ny, nx * ny);
+    printf(" - number of time steps: %d\n", nt);
+  }
+  
 
   // Calculate local domain sizes for each node
   int local_nx = nx / dims[0] + (coords[0] < nx % dims[0]);
@@ -423,7 +430,6 @@ int main(int argc, char **argv)
         double *global_eta = NULL;
         int global_nx = nx * ny; // Total number of grid points
         if (rank == 0) {
-            printf("je suis dans la boucle rank ==0");
             global_eta = (double *)malloc(global_nx * sizeof(double));
             if (!global_eta) {
                 printf("Error: Could not allocate memory for global_eta\n");
@@ -436,7 +442,6 @@ int main(int argc, char **argv)
       MPI_Gather(local_eta.values, local_nx * local_ny, MPI_DOUBLE,
                   global_eta, local_nx * local_ny, MPI_DOUBLE,
                   0, MPI_COMM_WORLD);
-      printf("je suis après le gather");
 
       // Write the gathered data to a VTK file on the root process
       if (rank == 0) {
@@ -450,14 +455,13 @@ int main(int argc, char **argv)
           write_data_vtk(&global_eta_data, "water elevation", param.output_eta_filename, n);
   
           free(global_eta);
-          printf ("je suis apres le VTK");
       }
     }
 
     double t = n * param.dt;
 
     if(param.source_type == 1) {
-      if(up == MPI_PROC_NULL) {
+      if (coords[1] == 0) {
         double A = 5;
         double f = 1. / 20.;
         for(int i = 0; i < local_nx; i++) {
@@ -465,7 +469,7 @@ int main(int argc, char **argv)
           SET(&local_v, i, 0, 0.);
         }
         for(int j = 0; j < local_ny; j++) {
-          SET(&local_u, 0, j, 0.);
+          SET(&local_u, 0, j, 0.);  
           SET(&local_u, local_nx - 1, j, 0.);
         }
       }
@@ -499,7 +503,7 @@ int main(int argc, char **argv)
     MPI_Request requests[8];
 
      if (up != MPI_PROC_NULL) {
-        MPI_Isend(buffer_send_up, local_nx, MPI_DOUBLE, up, 0, cart_comm, &requests[0]);
+        MPI_Isend(buffer_send_up, local_nx, MPI_DOUBLE, up, 0, cart_comm, &requests[0]);       
         MPI_Irecv(buffer_recv_up_v, local_nx, MPI_DOUBLE, up, 1, cart_comm, &requests[4]);
     } else {
         requests[0] = MPI_REQUEST_NULL;
@@ -562,10 +566,7 @@ int main(int argc, char **argv)
     }
   }
   
-  if (rank == 0) {
-    write_manifest_vtk("water elevation", param.output_eta_filename, param.dt, nt, param.sampling_rate);
-  }
-  
+
 
   double time = GET_TIME() - start;
   printf("\nDone: %g seconds (%g MUpdates/s)\n", time, 1e-6 * (double)local_eta.nx * (double)local_eta.ny * (double)nt / time);
@@ -583,59 +584,11 @@ int main(int argc, char **argv)
     if(right != MPI_PROC_NULL)
     buffer_send_right[j] = GET(&local_eta,local_nx-1,j);
   }
-  // Send and receive buffers
-  MPI_Request requests[8];  // To keep track of send and receive requests
 
-  MPI_Isend(buffer_send_up, local_nx, MPI_DOUBLE, up, 0, cart_comm, &requests[0]);
-  MPI_Isend(buffer_send_down_v, local_nx, MPI_DOUBLE, down, 1, cart_comm, &requests[1]);
-  MPI_Isend(buffer_send_left_u, local_ny, MPI_DOUBLE, left, 2, cart_comm, &requests[2]);
-  MPI_Isend(buffer_send_right, local_ny, MPI_DOUBLE, right, 3, cart_comm, &requests[3]);
 
-  MPI_Irecv(buffer_recv_up_v, local_nx, MPI_DOUBLE, up, 0, cart_comm, &requests[4]);
-  MPI_Irecv(buffer_recv_down,local_nx,MPI_DOUBLE,down,1,cart_comm,&requests[5]);
-  MPI_Irecv(buffer_recv_left,local_ny,MPI_DOUBLE,left,2,cart_comm,&requests[6]);
-  MPI_Irecv(buffer_recv_right_u,local_ny,MPI_DOUBLE,right,3,cart_comm,&requests[7]);
 
-  // Synchronization
-  MPI_Waitall(8, requests, MPI_STATUSES_IGNORE);
-  
-  // update eta
-  // Not sure if the conditions added to get the right values work
-  for(int j = 0; j < local_ny; j++) {
-    for(int i = 0; i < local_nx ; i++) {
-
-    //double val = interpolate_data(&h, x, y);   //bilinear_interpolation_with_edge_handling
-
-      double u_1 = (i == local_nx-1 && right != MPI_PROC_NULL) ? buffer_recv_right_u[j] : GET(&local_u, i + 1, j);
-      double v_1 = (j == local_ny-1 && up != MPI_PROC_NULL) ? buffer_recv_up_v[i] : GET(&local_v, i, j + 1);
-
-      double eta_ij = GET(&local_eta, i, j)
-        - param.dt / param.dx * (GET(&local_h_interp_u, i + 1, j)*u_1 - GET(&local_h_interp_u,i,j)*GET(&local_u, i, j))
-        - param.dt / param.dy * (GET(&local_h_interp_v,i,j+1)*v_1 - GET(&local_h_interp_v,i,j)*GET(&local_v, i, j));
-      SET(&local_eta, i, j, eta_ij);
-    }
-  }
-
-  // update u and v
-  for(int j = 0; j < ny; j++) {
-    for(int i = 0; i < nx; i++) {
-      double c1 = param.dt * param.g;
-      double c2 = param.dt * param.gamma;
-      double eta_ij = GET(&local_eta, i, j);
-      double eta_imj = (coords[0]*local_nx == 0) ? GET(&local_eta, (i == 0) ? 0 : i - 1, j) : buffer_recv_left[j];
-      double eta_ijm = (coords[1]*local_ny == 0) ? GET(&local_eta, i, (j == 0) ? 0 : j-1 ) : buffer_recv_down[i];
-      double u_ij = (1. - c2) * GET(&local_u, i, j)
-        - c1 / param.dx * (eta_ij - eta_imj);
-      double v_ij = (1. - c2) * GET(&local_v, i, j)
-        - c1 / param.dy * (eta_ij - eta_ijm);
-      SET(&local_u, i, j, u_ij);
-      SET(&local_v, i, j, v_ij);
-    }
-  }
-
-  
-  write_manifest_vtk("water elevation", param.output_eta_filename,
-                     param.dt, nt, param.sampling_rate);
+  //write_manifest_vtk("water elevation", param.output_eta_filename,
+  //                   param.dt, nt, param.sampling_rate);
   //write_manifest_vtk("x velocity", param.output_u_filename,
   //                   param.dt, nt, param.sampling_rate);
   //write_manifest_vtk("y velocity", param.output_v_filename,
@@ -646,6 +599,9 @@ int main(int argc, char **argv)
   printf("\nDone: %g seconds (%g MUpdates/s)\n", time,
          1e-6 * (double)eta.nx * (double)eta.ny * (double)nt / time);
   */
+   if (rank == 0) {
+    write_manifest_vtk("water elevation", param.output_eta_filename, param.dt, nt, param.sampling_rate);
+  }
 
   free_data(&local_h_interp_u);
   free_data(&local_h_interp_v);
