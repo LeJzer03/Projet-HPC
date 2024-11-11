@@ -365,6 +365,7 @@ int main(int argc, char **argv)
   init_data(&local_h_interp_u, local_nx + 1, local_ny, param.dx, param.dy, 0.);
   init_data(&local_h_interp_v, local_nx, local_ny + 1, param.dx, param.dy, 0.);
 
+
   for(int j = 0; j < local_ny; j++) {
     for(int i = 0; i < local_nx + 1; i++) {
       double x = (coords[0] * local_nx + i) * param.dx;
@@ -478,7 +479,7 @@ int main(int argc, char **argv)
     double t = n * param.dt;
 
     if(param.source_type == 1) {
-        if (coords[0] == 0) { // Check if the process is in the top row
+        if (down == MPI_PROC_NULL) { // Check if the process is in the top row
             double A = 5;
             double f = 1. / 20.;
             for(int i = 0; i < local_nx; i++) {
@@ -558,6 +559,7 @@ int main(int argc, char **argv)
 
     for(int j = 0; j < local_ny; j++) {
       for(int i = 0; i < local_nx; i++) {
+        
         double u_1 = (i == local_nx - 1 && right != MPI_PROC_NULL) ? buffer_recv_right_u[j] : GET(&local_u, i + 1, j);
         double v_1 = (j == local_ny - 1 && up != MPI_PROC_NULL) ? buffer_recv_up_v[i] : GET(&local_v, i, j + 1);
 
@@ -573,8 +575,8 @@ int main(int argc, char **argv)
         double c1 = param.dt * param.g;
         double c2 = param.dt * param.gamma;
         double eta_ij = GET(&local_eta, i, j);
-        double eta_imj = (coords[0] * local_nx == 0) ? GET(&local_eta, (i == 0) ? 0 : i - 1, j) : buffer_recv_left[j];
-        double eta_ijm = (coords[1] * local_ny == 0) ? GET(&local_eta, i, (j == 0) ? 0 : j - 1) : buffer_recv_down[i];
+        double eta_imj = (coords[0] == 0) ? GET(&local_eta, (i == 0) ? 0 : i - 1, j) : (i == 0) ? buffer_recv_left[j] : GET(&local_eta,i-1,j);
+        double eta_ijm = (coords[1] == 0) ? GET(&local_eta,  i , (j == 0) ? 0 : j - 1) : (j == 0) ? buffer_recv_down[i] : GET(&local_eta,i,j-1);
         double u_ij = (1. - c2) * GET(&local_u, i, j)
           - c1 / param.dx * (eta_ij - eta_imj);
         double v_ij = (1. - c2) * GET(&local_v, i, j)
@@ -628,4 +630,3 @@ int main(int argc, char **argv)
 
   return 0;
 }
-
