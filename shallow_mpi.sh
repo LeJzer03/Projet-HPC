@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name="shallow_mpi"
-#SBATCH --ntasks=39                # Number of tasks for MPI (adjust as needed)
+#SBATCH --ntasks=4              # Number of tasks for MPI (adjust as needed)
 #SBATCH --cpus-per-task=1         # Number of cores per task
 #SBATCH --time=05:00
 #SBATCH --output=shallow_mpi_%j.out
@@ -11,7 +11,7 @@ PROJECT_DIR="${HOME}/project_info0939"
 EXEC_DIR="${PROJECT_DIR}/bin"
 INPUT_DIR="${PROJECT_DIR}/example_inputs/simple"
 PARAM_FILE="param_simple.txt"
-SOURCE_FILE="${PROJECT_DIR}/shallow_MPI.c"
+SOURCE_FILE="${PROJECT_DIR}/shallow.c"
 EXEC_FILE="${EXEC_DIR}/shallow_MPI"
 
 module load OpenMPI
@@ -48,7 +48,7 @@ fi
 
 
 
-mv *.vti *.pvd output/
+zip -r output.zip *.vti *.pvd
 
-
+rm -f *.vti *.pvd
 
