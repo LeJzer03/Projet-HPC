@@ -517,10 +517,11 @@ int main(int argc, char **argv)
     for(int j = 0 ; j < local_ny; j++){
       if(left != MPI_PROC_NULL)
         buffer_send_left_u[j] = GET(&local_u,0,j);
-      if(right != MPI_PROC_NULL)
-      buffer_send_right[j] = GET(&local_eta,local_nx-1,j);
+      if(right != MPI_PROC_NULL){
+        buffer_send_right[j] = GET(&local_eta,local_nx-1,j);
+      }
+      
     }
-
     //output data each sampling rate steps
     if (param.sampling_rate && !(n % param.sampling_rate)) {
         // Allocate memory for the gathered data on the root process
@@ -554,9 +555,9 @@ int main(int argc, char **argv)
                 for (int j = 0; j < local_cols; j++) { 
                   int coordxy[2] = {py, px};
                   int process_rank;
+                  MPI_Cart_rank(cart_comm, coordxy, &process_rank);  
                   int offset = process_rank * local_rows * local_cols;
                   SET(&global_eta_data,j+prev_j,i+prev_i,global_eta[offset + i * local_cols + j]);
-                  MPI_Cart_rank(cart_comm, coordxy, &process_rank);  
                 }
                 prev_j += local_cols;
               }
@@ -576,13 +577,23 @@ int main(int argc, char **argv)
             double A = 5;
             double f = 1. / 20.;
             for(int i = 0; i < local_nx; i++) {
-                SET(&local_v, i, local_ny - 1, 0.); // Top boundary
                 SET(&local_v, i, 0, A * sin(2 * M_PI * f * t)); // Bottom boundary
             }
         }
-        for(int j = 0; j < local_ny; j++) {
-            SET(&local_u, 0, j, 0.); // Left boundary
-            SET(&local_u, local_nx - 1, j, 0.); // Right boundary
+        if(up == MPI_PROC_NULL){
+          for(int i = 0;i<local_nx;i++){
+            SET(&local_v,i,local_ny-1,0.);
+          }
+        }
+        if(right == MPI_PROC_NULL){
+          for(int j = 0 ; j < local_ny ; j++){
+            SET(&local_u,local_nx-1,j,0.);
+          }
+        }
+        if(left == MPI_PROC_NULL){
+          for(int j = 0 ; j < local_ny ; j++){
+            SET(&local_u,0,j,0.);
+          }
         }
     }
       
@@ -652,12 +663,10 @@ int main(int argc, char **argv)
 
     for(int j = 0; j < local_ny; j++) {
       for(int i = 0; i < local_nx; i++) {
-        double u_1 = (i == local_nx - 1 && right != MPI_PROC_NULL) ? buffer_recv_right_u[j] : GET(&local_u, i + 1, j);
-        double v_1 = (j == local_ny - 1 && up != MPI_PROC_NULL) ? buffer_recv_up_v[i] : GET(&local_v, i, j + 1);
 
         double eta_ij = GET(&local_eta, i, j)
-          - param.dt / param.dx * (GET(&local_h_interp_u, i + 1, j) * u_1 - GET(&local_h_interp_u, i, j) * GET(&local_u, i, j))
-          - param.dt / param.dy * (GET(&local_h_interp_v, i, j + 1) * v_1 - GET(&local_h_interp_v, i, j) * GET(&local_v, i, j));
+          - param.dt / param.dx * (GET(&local_h_interp_u, i + 1, j) * GET(&local_u,i+1,j) - GET(&local_h_interp_u, i, j) * GET(&local_u, i, j))
+          - param.dt / param.dy * (GET(&local_h_interp_v, i, j + 1) * GET(&local_v,i,j+1) - GET(&local_h_interp_v, i, j) * GET(&local_v, i, j));
         SET(&local_eta, i, j, eta_ij);
       }
     }
@@ -667,15 +676,19 @@ int main(int argc, char **argv)
         double c1 = param.dt * param.g;
         double c2 = param.dt * param.gamma;
         double eta_ij = GET(&local_eta, i, j);
-        double eta_imj = (coords[0] == 0) ? GET(&local_eta, (i == 0) ? 0 : i - 1, j) : (i == 0) ? buffer_recv_left[j] : GET(&local_eta,i-1,j);
-        double eta_ijm = (coords[1] == 0) ? GET(&local_eta,  i , (j == 0) ? 0 : j - 1) : (j == 0) ? buffer_recv_down[i] : GET(&local_eta,i,j-1);
+        double eta_imj = (left == MPI_PROC_NULL) ? GET(&local_eta, (i == 0) ? 0 : i - 1, j) : (i == 0) ? buffer_recv_left[j] : GET(&local_eta,i-1,j);
+        double eta_ijm = (down == MPI_PROC_NULL) ? GET(&local_eta,  i , (j == 0) ? 0 : j - 1) : (j == 0) ? buffer_recv_down[i] : GET(&local_eta,i,j-1);
         double u_ij = (1. - c2) * GET(&local_u, i, j)
           - c1 / param.dx * (eta_ij - eta_imj);
         double v_ij = (1. - c2) * GET(&local_v, i, j)
           - c1 / param.dy * (eta_ij - eta_ijm);
         SET(&local_u, i, j, u_ij);
         SET(&local_v, i, j, v_ij);
+        if(j == local_ny - 1 && up != MPI_PROC_NULL)
+          SET(&local_v,i,local_ny,buffer_recv_up_v[i]);
       }
+      if(right != MPI_PROC_NULL)
+        SET(&local_u,local_nx,j,buffer_recv_right_u[j]);
     }
 
 
