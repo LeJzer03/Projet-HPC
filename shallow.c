@@ -393,31 +393,110 @@ int main(int argc, char **argv)
   MPI_Cart_shift(cart_comm, 1, 1, &down, &up);
 
   double *buffer_send_right = (right != MPI_PROC_NULL ? malloc(sizeof(double) * local_ny) : NULL);
+  if(!buffer_send_right && right != MPI_PROC_NULL){
+    free_data(&local_h_interp_u);
+    free_data(&local_h_interp_v);
+    free_data(&local_eta);
+    free_data(&local_u);
+    free_data(&local_v);
+    MPI_Finalize();
+    return 1;
+  }
   double *buffer_send_up = (up != MPI_PROC_NULL ? malloc(sizeof(double) * local_nx) : NULL);
+  if(!buffer_send_up && up != MPI_PROC_NULL){
+    free_data(&local_h_interp_u);
+    free_data(&local_h_interp_v);
+    free_data(&local_eta);
+    free_data(&local_u);
+    free_data(&local_v);
+    if(buffer_send_right){free(buffer_send_right);}
+    MPI_Finalize();
+    return 1;
+  }
   double *buffer_send_left_u = (left != MPI_PROC_NULL ? malloc(sizeof(double) * local_ny) : NULL);
+  if(!buffer_send_left_u && left != MPI_PROC_NULL){
+    free_data(&local_h_interp_u);
+    free_data(&local_h_interp_v);
+    free_data(&local_eta);
+    free_data(&local_u);
+    free_data(&local_v);
+    if(buffer_send_right){free(buffer_send_right);}
+    if(buffer_send_up){free(buffer_send_up);}
+    MPI_Finalize();
+    return 1;
+  }
   double *buffer_send_down_v = (down != MPI_PROC_NULL ? malloc(sizeof(double) * local_nx) : NULL);
-  double *buffer_recv_left = (left != MPI_PROC_NULL ? malloc(sizeof(double) * local_ny) : NULL);
-  double *buffer_recv_down = (down != MPI_PROC_NULL ? malloc(sizeof(double) * local_nx) : NULL);
-  double *buffer_recv_right_u = (right != MPI_PROC_NULL ? malloc(sizeof(double) * local_ny) : NULL);
-  double *buffer_recv_up_v = (up != MPI_PROC_NULL ? malloc(sizeof(double) * local_nx) : NULL);
-
-  if(((!buffer_send_right || !buffer_recv_right_u) && right != MPI_PROC_NULL) ||
-     ((!buffer_send_up || !buffer_recv_up_v) && up != MPI_PROC_NULL) ||
-     ((!buffer_recv_down || !buffer_send_down_v) && down != MPI_PROC_NULL) ||
-     ((!buffer_recv_left || !buffer_send_left_u) && left != MPI_PROC_NULL)) {
-    printf("Error: Could not initiate buffers\n");
-    free(buffer_recv_down);
-    free(buffer_recv_left);
-    free(buffer_recv_up_v);
-    free(buffer_recv_right_u);
-    free(buffer_send_down_v);
-    free(buffer_send_left_u);
-    free(buffer_send_right);
-    free(buffer_send_up);
+  if(!buffer_send_down_v && down != MPI_PROC_NULL){
+    free_data(&local_h_interp_u);
+    free_data(&local_h_interp_v);
+    free_data(&local_eta);
+    free_data(&local_u);
+    free_data(&local_v);
+    if(buffer_send_right){free(buffer_send_right);}
+    if(buffer_send_up){free(buffer_send_up);}
+    if(buffer_send_left_u){free(buffer_send_left_u);}
     MPI_Finalize();
     return 1;
   }
 
+  double *buffer_recv_left = (left != MPI_PROC_NULL ? malloc(sizeof(double) * local_ny) : NULL);
+  if(!buffer_recv_left && left != MPI_PROC_NULL){
+    free_data(&local_h_interp_u);
+    free_data(&local_h_interp_v);
+    free_data(&local_eta);
+    free_data(&local_u);
+    free_data(&local_v);
+    if(buffer_send_right){free(buffer_send_right);}
+    if(buffer_send_up){free(buffer_send_up);}
+    if(buffer_send_down_v){free(buffer_send_down_v);}
+    free(buffer_send_left_u);
+    MPI_Finalize();
+    return 1;
+  }
+  double *buffer_recv_down = (down != MPI_PROC_NULL ? malloc(sizeof(double) * local_nx) : NULL);
+  if(!buffer_recv_down && down != MPI_PROC_NULL){
+    free_data(&local_h_interp_u);
+    free_data(&local_h_interp_v);
+    free_data(&local_eta);
+    free_data(&local_u);
+    free_data(&local_v);
+    if(buffer_send_right){free(buffer_send_right);}
+    if(buffer_send_up){free(buffer_send_up);}
+    if(buffer_send_left_u){free(buffer_send_left_u);free(buffer_recv_left);}
+    free(buffer_send_down_v);
+    MPI_Finalize();
+    return 1;
+  }
+  double *buffer_recv_right_u = (right != MPI_PROC_NULL ? malloc(sizeof(double) * local_ny) : NULL);
+  if(!buffer_recv_down && down != MPI_PROC_NULL){
+    free_data(&local_h_interp_u);
+    free_data(&local_h_interp_v);
+    free_data(&local_eta);
+    free_data(&local_u);
+    free_data(&local_v);
+    free(buffer_send_right);
+    if(buffer_send_up){free(buffer_send_up);}
+    if(buffer_send_left_u){free(buffer_send_left_u);free(buffer_recv_left);}
+    if(buffer_send_down_v){free(buffer_send_down_v);free(buffer_recv_down);}
+    MPI_Finalize();
+    return 1;
+  }
+  double *buffer_recv_up_v = (up != MPI_PROC_NULL ? malloc(sizeof(double) * local_nx) : NULL);
+  if(!buffer_recv_down && down != MPI_PROC_NULL){
+    free_data(&local_h_interp_u);
+    free_data(&local_h_interp_v);
+    free_data(&local_eta);
+    free_data(&local_u);
+    free_data(&local_v);
+    free(buffer_send_up);
+    if(buffer_send_right){free(buffer_send_right);free(buffer_recv_right_u);}
+    if(buffer_send_left_u){free(buffer_send_left_u);free(buffer_recv_left);}
+    if(buffer_send_down_v){free(buffer_send_down_v);free(buffer_recv_down);}
+    MPI_Finalize();
+    return 1;
+  }
+
+  printf("My rank is %d \r Neighbor on the right : %d \r Neighbor on the left : %d \r Neighbor above : %d \r Neighbor below : %d \r",rank,(right != MPI_PROC_NULL),(left != MPI_PROC_NULL),(up != MPI_PROC_NULL),(down != MPI_PROC_NULL));
 
   for(int n = 0; n < nt; n++) {
     if(n && (n % (nt / 10)) == 0) {
@@ -464,14 +543,28 @@ int main(int argc, char **argv)
       // Write the gathered data to a VTK file on the root process
       if (rank == 0) {
           struct data global_eta_data;
-          global_eta_data.nx = nx;
-          global_eta_data.ny = ny;
-          global_eta_data.dx = param.dx;
-          global_eta_data.dy = param.dy;
-          global_eta_data.values = global_eta;
-  
+          init_data(&global_eta_data,nx,ny,param.dx,param.dy,0.);
+          int prev_i = 0;
+          for (int px = 0; px < dims[0]; px++) {
+            int local_rows = nx / dims[0] + (px < nx % dims[0]);
+            for (int i = 0; i < local_rows; i++) {
+              int prev_j = 0;
+              for (int py = 0; py < dims[1]; py++) {
+                int local_cols = nx / dims[0] + (px < nx % dims[0]);
+                for (int j = 0; j < local_cols; j++) { 
+                  int coordxy[2] = {py, px};
+                  int process_rank;
+                  int offset = process_rank * local_rows * local_cols;
+                  SET(&global_eta_data,j+prev_j,i+prev_i,global_eta[offset + i * local_cols + j]);
+                  MPI_Cart_rank(cart_comm, coordxy, &process_rank);  
+                }
+                prev_j += local_cols;
+              }
+            }
+            prev_i += local_rows;
+          }
           write_data_vtk(&global_eta_data, "water elevation", param.output_eta_filename, n);
-  
+          free_data(&global_eta_data);
           free(global_eta);
       }
     }
@@ -559,7 +652,6 @@ int main(int argc, char **argv)
 
     for(int j = 0; j < local_ny; j++) {
       for(int i = 0; i < local_nx; i++) {
-        
         double u_1 = (i == local_nx - 1 && right != MPI_PROC_NULL) ? buffer_recv_right_u[j] : GET(&local_u, i + 1, j);
         double v_1 = (j == local_ny - 1 && up != MPI_PROC_NULL) ? buffer_recv_up_v[i] : GET(&local_v, i, j + 1);
 
