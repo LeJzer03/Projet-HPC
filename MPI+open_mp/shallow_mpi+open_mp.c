@@ -601,18 +601,21 @@ int main(int argc, char **argv)
         }
     }
       
-    else if(param.source_type == 2 &&
-              (coords[0] * local_nx <= nx / 2 && (coords[0] + 1) * local_nx > nx / 2 &&
-               coords[1] * local_ny <= ny / 2 && (coords[1] + 1) * local_ny > ny / 2)) {
-      double A = 5;
-      double f = 1. / 20.;
-      int local_i = nx / 2 - coords[0] * local_nx;
-      int local_j = ny / 2 - coords[1] * local_ny;
-      SET(&local_eta, local_i, local_j, A * sin(2 * M_PI * f * t));
+    else if (param.source_type == 2) {
+      if (coords[0] * local_nx <= nx / 2 && (coords[0] + 1) * local_nx > nx / 2 &&
+          coords[1] * local_ny <= ny / 2 && (coords[1] + 1) * local_ny > ny / 2) {
+          double A = 5;
+          double f = 1. / 20.;
+          int local_i = nx / 2 - coords[0] * local_nx;
+          int local_j = ny / 2 - coords[1] * local_ny;
+          if (local_i >= 0 && local_i < local_nx && local_j >= 0 && local_j < local_ny) {
+              SET(&local_eta, local_i, local_j, A * sin(2 * M_PI * f * t));
+          }
+        }
     } else {
-      printf("Error: Unknown source type %d\n", param.source_type);
-      MPI_Finalize();
-      return 1;
+        printf("Error: Unknown source type %d\n", param.source_type);
+        MPI_Finalize();
+        return 1;
     }
 
     for(int i = 0; i < local_nx; i++) {
