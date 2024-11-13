@@ -388,7 +388,7 @@ int main(int argc, char **argv)
 
     #pragma omp parallel //will split the work loop between the threads
     {
-      #pragma omp for collapse(2) 
+      #pragma omp for //schedule(dynamic) //collapse(2) //definitely slower with dynamic and also slightly slower with collapse (sure?)
       // update eta
       for(int j = 0; j < ny; j++) {
         for(int i = 0; i < nx ; i++) {
@@ -399,7 +399,7 @@ int main(int argc, char **argv)
         }
       }
 
-      #pragma omp for collapse(2) 
+      #pragma omp for //schedule(dynamic) //collapse(2) 
       // update u and v
       for(int j = 0; j < ny; j++) {
         for(int i = 0; i < nx; i++) {
@@ -419,7 +419,6 @@ int main(int argc, char **argv)
 
     }
   }
-
 
 
   write_manifest_vtk("water elevation", param.output_eta_filename,
