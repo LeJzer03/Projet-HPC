@@ -1,0 +1,1572 @@
+/var/spool/slurmd/job7917537/slurm_script: line 18: PARAM_SOURCE_TEST: command not found
+cc1: fatal error: /home/ulg/info0939/jcollign/project_info0939/workdir/mpi/shallow_mpi.c: No such file or directory
+compilation terminated.
+Running with 64 processes ...
+cp: cannot stat '/param_64procs.txt': No such file or directory
+Run 1 ...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 54.4041 seconds (47.0553 MUpdates/s)
+
+Done: 54.3037 seconds (47.1422 MUpdates/s)
+
+Done: 54.4068 seconds (47.0529 MUpdates/s)
+
+Done: 54.3644 seconds (47.0897 MUpdates/s)
+
+Done: 54.3457 seconds (47.1058 MUpdates/s)
+
+Done: 54.3516 seconds (47.1008 MUpdates/s)
+
+Done: 54.4301 seconds (47.0328 MUpdates/s)
+
+Done: 54.4192 seconds (47.0422 MUpdates/s)
+
+Done: 54.3472 seconds (47.1046 MUpdates/s)
+
+Done: 54.3661 seconds (47.0881 MUpdates/s)
+
+Done: 54.4226 seconds (47.0393 MUpdates/s)
+
+Done: 54.3435 seconds (47.1077 MUpdates/s)
+
+Done: 54.3368 seconds (47.1136 MUpdates/s)
+
+Done: 54.3824 seconds (47.074 MUpdates/s)
+
+Done: 54.426 seconds (47.0363 MUpdates/s)
+
+
+Done: 54.3126 seconds (47.1346 MUpdates/s)
+Done: 54.1829 seconds (47.2474 MUpdates/s)
+
+Done: 54.3469 seconds (47.1048 MUpdates/s)
+
+Done: 54.4185 seconds (47.0429 MUpdates/s)
+
+Done: 54.3917 seconds (47.066 MUpdates/s)
+
+Done: 54.3213 seconds (47.127 MUpdates/s)
+
+Done: 54.3826 seconds (47.0739 MUpdates/s)
+
+Done: 54.381 seconds (47.0753 MUpdates/s)
+
+Done: 54.3338 seconds (47.1162 MUpdates/s)
+
+Done: 54.3754 seconds (47.0801 MUpdates/s)
+
+Done: 54.3354 seconds (47.1148 MUpdates/s)
+
+Done: 54.3257 seconds (47.1232 MUpdates/s)
+
+Done: 54.3988 seconds (47.0598 MUpdates/s)
+
+Done: 54.1785 seconds (47.2512 MUpdates/s)
+
+Done: 54.2088 seconds (47.2248 MUpdates/s)
+
+Done: 54.3996 seconds (47.0592 MUpdates/s)
+
+Done: 54.342 seconds (47.1091 MUpdates/s)
+
+Done: 54.3508 seconds (47.1014 MUpdates/s)
+
+Done: 54.2937 seconds (47.151 MUpdates/s)
+
+
+Done: 54.3257 seconds (47.1232 MUpdates/s)
+Done: 54.3515 seconds (47.1008 MUpdates/s)
+
+Done: 54.2347 seconds (47.2023 MUpdates/s)
+
+Done: 54.1311 seconds (47.2926 MUpdates/s)
+
+
+Done: 54.1207 seconds (47.3017 MUpdates/s)
+Done: 54.2307 seconds (47.2057 MUpdates/s)
+
+Done: 54.3632 seconds (47.0907 MUpdates/s)
+
+Done: 54.4004 seconds (47.0585 MUpdates/s)
+
+Done: 54.0448 seconds (47.3681 MUpdates/s)
+
+Done: 54.3483 seconds (47.1036 MUpdates/s)
+
+Done: 54.2974 seconds (47.1478 MUpdates/s)
+
+Done: 54.2841 seconds (47.1593 MUpdates/s)
+
+Done: 54.3361 seconds (47.1142 MUpdates/s)
+
+Done: 54.3757 seconds (47.0799 MUpdates/s)
+
+Done: 54.3818 seconds (47.0746 MUpdates/s)
+
+Done: 54.2335 seconds (47.2033 MUpdates/s)
+
+Done: 54.327 seconds (47.122 MUpdates/s)
+
+Done: 54.359 seconds (47.0943 MUpdates/s)
+
+Done: 54.2564 seconds (47.1834 MUpdates/s)
+
+Done: 54.2197 seconds (47.2153 MUpdates/s)
+
+Done: 54.1201 seconds (47.3022 MUpdates/s)
+
+Done: 54.078 seconds (47.339 MUpdates/s)
+
+Done: 54.2502 seconds (47.1888 MUpdates/s)
+
+Done: 54.3772 seconds (47.0785 MUpdates/s)
+
+
+Done: 54.3797 seconds (47.0764 MUpdates/s)
+Done: 54.2494 seconds (47.1895 MUpdates/s)
+
+Done: 54.098 seconds (47.3215 MUpdates/s)
+
+Done: 54.2584 seconds (47.1816 MUpdates/s)
+
+Done: 54.3293 seconds (47.1201 MUpdates/s)
+
+Done: 54.2274 seconds (47.2086 MUpdates/s)
+Run 2 ...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 54.1516 seconds (47.2747 MUpdates/s)
+
+Done: 54.1937 seconds (47.238 MUpdates/s)
+
+Done: 54.1398 seconds (47.285 MUpdates/s)
+
+Done: 54.0767 seconds (47.3402 MUpdates/s)
+
+Done: 54.1399 seconds (47.2849 MUpdates/s)
+
+Done: 54.141 seconds (47.2839 MUpdates/s)
+
+Done: 54.1807 seconds (47.2493 MUpdates/s)
+
+Done: 54.1985 seconds (47.2338 MUpdates/s)
+
+Done: 54.2005 seconds (47.2321 MUpdates/s)
+
+Done: 54.1967 seconds (47.2354 MUpdates/s)
+
+Done: 54.2106 seconds (47.2233 MUpdates/s)
+
+Done: 54.1428 seconds (47.2824 MUpdates/s)
+
+Done: 54.148 seconds (47.2778 MUpdates/s)
+
+Done: 54.1773 seconds (47.2522 MUpdates/s)
+
+Done: 54.1582 seconds (47.2689 MUpdates/s)
+
+Done: 54.1948 seconds (47.237 MUpdates/s)
+
+Done: 54.1359 seconds (47.2884 MUpdates/s)
+
+Done: 54.1659 seconds (47.2622 MUpdates/s)
+
+Done: 54.1689 seconds (47.2596 MUpdates/s)
+
+Done: 54.2106 seconds (47.2233 MUpdates/s)
+
+Done: 54.1369 seconds (47.2875 MUpdates/s)
+
+Done: 54.1457 seconds (47.2798 MUpdates/s)
+
+Done: 54.147 seconds (47.2787 MUpdates/s)
+
+Done: 54.1673 seconds (47.2609 MUpdates/s)
+
+Done: 54.1768 seconds (47.2527 MUpdates/s)
+
+Done: 54.0859 seconds (47.3321 MUpdates/s)
+
+Done: 54.1614 seconds (47.2661 MUpdates/s)
+
+Done: 54.1231 seconds (47.2996 MUpdates/s)
+
+Done: 54.1523 seconds (47.2741 MUpdates/s)
+
+Done: 54.1081 seconds (47.3127 MUpdates/s)
+
+Done: 54.0473 seconds (47.3659 MUpdates/s)
+
+Done: 54.1218 seconds (47.3008 MUpdates/s)
+
+Done: 54.1741 seconds (47.255 MUpdates/s)
+
+Done: 53.9764 seconds (47.4281 MUpdates/s)
+
+Done: 54.125 seconds (47.298 MUpdates/s)
+
+Done: 54.1717 seconds (47.2572 MUpdates/s)
+
+Done: 54.1275 seconds (47.2957 MUpdates/s)
+
+Done: 54.1749 seconds (47.2544 MUpdates/s)
+
+Done: 54.1626 seconds (47.2651 MUpdates/s)
+
+Done: 54.0392 seconds (47.373 MUpdates/s)
+
+Done: 54.0445 seconds (47.3684 MUpdates/s)
+
+Done: 54.0733 seconds (47.3432 MUpdates/s)
+
+Done: 54.1942 seconds (47.2375 MUpdates/s)
+
+Done: 54.0437 seconds (47.3691 MUpdates/s)
+
+Done: 53.9688 seconds (47.4348 MUpdates/s)
+
+Done: 54.0846 seconds (47.3332 MUpdates/s)
+
+Done: 54.1078 seconds (47.313 MUpdates/s)
+
+Done: 54.1622 seconds (47.2655 MUpdates/s)
+
+Done: 53.907 seconds (47.4892 MUpdates/s)
+
+Done: 54.1101 seconds (47.311 MUpdates/s)
+
+Done: 53.9234 seconds (47.4747 MUpdates/s)
+
+Done: 54.1893 seconds (47.2418 MUpdates/s)
+
+Done: 54.0457 seconds (47.3674 MUpdates/s)
+
+Done: 54.1547 seconds (47.2719 MUpdates/s)
+
+Done: 54.0975 seconds (47.322 MUpdates/s)
+
+Done: 54.0307 seconds (47.3805 MUpdates/s)
+
+Done: 53.8888 seconds (47.5053 MUpdates/s)
+
+Done: 54.1048 seconds (47.3156 MUpdates/s)
+
+Done: 54.1096 seconds (47.3114 MUpdates/s)
+
+Done: 54.1765 seconds (47.253 MUpdates/s)
+
+Done: 54.1036 seconds (47.3167 MUpdates/s)
+
+Done: 53.8536 seconds (47.5362 MUpdates/s)
+
+Done: 54.0176 seconds (47.392 MUpdates/s)
+
+Done: 53.996 seconds (47.4109 MUpdates/s)
+Run 3 ...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 54.0861 seconds (47.332 MUpdates/s)
+
+Done: 54.1627 seconds (47.265 MUpdates/s)
+
+Done: 54.0761 seconds (47.3407 MUpdates/s)
+
+Done: 54.0977 seconds (47.3218 MUpdates/s)
+
+Done: 54.0607 seconds (47.3542 MUpdates/s)
+
+Done: 54.1265 seconds (47.2966 MUpdates/s)
+
+Done: 54.0664 seconds (47.3492 MUpdates/s)
+
+Done: 54.1125 seconds (47.3088 MUpdates/s)
+
+Done: 54.0595 seconds (47.3553 MUpdates/s)
+
+Done: 54.1034 seconds (47.3168 MUpdates/s)
+
+Done: 54.1284 seconds (47.2949 MUpdates/s)
+
+Done: 54.1724 seconds (47.2565 MUpdates/s)
+
+Done: 53.8586 seconds (47.5319 MUpdates/s)
+
+Done: 54.158 seconds (47.2691 MUpdates/s)
+
+Done: 53.8327 seconds (47.5547 MUpdates/s)
+
+Done: 54.1025 seconds (47.3175 MUpdates/s)
+
+Done: 53.6595 seconds (47.7082 MUpdates/s)
+
+
+Done: 54.0152 seconds (47.394 MUpdates/s)
+Done: 54.0893 seconds (47.3292 MUpdates/s)
+
+Done: 54.1485 seconds (47.2774 MUpdates/s)
+
+Done: 54.1018 seconds (47.3182 MUpdates/s)
+
+Done: 54.1573 seconds (47.2697 MUpdates/s)
+
+Done: 53.9627 seconds (47.4402 MUpdates/s)
+
+Done: 53.7968 seconds (47.5865 MUpdates/s)
+
+Done: 54.0788 seconds (47.3383 MUpdates/s)
+
+Done: 53.8505 seconds (47.539 MUpdates/s)
+
+Done: 54.0362 seconds (47.3757 MUpdates/s)
+
+Done: 54.0288 seconds (47.3821 MUpdates/s)
+
+Done: 54.0874 seconds (47.3308 MUpdates/s)
+
+Done: 53.9582 seconds (47.4442 MUpdates/s)
+
+Done: 53.9276 seconds (47.4711 MUpdates/s)
+
+Done: 53.99 seconds (47.4162 MUpdates/s)
+
+Done: 54.0294 seconds (47.3817 MUpdates/s)
+
+Done: 54.0501 seconds (47.3635 MUpdates/s)
+
+Done: 54.0911 seconds (47.3276 MUpdates/s)
+
+Done: 54.0714 seconds (47.3448 MUpdates/s)
+
+Done: 54.0487 seconds (47.3647 MUpdates/s)
+
+Done: 53.8889 seconds (47.5051 MUpdates/s)
+
+Done: 54.0562 seconds (47.3581 MUpdates/s)
+
+Done: 54.0378 seconds (47.3743 MUpdates/s)
+
+Done: 54.0775 seconds (47.3394 MUpdates/s)
+
+Done: 54.1215 seconds (47.301 MUpdates/s)
+
+Done: 54.0579 seconds (47.3566 MUpdates/s)
+
+Done: 54.023 seconds (47.3873 MUpdates/s)
+
+Done: 53.9555 seconds (47.4465 MUpdates/s)
+
+Done: 54.0847 seconds (47.3331 MUpdates/s)
+
+Done: 54.0581 seconds (47.3564 MUpdates/s)
+
+Done: 54.0692 seconds (47.3467 MUpdates/s)
+
+Done: 54.0897 seconds (47.3288 MUpdates/s)
+
+Done: 54.1381 seconds (47.2865 MUpdates/s)
+
+Done: 54.1302 seconds (47.2934 MUpdates/s)
+
+Done: 54.0891 seconds (47.3293 MUpdates/s)
+
+Done: 54.0165 seconds (47.3929 MUpdates/s)
+
+Done: 54.0385 seconds (47.3737 MUpdates/s)
+
+Done: 54.0107 seconds (47.398 MUpdates/s)
+
+Done: 54.0385 seconds (47.3736 MUpdates/s)
+
+Done: 54.024 seconds (47.3863 MUpdates/s)
+
+Done: 54.1107 seconds (47.3104 MUpdates/s)
+
+Done: 54.0767 seconds (47.3401 MUpdates/s)
+
+Done: 53.9754 seconds (47.4291 MUpdates/s)
+
+Done: 54.0176 seconds (47.392 MUpdates/s)
+
+Done: 54.0208 seconds (47.3892 MUpdates/s)
+
+Done: 54.0482 seconds (47.3651 MUpdates/s)
+
+Done: 53.9781 seconds (47.4267 MUpdates/s)
+Run 4 ...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+
+Done: 54.012 seconds (47.3969 MUpdates/s)
+Done: 54.0701 seconds (47.3459 MUpdates/s)
+
+Done: 54.0695 seconds (47.3465 MUpdates/s)
+
+Done: 53.9421 seconds (47.4583 MUpdates/s)
+
+Done: 54.0788 seconds (47.3384 MUpdates/s)
+
+Done: 54.085 seconds (47.3329 MUpdates/s)
+
+Done: 54.0237 seconds (47.3866 MUpdates/s)
+
+Done: 53.9913 seconds (47.415 MUpdates/s)
+
+Done: 54.0031 seconds (47.4047 MUpdates/s)
+
+Done: 54.052 seconds (47.3618 MUpdates/s)
+
+Done: 54.0015 seconds (47.4061 MUpdates/s)
+
+Done: 52.4124 seconds (48.8434 MUpdates/s)
+
+Done: 54.0492 seconds (47.3643 MUpdates/s)
+
+
+Done: 53.913 seconds (47.4839 MUpdates/s)
+Done: 53.9372 seconds (47.4626 MUpdates/s)
+
+Done: 53.9946 seconds (47.4122 MUpdates/s)
+
+Done: 52.1244 seconds (49.1133 MUpdates/s)
+
+Done: 54.0163 seconds (47.3931 MUpdates/s)
+
+Done: 54.0868 seconds (47.3313 MUpdates/s)
+
+Done: 53.8419 seconds (47.5466 MUpdates/s)
+
+Done: 54.0804 seconds (47.3369 MUpdates/s)
+
+Done: 53.8017 seconds (47.5822 MUpdates/s)
+
+Done: 53.9976 seconds (47.4095 MUpdates/s)
+
+Done: 54.0348 seconds (47.3769 MUpdates/s)
+
+Done: 53.8801 seconds (47.5129 MUpdates/s)
+
+Done: 54.004 seconds (47.4039 MUpdates/s)
+
+Done: 54.0327 seconds (47.3787 MUpdates/s)
+
+Done: 53.7541 seconds (47.6243 MUpdates/s)
+
+Done: 53.9954 seconds (47.4115 MUpdates/s)
+
+Done: 53.8645 seconds (47.5267 MUpdates/s)
+
+Done: 53.9397 seconds (47.4604 MUpdates/s)
+
+Done: 53.3368 seconds (47.9969 MUpdates/s)
+
+Done: 53.4103 seconds (47.9309 MUpdates/s)
+
+Done: 53.9216 seconds (47.4763 MUpdates/s)
+
+Done: 54.063 seconds (47.3521 MUpdates/s)
+
+Done: 52.6007 seconds (48.6685 MUpdates/s)
+
+Done: 52.0033 seconds (49.2276 MUpdates/s)
+
+Done: 53.477 seconds (47.871 MUpdates/s)
+
+Done: 53.9752 seconds (47.4292 MUpdates/s)
+
+Done: 53.9735 seconds (47.4307 MUpdates/s)
+
+Done: 53.5032 seconds (47.8476 MUpdates/s)
+
+Done: 54.0535 seconds (47.3605 MUpdates/s)
+
+Done: 53.89 seconds (47.5042 MUpdates/s)
+
+Done: 54.0478 seconds (47.3655 MUpdates/s)
+
+Done: 53.8716 seconds (47.5204 MUpdates/s)
+
+Done: 54.0791 seconds (47.338 MUpdates/s)
+
+Done: 54.0408 seconds (47.3716 MUpdates/s)
+
+Done: 54.051 seconds (47.3627 MUpdates/s)
+
+Done: 53.8641 seconds (47.527 MUpdates/s)
+
+
+Done: 54.017 seconds (47.3925 MUpdates/s)
+Done: 54.0649 seconds (47.3505 MUpdates/s)
+
+Done: 54.0864 seconds (47.3317 MUpdates/s)
+
+Done: 54.0043 seconds (47.4036 MUpdates/s)
+
+Done: 53.7177 seconds (47.6566 MUpdates/s)
+
+Done: 53.9183 seconds (47.4792 MUpdates/s)
+
+Done: 54.0202 seconds (47.3897 MUpdates/s)
+
+Done: 53.8272 seconds (47.5596 MUpdates/s)
+
+Done: 54.0926 seconds (47.3263 MUpdates/s)
+
+Done: 53.7066 seconds (47.6664 MUpdates/s)
+
+Done: 54.0113 seconds (47.3975 MUpdates/s)
+
+Done: 53.9779 seconds (47.4268 MUpdates/s)
+
+Done: 54.0133 seconds (47.3957 MUpdates/s)
+
+Done: 53.9643 seconds (47.4387 MUpdates/s)
+
+Done: 53.9287 seconds (47.4701 MUpdates/s)
+Run 5 ...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 54.0399 seconds (47.3724 MUpdates/s)
+
+Done: 54.0884 seconds (47.3299 MUpdates/s)
+
+Done: 54.0635 seconds (47.3517 MUpdates/s)
+
+Done: 53.8728 seconds (47.5193 MUpdates/s)
+
+Done: 54.0042 seconds (47.4037 MUpdates/s)
+
+Done: 54.0851 seconds (47.3328 MUpdates/s)
+
+Done: 54.1461 seconds (47.2795 MUpdates/s)
+
+Done: 54.0682 seconds (47.3476 MUpdates/s)
+
+Done: 54.1232 seconds (47.2995 MUpdates/s)
+
+Done: 54.1261 seconds (47.297 MUpdates/s)
+
+Done: 54.1387 seconds (47.2859 MUpdates/s)
+
+Done: 53.9597 seconds (47.4428 MUpdates/s)
+
+Done: 53.9074 seconds (47.4888 MUpdates/s)
+
+Done: 53.9836 seconds (47.4218 MUpdates/s)
+
+Done: 54.1334 seconds (47.2906 MUpdates/s)
+
+Done: 54.1291 seconds (47.2944 MUpdates/s)
+
+Done: 54.0607 seconds (47.3541 MUpdates/s)
+
+Done: 53.872 seconds (47.5201 MUpdates/s)
+
+Done: 54.0555 seconds (47.3587 MUpdates/s)
+
+Done: 53.8816 seconds (47.5116 MUpdates/s)
+
+Done: 54.1171 seconds (47.3048 MUpdates/s)
+
+Done: 54.1143 seconds (47.3072 MUpdates/s)
+
+Done: 53.8817 seconds (47.5115 MUpdates/s)
+
+Done: 53.9421 seconds (47.4583 MUpdates/s)
+
+Done: 53.8752 seconds (47.5172 MUpdates/s)
+
+Done: 54.1403 seconds (47.2846 MUpdates/s)
+
+Done: 54.0912 seconds (47.3274 MUpdates/s)
+
+Done: 54.0609 seconds (47.354 MUpdates/s)
+
+Done: 54.1023 seconds (47.3177 MUpdates/s)
+
+Done: 54.1273 seconds (47.2959 MUpdates/s)
+
+Done: 54.0361 seconds (47.3757 MUpdates/s)
+
+Done: 53.7661 seconds (47.6136 MUpdates/s)
+
+Done: 54.0916 seconds (47.3271 MUpdates/s)
+
+Done: 54.1127 seconds (47.3087 MUpdates/s)
+
+Done: 54.1736 seconds (47.2555 MUpdates/s)
+
+Done: 54.1445 seconds (47.2809 MUpdates/s)
+
+Done: 54.063 seconds (47.3522 MUpdates/s)
+
+Done: 54.0823 seconds (47.3353 MUpdates/s)
+
+Done: 54.1176 seconds (47.3043 MUpdates/s)
+
+Done: 54.0039 seconds (47.4039 MUpdates/s)
+
+Done: 54.1272 seconds (47.296 MUpdates/s)
+
+Done: 54.0055 seconds (47.4026 MUpdates/s)
+
+Done: 53.8845 seconds (47.509 MUpdates/s)
+
+Done: 54.0239 seconds (47.3864 MUpdates/s)
+
+Done: 54.087 seconds (47.3312 MUpdates/s)
+
+Done: 54.1048 seconds (47.3156 MUpdates/s)
+
+Done: 54.1776 seconds (47.252 MUpdates/s)
+
+Done: 53.9959 seconds (47.411 MUpdates/s)
+
+Done: 54.059 seconds (47.3556 MUpdates/s)
+
+Done: 54.1551 seconds (47.2716 MUpdates/s)
+
+
+Done: 54.1807 seconds (47.2493 MUpdates/s)
+Done: 53.9176 seconds (47.4798 MUpdates/s)
+
+Done: 53.873 seconds (47.5191 MUpdates/s)
+
+Done: 54.0855 seconds (47.3325 MUpdates/s)
+
+Done: 53.9676 seconds (47.4359 MUpdates/s)
+
+Done: 54.1188 seconds (47.3034 MUpdates/s)
+
+Done: 54.0355 seconds (47.3762 MUpdates/s)
+
+Done: 54.1513 seconds (47.275 MUpdates/s)
+
+Done: 54.0329 seconds (47.3785 MUpdates/s)
+
+Done: 53.9989 seconds (47.4084 MUpdates/s)
+
+Done: 54.081 seconds (47.3364 MUpdates/s)
+
+Done: 54.0572 seconds (47.3572 MUpdates/s)
+
+Done: 53.9955 seconds (47.4114 MUpdates/s)
+
+Done: 54.1577 seconds (47.2693 MUpdates/s)
+Running with 32 processes ...
+cp: cannot stat '/param_32procs.txt': No such file or directory
+Run 1 ...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 26.8349 seconds (95.5041 MUpdates/s)
+
+Done: 26.8342 seconds (95.5068 MUpdates/s)
+
+Done: 26.8268 seconds (95.4487 MUpdates/s)
+
+Done: 26.8149 seconds (95.5755 MUpdates/s)
+
+Done: 26.8336 seconds (95.509 MUpdates/s)
+
+Done: 26.832 seconds (95.4302 MUpdates/s)
+
+Done: 26.8356 seconds (95.4173 MUpdates/s)
+
+Done: 26.8375 seconds (95.4107 MUpdates/s)
+
+Done: 26.8394 seconds (95.3196 MUpdates/s)
+
+Done: 26.8415 seconds (95.4808 MUpdates/s)
+
+Done: 26.8357 seconds (95.3326 MUpdates/s)
+
+Done: 26.839 seconds (95.3211 MUpdates/s)
+
+Done: 26.8341 seconds (95.4226 MUpdates/s)
+
+Done: 26.8277 seconds (95.277 MUpdates/s)
+
+Done: 26.8422 seconds (95.394 MUpdates/s)
+
+Done: 26.8377 seconds (95.41 MUpdates/s)
+
+Done: 26.8369 seconds (95.4127 MUpdates/s)
+
+Done: 26.8368 seconds (95.2444 MUpdates/s)
+
+Done: 26.8339 seconds (95.255 MUpdates/s)
+
+Done: 26.838 seconds (95.4088 MUpdates/s)
+
+Done: 26.8365 seconds (95.2457 MUpdates/s)
+
+Done: 26.8377 seconds (95.41 MUpdates/s)
+
+Done: 26.8444 seconds (95.3861 MUpdates/s)
+
+Done: 26.8334 seconds (95.4253 MUpdates/s)
+
+Done: 26.8453 seconds (95.2144 MUpdates/s)
+
+Done: 26.8342 seconds (95.2536 MUpdates/s)
+
+Done: 26.8328 seconds (95.4274 MUpdates/s)
+
+Done: 26.8376 seconds (95.2417 MUpdates/s)
+
+Done: 26.8244 seconds (95.4572 MUpdates/s)
+
+Done: 26.8501 seconds (95.1976 MUpdates/s)
+
+Done: 26.8345 seconds (95.4215 MUpdates/s)
+
+Done: 26.8431 seconds (95.2221 MUpdates/s)
+Run 2 ...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 26.8695 seconds (95.2972 MUpdates/s)
+
+Done: 26.8723 seconds (95.287 MUpdates/s)
+
+Done: 26.8679 seconds (95.3026 MUpdates/s)
+
+
+Done: 26.8646 seconds (95.3144 MUpdates/s)
+
+Done: 26.8704 seconds (95.2937 MUpdates/s)
+Done: 26.8685 seconds (95.2164 MUpdates/s)
+
+Done: 26.8823 seconds (95.2517 MUpdates/s)
+
+Done: 26.8698 seconds (95.2959 MUpdates/s)
+
+Done: 26.8714 seconds (95.2905 MUpdates/s)
+
+Done: 26.8668 seconds (95.3066 MUpdates/s)
+
+Done: 26.8717 seconds (95.1209 MUpdates/s)
+
+Done: 26.8531 seconds (95.2708 MUpdates/s)
+
+Done: 26.8686 seconds (95.3003 MUpdates/s)
+
+Done: 26.8732 seconds (95.2839 MUpdates/s)
+
+Done: 26.8634 seconds (95.3186 MUpdates/s)
+
+Done: 26.8678 seconds (95.2189 MUpdates/s)
+
+Done: 26.868 seconds (95.1339 MUpdates/s)
+
+Done: 26.8654 seconds (95.1431 MUpdates/s)
+
+Done: 26.8753 seconds (95.1083 MUpdates/s)
+
+Done: 26.8688 seconds (95.3837 MUpdates/s)
+
+Done: 26.855 seconds (95.4329 MUpdates/s)
+
+Done: 26.8742 seconds (95.1121 MUpdates/s)
+
+Done: 26.8639 seconds (95.3169 MUpdates/s)
+
+Done: 26.8708 seconds (95.2924 MUpdates/s)
+
+Done: 26.8776 seconds (95.1001 MUpdates/s)
+
+Done: 26.8637 seconds (95.1493 MUpdates/s)
+
+Done: 26.861 seconds (95.4115 MUpdates/s)
+
+Done: 26.8688 seconds (95.1313 MUpdates/s)
+
+Done: 26.8617 seconds (95.3248 MUpdates/s)
+
+Done: 26.8741 seconds (95.3648 MUpdates/s)
+
+Done: 26.8792 seconds (95.0944 MUpdates/s)
+
+Done: 26.8664 seconds (95.3923 MUpdates/s)
+Run 3 ...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 26.8597 seconds (95.3318 MUpdates/s)
+
+Done: 26.8772 seconds (95.2699 MUpdates/s)
+
+Done: 26.8395 seconds (95.4034 MUpdates/s)
+
+Done: 26.8558 seconds (95.3457 MUpdates/s)
+
+Done: 26.8579 seconds (95.3382 MUpdates/s)
+
+Done: 26.8669 seconds (95.3064 MUpdates/s)
+
+Done: 26.8608 seconds (95.328 MUpdates/s)
+
+Done: 26.8588 seconds (95.3349 MUpdates/s)
+
+Done: 26.8565 seconds (95.343 MUpdates/s)
+
+Done: 26.8579 seconds (95.3381 MUpdates/s)
+
+
+Done: 26.8622 seconds (95.1544 MUpdates/s)
+
+Done: 26.8609 seconds (95.3275 MUpdates/s)
+
+Done: 26.861 seconds (95.2429 MUpdates/s)
+Done: 26.8617 seconds (95.1565 MUpdates/s)
+
+Done: 26.8582 seconds (95.1686 MUpdates/s)
+
+Done: 26.8636 seconds (95.2335 MUpdates/s)
+
+Done: 26.8734 seconds (95.115 MUpdates/s)
+
+Done: 26.8564 seconds (95.3436 MUpdates/s)
+
+Done: 26.8587 seconds (95.3352 MUpdates/s)
+
+Done: 26.8581 seconds (95.4218 MUpdates/s)
+
+Done: 26.8624 seconds (95.1537 MUpdates/s)
+
+Done: 26.8583 seconds (95.1684 MUpdates/s)
+
+Done: 26.8673 seconds (95.3892 MUpdates/s)
+
+Done: 26.8613 seconds (95.1575 MUpdates/s)
+
+Done: 26.8531 seconds (95.4396 MUpdates/s)
+
+Done: 26.8568 seconds (95.342 MUpdates/s)
+
+Done: 26.8572 seconds (95.1721 MUpdates/s)
+
+Done: 26.8659 seconds (95.2256 MUpdates/s)
+
+Done: 26.866 seconds (95.3936 MUpdates/s)
+
+Done: 26.8667 seconds (95.3913 MUpdates/s)
+
+Done: 26.8581 seconds (95.3376 MUpdates/s)
+
+Done: 26.8598 seconds (95.1629 MUpdates/s)
+Run 4 ...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 26.8473 seconds (95.2916 MUpdates/s)
+
+Done: 26.8678 seconds (95.2187 MUpdates/s)
+
+Done: 26.8608 seconds (95.1594 MUpdates/s)
+
+Done: 26.8675 seconds (95.1358 MUpdates/s)
+
+Done: 26.8683 seconds (95.3013 MUpdates/s)
+
+Done: 26.8691 seconds (95.2144 MUpdates/s)
+
+Done: 26.865 seconds (95.1447 MUpdates/s)
+
+Done: 26.8648 seconds (95.3138 MUpdates/s)
+
+Done: 26.8658 seconds (95.3946 MUpdates/s)
+
+Done: 26.8624 seconds (95.3222 MUpdates/s)
+
+Done: 26.8681 seconds (95.3864 MUpdates/s)
+
+Done: 26.8658 seconds (95.3945 MUpdates/s)
+
+Done: 26.8618 seconds (95.3243 MUpdates/s)
+
+Done: 26.8662 seconds (95.3932 MUpdates/s)
+
+Done: 26.8711 seconds (95.1231 MUpdates/s)
+
+Done: 26.8658 seconds (95.3945 MUpdates/s)
+
+Done: 26.8591 seconds (95.1654 MUpdates/s)
+
+Done: 26.8648 seconds (95.1453 MUpdates/s)
+
+Done: 26.8595 seconds (95.3326 MUpdates/s)
+
+Done: 26.8618 seconds (95.3245 MUpdates/s)
+
+
+Done: 26.8639 seconds (95.1484 MUpdates/s)
+Done: 26.8649 seconds (95.3135 MUpdates/s)
+
+Done: 26.8665 seconds (95.3076 MUpdates/s)
+
+Done: 26.8666 seconds (95.3074 MUpdates/s)
+
+Done: 26.8728 seconds (95.1171 MUpdates/s)
+
+Done: 26.8654 seconds (95.3114 MUpdates/s)
+
+Done: 26.8627 seconds (95.3211 MUpdates/s)
+
+Done: 26.8651 seconds (95.3126 MUpdates/s)
+
+Done: 26.8739 seconds (95.113 MUpdates/s)
+
+Done: 26.87 seconds (95.2952 MUpdates/s)
+
+Done: 26.8735 seconds (95.283 MUpdates/s)
+
+Done: 26.8498 seconds (95.3669 MUpdates/s)
+Run 5 ...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 26.8731 seconds (95.3687 MUpdates/s)
+
+Done: 26.8847 seconds (95.2433 MUpdates/s)
+
+Done: 26.8818 seconds (95.3377 MUpdates/s)
+
+Done: 26.8879 seconds (95.316 MUpdates/s)
+
+Done: 26.8922 seconds (95.1324 MUpdates/s)
+
+Done: 26.8844 seconds (95.2442 MUpdates/s)
+
+Done: 26.8917 seconds (95.2185 MUpdates/s)
+
+Done: 26.8887 seconds (95.3131 MUpdates/s)
+
+Done: 26.8882 seconds (95.1466 MUpdates/s)
+
+Done: 26.8863 seconds (95.3217 MUpdates/s)
+
+Done: 26.8913 seconds (95.0515 MUpdates/s)
+
+Done: 26.889 seconds (95.1436 MUpdates/s)
+
+Done: 26.892 seconds (95.0492 MUpdates/s)
+
+Done: 26.8812 seconds (95.2556 MUpdates/s)
+
+Done: 26.8829 seconds (95.2496 MUpdates/s)
+
+Done: 26.8949 seconds (95.207 MUpdates/s)
+
+Done: 26.8898 seconds (95.225 MUpdates/s)
+
+Done: 26.8883 seconds (95.0622 MUpdates/s)
+
+Done: 26.8912 seconds (95.0519 MUpdates/s)
+
+Done: 26.8929 seconds (95.2143 MUpdates/s)
+
+Done: 26.8684 seconds (95.301 MUpdates/s)
+
+Done: 26.8905 seconds (95.2225 MUpdates/s)
+
+Done: 26.8947 seconds (95.0396 MUpdates/s)
+
+Done: 26.8902 seconds (95.0553 MUpdates/s)
+
+Done: 26.8894 seconds (95.2264 MUpdates/s)
+
+Done: 26.8905 seconds (95.2226 MUpdates/s)
+
+Done: 26.8963 seconds (95.2021 MUpdates/s)
+
+Done: 26.8902 seconds (95.2237 MUpdates/s)
+
+Done: 26.8883 seconds (95.062 MUpdates/s)
+
+Done: 26.8974 seconds (95.0301 MUpdates/s)
+
+Done: 26.903 seconds (95.0103 MUpdates/s)
+
+Done: 26.8963 seconds (95.2019 MUpdates/s)
+Running with 16 processes ...
+cp: cannot stat '/param_16procs.txt': No such file or directory
+Run 1 ...
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[3095,1],13]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 2 ...
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[3259,1],13]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 3 ...
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[3924,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 4 ...
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[4025,1],5]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 5 ...
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+Error: Could not read one or more parameters in 'param_16procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[3660,1],15]
+  Exit code:    1
+--------------------------------------------------------------------------
+Running with 8 processes ...
+cp: cannot stat '/param_8procs.txt': No such file or directory
+Run 1 ...
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[3809,1],7]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 2 ...
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2371,1],2]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 3 ...
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2357,1],7]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 4 ...
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2546,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 5 ...
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+Error: Could not read one or more parameters in 'param_8procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2464,1],2]
+  Exit code:    1
+--------------------------------------------------------------------------
+Running with 4 processes ...
+cp: cannot stat '/param_4procs.txt': No such file or directory
+Run 1 ...
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2144,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 2 ...
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2126,1],1]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 3 ...
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2081,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 4 ...
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2051,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 5 ...
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+Error: Could not read one or more parameters in 'param_4procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2275,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+Running with 2 processes ...
+cp: cannot stat '/param_2procs.txt': No such file or directory
+Run 1 ...
+Error: Could not read one or more parameters in 'param_2procs.txt'
+Error: Could not read one or more parameters in 'param_2procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2264,1],1]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 2 ...
+Error: Could not read one or more parameters in 'param_2procs.txt'
+Error: Could not read one or more parameters in 'param_2procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2214,1],1]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 3 ...
+Error: Could not read one or more parameters in 'param_2procs.txt'
+Error: Could not read one or more parameters in 'param_2procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2191,1],1]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 4 ...
+Error: Could not read one or more parameters in 'param_2procs.txt'
+Error: Could not read one or more parameters in 'param_2procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2194,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 5 ...
+Error: Could not read one or more parameters in 'param_2procs.txt'
+Error: Could not read one or more parameters in 'param_2procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2937,1],1]
+  Exit code:    1
+--------------------------------------------------------------------------
+Running with 1 processes ...
+cp: cannot stat '/param_1procs.txt': No such file or directory
+Run 1 ...
+Error: Could not read one or more parameters in 'param_1procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2886,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 2 ...
+Error: Could not read one or more parameters in 'param_1procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2909,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 3 ...
+Error: Could not read one or more parameters in 'param_1procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2856,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 4 ...
+Error: Could not read one or more parameters in 'param_1procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2855,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+Run 5 ...
+Error: Could not read one or more parameters in 'param_1procs.txt'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2991,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------

@@ -1,0 +1,1109 @@
+/var/spool/slurmd/job7918278/slurm_script: line 18: PARAM_SOURCE_TEST: command not found
+/home/ulg/info0939/jcollign/project_info0939/workdir/MPI/shallow_mpi.c: In function ‘main’:
+/home/ulg/info0939/jcollign/project_info0939/workdir/MPI/shallow_mpi.c:500:14: warning: unused variable ‘eta’ [-Wunused-variable]
+  500 |       double eta = (nt - n) * time_sofar / n;
+      |              ^~~
+Running with 64 processes ...
+cp: cannot stat '/param_simple.txt': No such file or directory
+Run 1 ...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 54.1014 seconds (47.3185 MUpdates/s)
+
+Done: 54.0162 seconds (47.3932 MUpdates/s)
+
+Done: 54.1109 seconds (47.3103 MUpdates/s)
+
+Done: 54.1652 seconds (47.2628 MUpdates/s)
+
+Done: 53.995 seconds (47.4118 MUpdates/s)
+
+Done: 54.1219 seconds (47.3006 MUpdates/s)
+
+Done: 54.1835 seconds (47.2469 MUpdates/s)
+
+Done: 54.1133 seconds (47.3081 MUpdates/s)
+
+Done: 54.1288 seconds (47.2946 MUpdates/s)
+
+Done: 54.0327 seconds (47.3787 MUpdates/s)
+
+Done: 54.1517 seconds (47.2746 MUpdates/s)
+
+Done: 54.1363 seconds (47.2881 MUpdates/s)
+
+Done: 54.0545 seconds (47.3596 MUpdates/s)
+
+Done: 54.0818 seconds (47.3357 MUpdates/s)
+
+Done: 54.1652 seconds (47.2628 MUpdates/s)
+
+Done: 54.1782 seconds (47.2514 MUpdates/s)
+
+Done: 54.1702 seconds (47.2585 MUpdates/s)
+
+Done: 54.1017 seconds (47.3183 MUpdates/s)
+
+Done: 54.0335 seconds (47.3781 MUpdates/s)
+
+Done: 54.1776 seconds (47.252 MUpdates/s)
+
+Done: 54.1714 seconds (47.2574 MUpdates/s)
+
+Done: 53.9909 seconds (47.4154 MUpdates/s)
+
+Done: 53.9645 seconds (47.4386 MUpdates/s)
+
+Done: 54.1568 seconds (47.2702 MUpdates/s)
+
+Done: 54.0917 seconds (47.327 MUpdates/s)
+
+Done: 54.1331 seconds (47.2908 MUpdates/s)
+
+Done: 54.1263 seconds (47.2968 MUpdates/s)
+
+Done: 54.0247 seconds (47.3857 MUpdates/s)
+
+Done: 54.2097 seconds (47.224 MUpdates/s)
+
+Done: 54.0992 seconds (47.3205 MUpdates/s)
+
+Done: 54.1632 seconds (47.2646 MUpdates/s)
+
+Done: 54.0927 seconds (47.3262 MUpdates/s)
+
+Done: 54.0964 seconds (47.3229 MUpdates/s)
+
+Done: 54.0054 seconds (47.4027 MUpdates/s)
+
+Done: 54.0311 seconds (47.3801 MUpdates/s)
+
+Done: 54.0629 seconds (47.3523 MUpdates/s)
+
+Done: 54.1804 seconds (47.2495 MUpdates/s)
+
+Done: 54.0253 seconds (47.3852 MUpdates/s)
+
+Done: 54.0518 seconds (47.362 MUpdates/s)
+
+Done: 54.0908 seconds (47.3279 MUpdates/s)
+
+Done: 54.0782 seconds (47.3388 MUpdates/s)
+
+Done: 54.0469 seconds (47.3663 MUpdates/s)
+
+Done: 54.1342 seconds (47.2899 MUpdates/s)
+
+Done: 54.157 seconds (47.27 MUpdates/s)
+
+Done: 53.9641 seconds (47.4389 MUpdates/s)
+
+Done: 54.0033 seconds (47.4045 MUpdates/s)
+
+Done: 54.1361 seconds (47.2882 MUpdates/s)
+
+Done: 54.0859 seconds (47.3321 MUpdates/s)
+
+Done: 54.1699 seconds (47.2587 MUpdates/s)
+
+Done: 54.1053 seconds (47.3151 MUpdates/s)
+
+Done: 54.1357 seconds (47.2886 MUpdates/s)
+
+Done: 54.1176 seconds (47.3044 MUpdates/s)
+
+Done: 53.9973 seconds (47.4098 MUpdates/s)
+
+Done: 54.0176 seconds (47.392 MUpdates/s)
+
+Done: 54.1618 seconds (47.2657 MUpdates/s)
+
+Done: 53.9973 seconds (47.4097 MUpdates/s)
+
+Done: 54.0947 seconds (47.3245 MUpdates/s)
+
+Done: 54.1517 seconds (47.2746 MUpdates/s)
+
+Done: 54.1634 seconds (47.2644 MUpdates/s)
+
+Done: 54.0053 seconds (47.4028 MUpdates/s)
+
+Done: 54.0401 seconds (47.3723 MUpdates/s)
+
+Done: 54.0801 seconds (47.3372 MUpdates/s)
+
+Done: 54.1447 seconds (47.2807 MUpdates/s)
+
+Done: 53.9763 seconds (47.4283 MUpdates/s)
+Run 2 ...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 54.1978 seconds (47.2344 MUpdates/s)
+
+Done: 54.2222 seconds (47.2131 MUpdates/s)
+
+Done: 54.2184 seconds (47.2164 MUpdates/s)
+
+Done: 54.2995 seconds (47.1459 MUpdates/s)
+
+Done: 54.2208 seconds (47.2144 MUpdates/s)
+
+Done: 54.2789 seconds (47.1638 MUpdates/s)
+
+Done: 54.0795 seconds (47.3377 MUpdates/s)
+
+Done: 54.2999 seconds (47.1455 MUpdates/s)
+
+Done: 54.3203 seconds (47.1279 MUpdates/s)
+
+Done: 54.2223 seconds (47.213 MUpdates/s)
+
+Done: 54.0581 seconds (47.3565 MUpdates/s)
+
+Done: 54.3103 seconds (47.1365 MUpdates/s)
+
+Done: 54.2694 seconds (47.1721 MUpdates/s)
+
+Done: 54.2745 seconds (47.1676 MUpdates/s)
+
+Done: 54.2439 seconds (47.1942 MUpdates/s)
+
+Done: 54.2807 seconds (47.1622 MUpdates/s)
+
+Done: 54.2504 seconds (47.1886 MUpdates/s)
+
+Done: 54.1061 seconds (47.3145 MUpdates/s)
+
+Done: 54.2155 seconds (47.2189 MUpdates/s)
+
+Done: 54.2302 seconds (47.2062 MUpdates/s)
+
+Done: 54.1024 seconds (47.3176 MUpdates/s)
+
+Done: 54.31 seconds (47.1368 MUpdates/s)
+
+Done: 54.1679 seconds (47.2605 MUpdates/s)
+
+Done: 54.2273 seconds (47.2087 MUpdates/s)
+
+Done: 54.3165 seconds (47.1311 MUpdates/s)
+
+Done: 54.2284 seconds (47.2077 MUpdates/s)
+
+Done: 54.1885 seconds (47.2425 MUpdates/s)
+
+Done: 54.2007 seconds (47.2319 MUpdates/s)
+
+Done: 54.1012 seconds (47.3188 MUpdates/s)
+
+Done: 54.1837 seconds (47.2467 MUpdates/s)
+
+Done: 54.245 seconds (47.1933 MUpdates/s)
+
+Done: 54.1004 seconds (47.3195 MUpdates/s)
+
+Done: 54.1385 seconds (47.2862 MUpdates/s)
+
+Done: 54.2931 seconds (47.1515 MUpdates/s)
+
+
+Done: 54.2024 seconds (47.2303 MUpdates/s)
+
+Done: 54.2753 seconds (47.1669 MUpdates/s)
+Done: 54.2223 seconds (47.213 MUpdates/s)
+
+Done: 54.295 seconds (47.1498 MUpdates/s)
+
+Done: 54.2187 seconds (47.2162 MUpdates/s)
+
+Done: 54.1558 seconds (47.271 MUpdates/s)
+
+Done: 54.2112 seconds (47.2228 MUpdates/s)
+
+Done: 54.2927 seconds (47.1518 MUpdates/s)
+
+Done: 54.2771 seconds (47.1654 MUpdates/s)
+
+Done: 54.1856 seconds (47.245 MUpdates/s)
+
+Done: 54.2296 seconds (47.2067 MUpdates/s)
+
+
+Done: 54.1699 seconds (47.2587 MUpdates/s)
+Done: 54.1102 seconds (47.3108 MUpdates/s)
+
+Done: 53.8848 seconds (47.5088 MUpdates/s)
+
+Done: 54.092 seconds (47.3267 MUpdates/s)
+
+Done: 54.2641 seconds (47.1767 MUpdates/s)
+
+Done: 54.2364 seconds (47.2008 MUpdates/s)
+
+Done: 54.1179 seconds (47.3041 MUpdates/s)
+
+Done: 54.0583 seconds (47.3563 MUpdates/s)
+
+Done: 54.0931 seconds (47.3258 MUpdates/s)
+
+Done: 54.1576 seconds (47.2695 MUpdates/s)
+
+Done: 53.9895 seconds (47.4166 MUpdates/s)
+
+Done: 54.2201 seconds (47.215 MUpdates/s)
+
+Done: 54.2139 seconds (47.2204 MUpdates/s)
+
+Done: 54.0902 seconds (47.3283 MUpdates/s)
+
+Done: 54.1072 seconds (47.3135 MUpdates/s)
+
+Done: 54.227 seconds (47.209 MUpdates/s)
+
+Done: 54.2273 seconds (47.2087 MUpdates/s)
+
+Done: 54.2422 seconds (47.1957 MUpdates/s)
+
+Done: 54.1752 seconds (47.2541 MUpdates/s)
+Run 3 ...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 54.0307 seconds (47.3805 MUpdates/s)
+
+Done: 54.0584 seconds (47.3562 MUpdates/s)
+
+Done: 53.8879 seconds (47.506 MUpdates/s)
+
+Done: 54.0746 seconds (47.342 MUpdates/s)
+
+Done: 53.9951 seconds (47.4117 MUpdates/s)
+
+Done: 54.0766 seconds (47.3403 MUpdates/s)
+
+Done: 54.0998 seconds (47.3199 MUpdates/s)
+
+Done: 54.0594 seconds (47.3553 MUpdates/s)
+
+Done: 54.099 seconds (47.3206 MUpdates/s)
+
+Done: 54.0908 seconds (47.3278 MUpdates/s)
+
+Done: 54.0948 seconds (47.3243 MUpdates/s)
+
+Done: 54.0932 seconds (47.3258 MUpdates/s)
+
+Done: 54.0063 seconds (47.4019 MUpdates/s)
+
+Done: 54.0445 seconds (47.3684 MUpdates/s)
+
+Done: 54.0065 seconds (47.4017 MUpdates/s)
+
+Done: 54.0437 seconds (47.3691 MUpdates/s)
+
+Done: 54.0988 seconds (47.3208 MUpdates/s)
+
+Done: 54.0782 seconds (47.3389 MUpdates/s)
+
+Done: 54.1068 seconds (47.3138 MUpdates/s)
+
+Done: 53.9289 seconds (47.4699 MUpdates/s)
+
+Done: 54.0847 seconds (47.3332 MUpdates/s)
+
+Done: 54.0889 seconds (47.3295 MUpdates/s)
+
+Done: 54.0085 seconds (47.3999 MUpdates/s)
+
+Done: 54.0452 seconds (47.3678 MUpdates/s)
+
+Done: 54.0282 seconds (47.3827 MUpdates/s)
+
+Done: 54.0612 seconds (47.3537 MUpdates/s)
+
+Done: 54.0901 seconds (47.3285 MUpdates/s)
+
+Done: 53.8929 seconds (47.5016 MUpdates/s)
+
+Done: 54.1212 seconds (47.3013 MUpdates/s)
+
+Done: 54.103 seconds (47.3171 MUpdates/s)
+
+Done: 53.9945 seconds (47.4122 MUpdates/s)
+
+Done: 54.0674 seconds (47.3483 MUpdates/s)
+
+Done: 54.006 seconds (47.4021 MUpdates/s)
+
+Done: 54.0791 seconds (47.338 MUpdates/s)
+
+Done: 54.0946 seconds (47.3245 MUpdates/s)
+
+Done: 54.0625 seconds (47.3526 MUpdates/s)
+
+Done: 53.9974 seconds (47.4097 MUpdates/s)
+
+Done: 54.0205 seconds (47.3894 MUpdates/s)
+
+Done: 54.0431 seconds (47.3696 MUpdates/s)
+
+Done: 53.9468 seconds (47.4541 MUpdates/s)
+
+Done: 53.9002 seconds (47.4952 MUpdates/s)
+
+Done: 54.0973 seconds (47.3221 MUpdates/s)
+
+Done: 53.9217 seconds (47.4762 MUpdates/s)
+
+Done: 53.9686 seconds (47.435 MUpdates/s)
+
+Done: 54.1006 seconds (47.3192 MUpdates/s)
+
+Done: 54.0528 seconds (47.3611 MUpdates/s)
+
+Done: 53.7329 seconds (47.643 MUpdates/s)
+
+Done: 53.9672 seconds (47.4362 MUpdates/s)
+
+Done: 54.1371 seconds (47.2873 MUpdates/s)
+
+Done: 54.0704 seconds (47.3457 MUpdates/s)
+
+Done: 53.9362 seconds (47.4635 MUpdates/s)
+
+Done: 53.9921 seconds (47.4144 MUpdates/s)
+
+Done: 54.0726 seconds (47.3438 MUpdates/s)
+
+Done: 54.0155 seconds (47.3938 MUpdates/s)
+
+Done: 53.9475 seconds (47.4536 MUpdates/s)
+
+Done: 53.7249 seconds (47.6502 MUpdates/s)
+
+Done: 54.1016 seconds (47.3184 MUpdates/s)
+
+Done: 54.0414 seconds (47.3711 MUpdates/s)
+
+Done: 54.0438 seconds (47.369 MUpdates/s)
+
+Done: 53.968 seconds (47.4355 MUpdates/s)
+
+Done: 53.9381 seconds (47.4618 MUpdates/s)
+
+Done: 54.1241 seconds (47.2987 MUpdates/s)
+
+Done: 54.0847 seconds (47.3332 MUpdates/s)
+
+Done: 53.8371 seconds (47.5508 MUpdates/s)
+Run 4 ...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 54.1184 seconds (47.3037 MUpdates/s)
+
+Done: 54.0625 seconds (47.3526 MUpdates/s)
+
+Done: 54.0681 seconds (47.3477 MUpdates/s)
+
+Done: 54.0914 seconds (47.3273 MUpdates/s)
+
+Done: 54.1259 seconds (47.2972 MUpdates/s)
+
+Done: 54.131 seconds (47.2927 MUpdates/s)
+
+Done: 53.9544 seconds (47.4475 MUpdates/s)
+
+Done: 53.8269 seconds (47.5599 MUpdates/s)
+
+Done: 54.0803 seconds (47.337 MUpdates/s)
+
+Done: 54.1293 seconds (47.2941 MUpdates/s)
+
+Done: 54.1184 seconds (47.3037 MUpdates/s)
+
+Done: 54.0427 seconds (47.3699 MUpdates/s)
+
+Done: 53.8681 seconds (47.5235 MUpdates/s)
+
+Done: 54.0224 seconds (47.3877 MUpdates/s)
+
+Done: 54.0845 seconds (47.3333 MUpdates/s)
+
+Done: 54.1398 seconds (47.285 MUpdates/s)
+
+Done: 54.1019 seconds (47.3181 MUpdates/s)
+
+Done: 53.9833 seconds (47.4221 MUpdates/s)
+
+Done: 54.1317 seconds (47.2921 MUpdates/s)
+
+Done: 54.1495 seconds (47.2765 MUpdates/s)
+
+Done: 54.1546 seconds (47.272 MUpdates/s)
+
+Done: 54.0501 seconds (47.3635 MUpdates/s)
+
+Done: 54.113 seconds (47.3084 MUpdates/s)
+
+Done: 53.9151 seconds (47.4821 MUpdates/s)
+
+Done: 54.0844 seconds (47.3334 MUpdates/s)
+
+Done: 54.1351 seconds (47.2891 MUpdates/s)
+
+Done: 53.9571 seconds (47.4451 MUpdates/s)
+
+Done: 54.1586 seconds (47.2685 MUpdates/s)
+
+Done: 54.0357 seconds (47.3761 MUpdates/s)
+
+Done: 54.1063 seconds (47.3143 MUpdates/s)
+
+Done: 54.1336 seconds (47.2904 MUpdates/s)
+
+Done: 54.004 seconds (47.4039 MUpdates/s)
+
+Done: 54.0741 seconds (47.3424 MUpdates/s)
+
+Done: 54.06 seconds (47.3548 MUpdates/s)
+
+Done: 54.0194 seconds (47.3904 MUpdates/s)
+
+Done: 54.1542 seconds (47.2724 MUpdates/s)
+
+Done: 54.1296 seconds (47.2939 MUpdates/s)
+
+Done: 53.9768 seconds (47.4277 MUpdates/s)
+
+Done: 54.1003 seconds (47.3195 MUpdates/s)
+
+Done: 53.966 seconds (47.4373 MUpdates/s)
+
+Done: 53.9962 seconds (47.4107 MUpdates/s)
+
+Done: 54.0831 seconds (47.3346 MUpdates/s)
+
+Done: 54.125 seconds (47.2979 MUpdates/s)
+
+Done: 54.0742 seconds (47.3424 MUpdates/s)
+
+Done: 54.1239 seconds (47.2989 MUpdates/s)
+
+Done: 54.1054 seconds (47.3151 MUpdates/s)
+
+Done: 54.0863 seconds (47.3318 MUpdates/s)
+
+Done: 54.0943 seconds (47.3248 MUpdates/s)
+
+Done: 54.075 seconds (47.3417 MUpdates/s)
+
+Done: 54.1103 seconds (47.3108 MUpdates/s)
+
+Done: 54.0781 seconds (47.3389 MUpdates/s)
+
+Done: 54.155 seconds (47.2718 MUpdates/s)
+
+Done: 54.1151 seconds (47.3065 MUpdates/s)
+
+Done: 53.9798 seconds (47.4252 MUpdates/s)
+
+Done: 54.1428 seconds (47.2823 MUpdates/s)
+
+Done: 54.1104 seconds (47.3107 MUpdates/s)
+
+Done: 53.9604 seconds (47.4422 MUpdates/s)
+
+Done: 54.0051 seconds (47.4029 MUpdates/s)
+
+Done: 53.97 seconds (47.4337 MUpdates/s)
+
+Done: 53.766 seconds (47.6137 MUpdates/s)
+
+Done: 54.082 seconds (47.3356 MUpdates/s)
+
+Done: 54.1259 seconds (47.2971 MUpdates/s)
+
+Done: 53.9966 seconds (47.4104 MUpdates/s)
+
+Done: 53.961 seconds (47.4417 MUpdates/s)
+Run 5 ...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 53.8757 seconds (47.5168 MUpdates/s)
+
+Done: 53.835 seconds (47.5527 MUpdates/s)
+
+Done: 53.9232 seconds (47.4749 MUpdates/s)
+
+Done: 53.907 seconds (47.4892 MUpdates/s)
+
+Done: 54.0281 seconds (47.3827 MUpdates/s)
+
+Done: 53.9654 seconds (47.4378 MUpdates/s)
+
+Done: 53.9421 seconds (47.4583 MUpdates/s)
+
+Done: 53.8716 seconds (47.5204 MUpdates/s)
+
+Done: 53.945 seconds (47.4557 MUpdates/s)
+
+Done: 53.6121 seconds (47.7504 MUpdates/s)
+
+Done: 53.9795 seconds (47.4254 MUpdates/s)
+
+Done: 53.951 seconds (47.4505 MUpdates/s)
+
+Done: 54.0115 seconds (47.3973 MUpdates/s)
+
+Done: 54.0069 seconds (47.4013 MUpdates/s)
+
+Done: 54.0022 seconds (47.4055 MUpdates/s)
+
+Done: 53.9942 seconds (47.4125 MUpdates/s)
+
+Done: 54.0181 seconds (47.3915 MUpdates/s)
+
+Done: 53.9891 seconds (47.417 MUpdates/s)
+
+Done: 54.0341 seconds (47.3775 MUpdates/s)
+
+Done: 53.9785 seconds (47.4263 MUpdates/s)
+
+Done: 54.0285 seconds (47.3824 MUpdates/s)
+
+Done: 53.845 seconds (47.5439 MUpdates/s)
+
+Done: 53.8838 seconds (47.5096 MUpdates/s)
+
+Done: 53.9432 seconds (47.4573 MUpdates/s)
+
+Done: 54.0007 seconds (47.4068 MUpdates/s)
+
+Done: 53.9692 seconds (47.4345 MUpdates/s)
+
+Done: 54.0214 seconds (47.3886 MUpdates/s)
+
+Done: 53.9654 seconds (47.4378 MUpdates/s)
+
+Done: 53.8094 seconds (47.5753 MUpdates/s)
+
+Done: 53.9292 seconds (47.4696 MUpdates/s)
+
+Done: 53.9322 seconds (47.467 MUpdates/s)
+
+Done: 54.0031 seconds (47.4047 MUpdates/s)
+
+Done: 53.9903 seconds (47.4159 MUpdates/s)
+
+Done: 54.0137 seconds (47.3954 MUpdates/s)
+
+Done: 53.9063 seconds (47.4898 MUpdates/s)
+
+Done: 53.9909 seconds (47.4154 MUpdates/s)
+
+Done: 54.014 seconds (47.3951 MUpdates/s)
+
+Done: 53.9223 seconds (47.4757 MUpdates/s)
+
+Done: 53.9019 seconds (47.4937 MUpdates/s)
+
+Done: 54.0537 seconds (47.3603 MUpdates/s)
+
+Done: 53.9957 seconds (47.4112 MUpdates/s)
+
+Done: 54.0496 seconds (47.3639 MUpdates/s)
+
+Done: 53.9493 seconds (47.452 MUpdates/s)
+
+Done: 54.0056 seconds (47.4025 MUpdates/s)
+
+Done: 53.9716 seconds (47.4323 MUpdates/s)
+
+Done: 53.9789 seconds (47.4259 MUpdates/s)
+
+Done: 54.0061 seconds (47.4021 MUpdates/s)
+
+Done: 54.0035 seconds (47.4044 MUpdates/s)
+
+Done: 53.9754 seconds (47.429 MUpdates/s)
+
+Done: 53.902 seconds (47.4936 MUpdates/s)
+
+Done: 53.9263 seconds (47.4722 MUpdates/s)
+
+Done: 53.9653 seconds (47.4379 MUpdates/s)
+
+Done: 53.8797 seconds (47.5133 MUpdates/s)
+
+Done: 54.0624 seconds (47.3527 MUpdates/s)
+
+Done: 53.858 seconds (47.5324 MUpdates/s)
+
+Done: 53.9071 seconds (47.4891 MUpdates/s)
+
+Done: 54.0168 seconds (47.3927 MUpdates/s)
+
+Done: 53.9503 seconds (47.4511 MUpdates/s)
+
+Done: 53.9671 seconds (47.4363 MUpdates/s)
+
+Done: 53.7111 seconds (47.6624 MUpdates/s)
+
+Done: 53.9891 seconds (47.417 MUpdates/s)
+
+Done: 54.046 seconds (47.3671 MUpdates/s)
+
+Done: 54.0167 seconds (47.3927 MUpdates/s)
+
+Done: 53.9844 seconds (47.4211 MUpdates/s)
+Running with 32 processes ...
+cp: cannot stat '/param_simple.txt': No such file or directory
+Run 1 ...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 26.8151 seconds (95.5748 MUpdates/s)
+
+Done: 26.819 seconds (95.5609 MUpdates/s)
+
+Done: 26.8128 seconds (95.4985 MUpdates/s)
+
+Done: 26.8158 seconds (95.5722 MUpdates/s)
+
+Done: 26.8189 seconds (95.477 MUpdates/s)
+
+Done: 26.812 seconds (95.5014 MUpdates/s)
+
+Done: 26.8046 seconds (95.5278 MUpdates/s)
+
+Done: 26.8202 seconds (95.5566 MUpdates/s)
+
+Done: 26.8199 seconds (95.4734 MUpdates/s)
+
+Done: 26.8106 seconds (95.5908 MUpdates/s)
+
+Done: 26.814 seconds (95.4098 MUpdates/s)
+
+Done: 26.8186 seconds (95.3934 MUpdates/s)
+
+Done: 26.8146 seconds (95.4923 MUpdates/s)
+
+Done: 26.8145 seconds (95.4926 MUpdates/s)
+
+Done: 26.8208 seconds (95.3856 MUpdates/s)
+
+Done: 26.8177 seconds (95.3124 MUpdates/s)
+
+Done: 26.8206 seconds (95.302 MUpdates/s)
+
+Done: 26.8149 seconds (95.491 MUpdates/s)
+
+Done: 26.8077 seconds (95.5167 MUpdates/s)
+
+Done: 26.8132 seconds (95.4973 MUpdates/s)
+
+Done: 26.8212 seconds (95.2999 MUpdates/s)
+
+Done: 26.816 seconds (95.4872 MUpdates/s)
+
+Done: 26.7963 seconds (95.3884 MUpdates/s)
+
+Done: 26.8243 seconds (95.2888 MUpdates/s)
+
+Done: 26.8218 seconds (95.4665 MUpdates/s)
+
+Done: 26.8105 seconds (95.5067 MUpdates/s)
+
+Done: 26.8217 seconds (95.2983 MUpdates/s)
+
+Done: 26.8146 seconds (95.3233 MUpdates/s)
+
+Done: 26.8126 seconds (95.4993 MUpdates/s)
+
+Done: 26.8231 seconds (95.4618 MUpdates/s)
+
+Done: 26.8246 seconds (95.288 MUpdates/s)
+
+Done: 26.8242 seconds (95.2894 MUpdates/s)
+Run 2 ...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 26.8798 seconds (95.2606 MUpdates/s)
+
+Done: 26.9078 seconds (95.2457 MUpdates/s)
+
+Done: 26.9047 seconds (95.2566 MUpdates/s)
+
+Done: 26.9021 seconds (95.2657 MUpdates/s)
+
+Done: 26.9063 seconds (95.1667 MUpdates/s)
+
+Done: 26.8789 seconds (95.3479 MUpdates/s)
+
+Done: 26.909 seconds (95.0729 MUpdates/s)
+
+Done: 26.9089 seconds (95.0733 MUpdates/s)
+
+Done: 26.9033 seconds (95.2616 MUpdates/s)
+
+Done: 26.903 seconds (95.1783 MUpdates/s)
+
+Done: 26.9035 seconds (95.0923 MUpdates/s)
+
+Done: 26.907 seconds (94.996 MUpdates/s)
+
+Done: 26.9114 seconds (95.1487 MUpdates/s)
+
+Done: 26.9044 seconds (95.1734 MUpdates/s)
+
+Done: 26.9062 seconds (95.1669 MUpdates/s)
+
+Done: 26.9081 seconds (95.1603 MUpdates/s)
+
+Done: 26.9065 seconds (94.9977 MUpdates/s)
+
+Done: 26.8998 seconds (95.0215 MUpdates/s)
+
+Done: 26.8986 seconds (95.1938 MUpdates/s)
+
+Done: 26.9038 seconds (95.1757 MUpdates/s)
+
+Done: 26.8962 seconds (95.2025 MUpdates/s)
+
+Done: 26.9085 seconds (95.1588 MUpdates/s)
+
+Done: 26.9003 seconds (95.1878 MUpdates/s)
+
+Done: 26.9 seconds (95.0207 MUpdates/s)
+
+Done: 26.9096 seconds (94.9868 MUpdates/s)
+
+Done: 26.9108 seconds (95.151 MUpdates/s)
+
+Done: 26.9071 seconds (94.9958 MUpdates/s)
+
+Done: 26.9174 seconds (95.1275 MUpdates/s)
+
+Done: 26.9056 seconds (95.1693 MUpdates/s)
+
+Done: 26.9116 seconds (94.9797 MUpdates/s)
+
+Done: 26.9183 seconds (94.9561 MUpdates/s)
+
+Done: 26.9009 seconds (95.0175 MUpdates/s)
+Run 3 ...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 26.8999 seconds (95.1052 MUpdates/s)
+
+Done: 26.9101 seconds (95.2376 MUpdates/s)
+
+Done: 26.8964 seconds (95.2017 MUpdates/s)
+
+
+Done: 26.8966 seconds (95.1167 MUpdates/s)
+
+Done: 26.8928 seconds (95.1304 MUpdates/s)
+
+Done: 26.8822 seconds (95.3364 MUpdates/s)
+
+Done: 26.8869 seconds (95.3195 MUpdates/s)
+
+Done: 26.8979 seconds (95.2807 MUpdates/s)
+Done: 26.8863 seconds (95.2376 MUpdates/s)
+
+Done: 26.8954 seconds (95.0371 MUpdates/s)
+
+Done: 26.8946 seconds (95.2922 MUpdates/s)
+
+Done: 26.8908 seconds (95.2217 MUpdates/s)
+
+Done: 26.8932 seconds (95.213 MUpdates/s)
+
+Done: 26.8989 seconds (95.0246 MUpdates/s)
+
+Done: 26.8902 seconds (95.2237 MUpdates/s)
+
+Done: 26.8953 seconds (95.2058 MUpdates/s)
+
+
+Done: 26.8944 seconds (95.0406 MUpdates/s)
+Done: 26.897 seconds (95.1995 MUpdates/s)
+
+Done: 26.8968 seconds (95.2005 MUpdates/s)
+
+Done: 26.8874 seconds (95.2337 MUpdates/s)
+
+Done: 26.9005 seconds (95.1871 MUpdates/s)
+
+Done: 26.8957 seconds (95.0361 MUpdates/s)
+
+Done: 26.8924 seconds (95.0478 MUpdates/s)
+
+Done: 26.8936 seconds (95.0434 MUpdates/s)
+
+Done: 26.8999 seconds (95.1895 MUpdates/s)
+
+Done: 26.8936 seconds (95.2115 MUpdates/s)
+
+Done: 26.8983 seconds (95.0269 MUpdates/s)
+
+Done: 26.8944 seconds (95.2087 MUpdates/s)
+
+Done: 26.9059 seconds (95.0001 MUpdates/s)
+
+Done: 26.9029 seconds (95.1786 MUpdates/s)
+
+Done: 26.9043 seconds (95.0057 MUpdates/s)
+
+Done: 26.9063 seconds (95.1667 MUpdates/s)
+Run 4 ...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 26.861 seconds (95.4115 MUpdates/s)
+
+Done: 26.866 seconds (95.3937 MUpdates/s)
+
+Done: 26.8638 seconds (95.4015 MUpdates/s)
+
+Done: 26.8589 seconds (95.3346 MUpdates/s)
+
+Done: 26.8577 seconds (95.3389 MUpdates/s)
+
+Done: 26.862 seconds (95.4078 MUpdates/s)
+
+Done: 26.8621 seconds (95.4077 MUpdates/s)
+
+Done: 26.8661 seconds (95.2249 MUpdates/s)
+
+
+Done: 26.8641 seconds (95.2321 MUpdates/s)
+Done: 26.8597 seconds (95.3318 MUpdates/s)
+
+Done: 26.8646 seconds (95.3146 MUpdates/s)
+
+Done: 26.8593 seconds (95.249 MUpdates/s)
+
+Done: 26.853 seconds (95.3556 MUpdates/s)
+
+Done: 26.8582 seconds (95.337 MUpdates/s)
+
+Done: 26.8611 seconds (95.3267 MUpdates/s)
+
+Done: 26.8585 seconds (95.3361 MUpdates/s)
+
+Done: 26.8609 seconds (95.1591 MUpdates/s)
+
+Done: 26.8595 seconds (95.3327 MUpdates/s)
+
+Done: 26.865 seconds (95.1448 MUpdates/s)
+
+Done: 26.8603 seconds (95.1613 MUpdates/s)
+
+Done: 26.8697 seconds (95.2965 MUpdates/s)
+
+Done: 26.8665 seconds (95.1392 MUpdates/s)
+
+Done: 26.8555 seconds (95.3468 MUpdates/s)
+
+Done: 26.8631 seconds (95.3197 MUpdates/s)
+
+Done: 26.8663 seconds (95.14 MUpdates/s)
+
+Done: 26.8442 seconds (95.387 MUpdates/s)
+
+Done: 26.8597 seconds (95.1635 MUpdates/s)
+
+Done: 26.8668 seconds (95.3067 MUpdates/s)
+
+Done: 26.8637 seconds (95.3175 MUpdates/s)
+
+Done: 26.8617 seconds (95.1563 MUpdates/s)
+
+Done: 26.8676 seconds (95.1356 MUpdates/s)
+
+Done: 26.8685 seconds (95.1323 MUpdates/s)
+Run 5 ...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 26.9145 seconds (95.2218 MUpdates/s)
+
+Done: 26.9396 seconds (95.1332 MUpdates/s)
+
+Done: 26.9312 seconds (95.0787 MUpdates/s)
+
+Done: 26.9354 seconds (95.064 MUpdates/s)
+
+Done: 26.935 seconds (95.0652 MUpdates/s)
+
+Done: 26.9368 seconds (95.0589 MUpdates/s)
+
+Done: 26.9403 seconds (95.1305 MUpdates/s)
+
+Done: 26.9282 seconds (95.0052 MUpdates/s)
+
+Done: 26.9363 seconds (95.1449 MUpdates/s)
+
+Done: 26.9419 seconds (95.1249 MUpdates/s)
+
+Done: 26.9378 seconds (95.0553 MUpdates/s)
+
+Done: 26.9402 seconds (94.963 MUpdates/s)
+
+Done: 26.9416 seconds (95.042 MUpdates/s)
+
+Done: 26.9368 seconds (95.059 MUpdates/s)
+
+Done: 26.9358 seconds (95.0624 MUpdates/s)
+
+Done: 26.9388 seconds (94.968 MUpdates/s)
+
+Done: 26.9388 seconds (95.0518 MUpdates/s)
+
+Done: 26.9379 seconds (95.0552 MUpdates/s)
+
+Done: 26.9418 seconds (94.8734 MUpdates/s)
+
+Done: 26.9384 seconds (94.8853 MUpdates/s)
+
+Done: 26.9241 seconds (95.1039 MUpdates/s)
+
+Done: 26.9344 seconds (94.8993 MUpdates/s)
+
+Done: 26.9369 seconds (94.8905 MUpdates/s)
+
+Done: 26.9362 seconds (95.0611 MUpdates/s)
+
+Done: 26.9454 seconds (95.0286 MUpdates/s)
+
+Done: 26.9433 seconds (94.8679 MUpdates/s)
+
+Done: 26.9464 seconds (95.0252 MUpdates/s)
+
+Done: 26.944 seconds (94.8656 MUpdates/s)
+
+Done: 26.9373 seconds (95.0572 MUpdates/s)
+
+Done: 26.9387 seconds (94.8845 MUpdates/s)
+
+Done: 26.9451 seconds (94.8617 MUpdates/s)
+
+Done: 26.9462 seconds (94.858 MUpdates/s)

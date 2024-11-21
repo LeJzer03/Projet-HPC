@@ -1,0 +1,294 @@
+Running with 4 threads and BIND=spread...
+Run 1 ...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 43.2942 seconds)     Computing step 800/4000 (ETA: 38.4801 seconds)     Computing step 1200/4000 (ETA: 33.6819 seconds)     Computing step 1600/4000 (ETA: 28.8727 seconds)     Computing step 2000/4000 (ETA: 24.0661 seconds)     Computing step 2400/4000 (ETA: 19.2557 seconds)     Computing step 2800/4000 (ETA: 14.4441 seconds)     Computing step 3200/4000 (ETA: 9.63118 seconds)     Computing step 3600/4000 (ETA: 4.81636 seconds)     
+Done: 48.1707 seconds (212.578 MUpdates/s)
+Run 2 ...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 43.4145 seconds)     Computing step 800/4000 (ETA: 38.5625 seconds)     Computing step 1200/4000 (ETA: 33.7408 seconds)     Computing step 1600/4000 (ETA: 28.9231 seconds)     Computing step 2000/4000 (ETA: 24.1056 seconds)     Computing step 2400/4000 (ETA: 19.2837 seconds)     Computing step 2800/4000 (ETA: 14.4645 seconds)     Computing step 3200/4000 (ETA: 9.64396 seconds)     Computing step 3600/4000 (ETA: 4.82256 seconds)     
+Done: 48.2337 seconds (212.3 MUpdates/s)
+Run 3 ...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 43.4409 seconds)     Computing step 800/4000 (ETA: 38.6197 seconds)     Computing step 1200/4000 (ETA: 33.7917 seconds)     Computing step 1600/4000 (ETA: 28.9677 seconds)     Computing step 2000/4000 (ETA: 24.1385 seconds)     Computing step 2400/4000 (ETA: 19.3133 seconds)     Computing step 2800/4000 (ETA: 14.4862 seconds)     Computing step 3200/4000 (ETA: 9.65841 seconds)     Computing step 3600/4000 (ETA: 4.82948 seconds)     
+Done: 48.3001 seconds (212.008 MUpdates/s)
+Running with 2 threads and BIND=spread...
+Run 1 ...
+Parameters:
+ - grid spacing (dx, dy): 3.53553 m, 3.53553 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1131 x 1131 = 1279161 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 27.3943 seconds)     Computing step 800/4000 (ETA: 24.3743 seconds)     Computing step 1200/4000 (ETA: 21.3404 seconds)     Computing step 1600/4000 (ETA: 18.2971 seconds)     Computing step 2000/4000 (ETA: 15.2507 seconds)     Computing step 2400/4000 (ETA: 12.2042 seconds)     Computing step 2800/4000 (ETA: 9.1536 seconds)     Computing step 3200/4000 (ETA: 6.10223 seconds)     Computing step 3600/4000 (ETA: 3.05125 seconds)     
+Done: 30.5122 seconds (167.692 MUpdates/s)
+Run 2 ...
+Parameters:
+ - grid spacing (dx, dy): 3.53553 m, 3.53553 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1131 x 1131 = 1279161 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 27.6073 seconds)     Computing step 800/4000 (ETA: 24.5563 seconds)     Computing step 1200/4000 (ETA: 21.4999 seconds)     Computing step 1600/4000 (ETA: 18.4266 seconds)     Computing step 2000/4000 (ETA: 15.3553 seconds)     Computing step 2400/4000 (ETA: 12.2843 seconds)     Computing step 2800/4000 (ETA: 9.21143 seconds)     Computing step 3200/4000 (ETA: 6.14049 seconds)     Computing step 3600/4000 (ETA: 3.06996 seconds)     
+Done: 30.7011 seconds (166.66 MUpdates/s)
+Run 3 ...
+Parameters:
+ - grid spacing (dx, dy): 3.53553 m, 3.53553 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1131 x 1131 = 1279161 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 27.537 seconds)     Computing step 800/4000 (ETA: 24.4906 seconds)     Computing step 1200/4000 (ETA: 21.4397 seconds)     Computing step 1600/4000 (ETA: 18.3765 seconds)     Computing step 2000/4000 (ETA: 15.3132 seconds)     Computing step 2400/4000 (ETA: 12.2515 seconds)     Computing step 2800/4000 (ETA: 9.18908 seconds)     Computing step 3200/4000 (ETA: 6.12666 seconds)     Computing step 3600/4000 (ETA: 3.06381 seconds)     
+Done: 30.6407 seconds (166.988 MUpdates/s)
+Running with 1 threads and BIND=spread...
+Run 1 ...
+Parameters:
+ - grid spacing (dx, dy): 5 m, 5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (800 x 800 = 640000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 11.8852 seconds)     Computing step 800/4000 (ETA: 10.5504 seconds)     Computing step 1200/4000 (ETA: 9.22355 seconds)     Computing step 1600/4000 (ETA: 7.9027 seconds)     Computing step 2000/4000 (ETA: 6.58464 seconds)     Computing step 2400/4000 (ETA: 5.26594 seconds)     Computing step 2800/4000 (ETA: 3.95162 seconds)     Computing step 3200/4000 (ETA: 2.63584 seconds)     Computing step 3600/4000 (ETA: 1.31853 seconds)     
+Done: 13.1947 seconds (194.017 MUpdates/s)
+Run 2 ...
+Parameters:
+ - grid spacing (dx, dy): 5 m, 5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (800 x 800 = 640000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 11.8772 seconds)     Computing step 800/4000 (ETA: 10.55 seconds)     Computing step 1200/4000 (ETA: 9.23883 seconds)     Computing step 1600/4000 (ETA: 7.9212 seconds)     Computing step 2000/4000 (ETA: 6.60011 seconds)     Computing step 2400/4000 (ETA: 5.28122 seconds)     Computing step 2800/4000 (ETA: 3.96288 seconds)     Computing step 3200/4000 (ETA: 2.64229 seconds)     Computing step 3600/4000 (ETA: 1.32162 seconds)     
+Done: 13.2241 seconds (193.587 MUpdates/s)
+Run 3 ...
+Parameters:
+ - grid spacing (dx, dy): 5 m, 5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (800 x 800 = 640000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 11.8857 seconds)     Computing step 800/4000 (ETA: 10.5529 seconds)     Computing step 1200/4000 (ETA: 9.22994 seconds)     Computing step 1600/4000 (ETA: 7.9007 seconds)     Computing step 2000/4000 (ETA: 6.5741 seconds)     Computing step 2400/4000 (ETA: 5.25336 seconds)     Computing step 2800/4000 (ETA: 3.93691 seconds)     Computing step 3200/4000 (ETA: 2.62456 seconds)     Computing step 3600/4000 (ETA: 1.31275 seconds)     
+Done: 13.1352 seconds (194.896 MUpdates/s)
+Running with 4 threads and BIND=close...
+Run 1 ...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 23.6434 seconds)     Computing step 800/4000 (ETA: 21.0137 seconds)     Computing step 1200/4000 (ETA: 18.3874 seconds)     Computing step 1600/4000 (ETA: 15.7619 seconds)     Computing step 2000/4000 (ETA: 13.1356 seconds)     Computing step 2400/4000 (ETA: 10.5088 seconds)     Computing step 2800/4000 (ETA: 7.88258 seconds)     Computing step 3200/4000 (ETA: 5.2553 seconds)     Computing step 3600/4000 (ETA: 2.62771 seconds)     
+Done: 26.2786 seconds (389.671 MUpdates/s)
+Run 2 ...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 23.697 seconds)     Computing step 800/4000 (ETA: 21.0606 seconds)     Computing step 1200/4000 (ETA: 18.4281 seconds)     Computing step 1600/4000 (ETA: 15.945 seconds)     Computing step 2000/4000 (ETA: 13.2654 seconds)     Computing step 2400/4000 (ETA: 10.5985 seconds)     Computing step 2800/4000 (ETA: 7.94152 seconds)     Computing step 3200/4000 (ETA: 5.29124 seconds)     Computing step 3600/4000 (ETA: 2.64449 seconds)     
+Done: 26.438 seconds (387.321 MUpdates/s)
+Run 3 ...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 23.726 seconds)     Computing step 800/4000 (ETA: 21.0958 seconds)     Computing step 1200/4000 (ETA: 18.4586 seconds)     Computing step 1600/4000 (ETA: 15.8209 seconds)     Computing step 2000/4000 (ETA: 13.1861 seconds)     Computing step 2400/4000 (ETA: 10.5497 seconds)     Computing step 2800/4000 (ETA: 7.91254 seconds)     Computing step 3200/4000 (ETA: 5.27477 seconds)     Computing step 3600/4000 (ETA: 2.63747 seconds)     
+Done: 26.3779 seconds (388.204 MUpdates/s)
+Running with 2 threads and BIND=close...
+Run 1 ...
+Parameters:
+ - grid spacing (dx, dy): 3.53553 m, 3.53553 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1131 x 1131 = 1279161 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 16.0823 seconds)     Computing step 800/4000 (ETA: 14.3079 seconds)     Computing step 1200/4000 (ETA: 12.5256 seconds)     Computing step 1600/4000 (ETA: 10.7385 seconds)     Computing step 2000/4000 (ETA: 8.95147 seconds)     Computing step 2400/4000 (ETA: 7.16177 seconds)     Computing step 2800/4000 (ETA: 5.37137 seconds)     Computing step 3200/4000 (ETA: 3.57943 seconds)     Computing step 3600/4000 (ETA: 1.78987 seconds)     
+Done: 17.901 seconds (285.831 MUpdates/s)
+Run 2 ...
+Parameters:
+ - grid spacing (dx, dy): 3.53553 m, 3.53553 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1131 x 1131 = 1279161 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 16.1359 seconds)     Computing step 800/4000 (ETA: 14.3365 seconds)     Computing step 1200/4000 (ETA: 12.5403 seconds)     Computing step 1600/4000 (ETA: 10.7525 seconds)     Computing step 2000/4000 (ETA: 8.96132 seconds)     Computing step 2400/4000 (ETA: 7.17072 seconds)     Computing step 2800/4000 (ETA: 5.3793 seconds)     Computing step 3200/4000 (ETA: 3.58579 seconds)     Computing step 3600/4000 (ETA: 1.79307 seconds)     
+Done: 17.9334 seconds (285.314 MUpdates/s)
+Run 3 ...
+Parameters:
+ - grid spacing (dx, dy): 3.53553 m, 3.53553 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1131 x 1131 = 1279161 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 16.2188 seconds)     Computing step 800/4000 (ETA: 14.4138 seconds)     Computing step 1200/4000 (ETA: 12.6112 seconds)     Computing step 1600/4000 (ETA: 10.8068 seconds)     Computing step 2000/4000 (ETA: 9.00585 seconds)     Computing step 2400/4000 (ETA: 7.20472 seconds)     Computing step 2800/4000 (ETA: 5.40366 seconds)     Computing step 3200/4000 (ETA: 3.60277 seconds)     Computing step 3600/4000 (ETA: 1.80126 seconds)     
+Done: 18.0135 seconds (284.045 MUpdates/s)
+Running with 1 threads and BIND=close...
+Run 1 ...
+Parameters:
+ - grid spacing (dx, dy): 5 m, 5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (800 x 800 = 640000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 11.9008 seconds)     Computing step 800/4000 (ETA: 10.5783 seconds)     Computing step 1200/4000 (ETA: 9.24453 seconds)     Computing step 1600/4000 (ETA: 7.92659 seconds)     Computing step 2000/4000 (ETA: 6.60587 seconds)     Computing step 2400/4000 (ETA: 5.28176 seconds)     Computing step 2800/4000 (ETA: 3.95989 seconds)     Computing step 3200/4000 (ETA: 2.63974 seconds)     Computing step 3600/4000 (ETA: 1.32042 seconds)     
+Done: 13.2073 seconds (193.832 MUpdates/s)
+Run 2 ...
+Parameters:
+ - grid spacing (dx, dy): 5 m, 5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (800 x 800 = 640000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 11.9442 seconds)     Computing step 800/4000 (ETA: 10.6134 seconds)     Computing step 1200/4000 (ETA: 9.29318 seconds)     Computing step 1600/4000 (ETA: 7.96529 seconds)     Computing step 2000/4000 (ETA: 6.63142 seconds)     Computing step 2400/4000 (ETA: 5.30627 seconds)     Computing step 2800/4000 (ETA: 3.98088 seconds)     Computing step 3200/4000 (ETA: 2.65455 seconds)     Computing step 3600/4000 (ETA: 1.32776 seconds)     
+Done: 13.2788 seconds (192.789 MUpdates/s)
+Run 3 ...
+Parameters:
+ - grid spacing (dx, dy): 5 m, 5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (800 x 800 = 640000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 11.9404 seconds)     Computing step 800/4000 (ETA: 10.6222 seconds)     Computing step 1200/4000 (ETA: 9.29734 seconds)     Computing step 1600/4000 (ETA: 7.96929 seconds)     Computing step 2000/4000 (ETA: 6.64441 seconds)     Computing step 2400/4000 (ETA: 5.31576 seconds)     Computing step 2800/4000 (ETA: 3.98704 seconds)     Computing step 3200/4000 (ETA: 2.65804 seconds)     Computing step 3600/4000 (ETA: 1.32915 seconds)     
+Done: 13.2943 seconds (192.564 MUpdates/s)
