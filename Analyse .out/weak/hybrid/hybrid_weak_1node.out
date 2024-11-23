@@ -1,0 +1,2155 @@
+Running with 1 ranks and 2 threads...
+Run 1 with 1 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 3.53553 m, 3.53553 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1131 x 1131 = 1279161 grid points)
+ - number of time steps: 4000
+
+Done: 27.9213 seconds (183.252 MUpdates/s)
+Run 2 with 1 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 3.53553 m, 3.53553 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1131 x 1131 = 1279161 grid points)
+ - number of time steps: 4000
+
+Done: 27.8322 seconds (183.839 MUpdates/s)
+Run 3 with 1 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 3.53553 m, 3.53553 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1131 x 1131 = 1279161 grid points)
+ - number of time steps: 4000
+
+Done: 27.9397 seconds (183.132 MUpdates/s)
+Run 4 with 1 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 3.53553 m, 3.53553 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1131 x 1131 = 1279161 grid points)
+ - number of time steps: 4000
+
+Done: 27.9893 seconds (182.807 MUpdates/s)
+Run 5 with 1 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 3.53553 m, 3.53553 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1131 x 1131 = 1279161 grid points)
+ - number of time steps: 4000
+
+Done: 27.9589 seconds (183.006 MUpdates/s)
+Running with 2 ranks and 2 threads...
+Run 1 with 2 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+
+Done: 34.0521 seconds (150.358 MUpdates/s)
+
+Done: 34.0386 seconds (150.417 MUpdates/s)
+Run 2 with 2 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+
+Done: 34.0333 seconds (150.441 MUpdates/s)
+
+Done: 34.0698 seconds (150.28 MUpdates/s)
+Run 3 with 2 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+
+Done: 34.0857 seconds (150.21 MUpdates/s)
+
+Done: 34.1087 seconds (150.108 MUpdates/s)
+Run 4 with 2 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+
+Done: 34.0324 seconds (150.445 MUpdates/s)
+
+Done: 34.0504 seconds (150.365 MUpdates/s)
+Run 5 with 2 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+
+Done: 34.0711 seconds (150.274 MUpdates/s)
+
+Done: 34.0663 seconds (150.295 MUpdates/s)
+Running with 4 ranks and 2 threads...
+Run 1 with 4 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 34.1416 seconds (149.865 MUpdates/s)
+
+Done: 34.1326 seconds (149.905 MUpdates/s)
+
+Done: 34.1464 seconds (149.844 MUpdates/s)
+
+Done: 34.1258 seconds (149.935 MUpdates/s)
+Run 2 with 4 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 34.1655 seconds (149.76 MUpdates/s)
+
+Done: 34.1371 seconds (149.885 MUpdates/s)
+
+Done: 34.163 seconds (149.771 MUpdates/s)
+
+Done: 34.1642 seconds (149.766 MUpdates/s)
+Run 3 with 4 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 34.159 seconds (149.789 MUpdates/s)
+
+Done: 34.1298 seconds (149.917 MUpdates/s)
+
+Done: 34.1636 seconds (149.769 MUpdates/s)
+
+Done: 34.166 seconds (149.758 MUpdates/s)
+Run 4 with 4 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 34.1185 seconds (149.967 MUpdates/s)
+
+Done: 34.1103 seconds (150.003 MUpdates/s)
+
+Done: 34.1041 seconds (150.03 MUpdates/s)
+
+Done: 34.1162 seconds (149.977 MUpdates/s)
+Run 5 with 4 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 34.137 seconds (149.885 MUpdates/s)
+
+Done: 34.1122 seconds (149.994 MUpdates/s)
+
+Done: 34.1378 seconds (149.882 MUpdates/s)
+
+Done: 34.136 seconds (149.89 MUpdates/s)
+Running with 8 ranks and 2 threads...
+Run 1 with 8 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 32.0614 seconds (159.693 MUpdates/s)
+
+Done: 32.0298 seconds (159.851 MUpdates/s)
+
+Done: 32.0629 seconds (159.686 MUpdates/s)
+
+Done: 32.048 seconds (159.76 MUpdates/s)
+
+Done: 32.0618 seconds (159.691 MUpdates/s)
+
+Done: 32.0575 seconds (159.713 MUpdates/s)
+
+Done: 32.0551 seconds (159.725 MUpdates/s)
+
+Done: 32.0555 seconds (159.723 MUpdates/s)
+Run 2 with 8 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 32.0371 seconds (159.815 MUpdates/s)
+
+Done: 32.0108 seconds (159.946 MUpdates/s)
+
+Done: 32.0142 seconds (159.929 MUpdates/s)
+
+Done: 32.0251 seconds (159.875 MUpdates/s)
+
+Done: 32.0122 seconds (159.939 MUpdates/s)
+
+Done: 32.0278 seconds (159.861 MUpdates/s)
+
+Done: 32.0205 seconds (159.898 MUpdates/s)
+
+Done: 32.0312 seconds (159.844 MUpdates/s)
+Run 3 with 8 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 32.1449 seconds (159.279 MUpdates/s)
+
+Done: 32.1736 seconds (159.137 MUpdates/s)
+
+Done: 32.168 seconds (159.164 MUpdates/s)
+
+Done: 32.1662 seconds (159.174 MUpdates/s)
+
+Done: 32.1761 seconds (159.124 MUpdates/s)
+
+Done: 32.1742 seconds (159.134 MUpdates/s)
+
+Done: 32.1769 seconds (159.121 MUpdates/s)
+
+Done: 32.1692 seconds (159.158 MUpdates/s)
+Run 4 with 8 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 31.9121 seconds (160.441 MUpdates/s)
+
+Done: 31.9372 seconds (160.314 MUpdates/s)
+
+Done: 31.9157 seconds (160.423 MUpdates/s)
+
+Done: 31.9211 seconds (160.396 MUpdates/s)
+
+Done: 31.9423 seconds (160.289 MUpdates/s)
+
+Done: 31.9347 seconds (160.327 MUpdates/s)
+
+Done: 31.9288 seconds (160.357 MUpdates/s)
+
+Done: 31.9237 seconds (160.383 MUpdates/s)
+Run 5 with 8 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 31.9127 seconds (160.438 MUpdates/s)
+
+Done: 31.9452 seconds (160.274 MUpdates/s)
+
+
+Done: 31.9169 seconds (160.417 MUpdates/s)
+Done: 31.9302 seconds (160.35 MUpdates/s)
+
+Done: 31.9442 seconds (160.279 MUpdates/s)
+
+Done: 31.9365 seconds (160.318 MUpdates/s)
+
+Done: 31.9352 seconds (160.324 MUpdates/s)
+
+Done: 31.9319 seconds (160.341 MUpdates/s)
+Running with 16 ranks and 2 threads...
+Run 1 with 16 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 54.8192 seconds (93.4192 MUpdates/s)
+
+Done: 54.8173 seconds (93.4225 MUpdates/s)
+
+Done: 54.8195 seconds (93.4188 MUpdates/s)
+
+Done: 54.8097 seconds (93.518 MUpdates/s)
+
+Done: 54.8122 seconds (93.4311 MUpdates/s)
+
+Done: 54.8184 seconds (93.3381 MUpdates/s)
+
+
+Done: 54.8139 seconds (93.3458 MUpdates/s)
+
+Done: 54.8026 seconds (93.365 MUpdates/s)
+
+Done: 54.8202 seconds (93.3351 MUpdates/s)
+
+Done: 54.8239 seconds (93.3288 MUpdates/s)
+
+Done: 54.8165 seconds (93.3413 MUpdates/s)
+
+Done: 54.8085 seconds (93.4375 MUpdates/s)
+Done: 54.823 seconds (93.3302 MUpdates/s)
+
+Done: 54.8135 seconds (93.3464 MUpdates/s)
+
+Done: 54.8182 seconds (93.3385 MUpdates/s)
+
+Done: 54.8016 seconds (93.4492 MUpdates/s)
+Run 2 with 16 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 54.8137 seconds (93.4286 MUpdates/s)
+
+Done: 54.8074 seconds (93.3568 MUpdates/s)
+
+Done: 54.8123 seconds (93.4309 MUpdates/s)
+
+Done: 54.8228 seconds (93.3306 MUpdates/s)
+
+Done: 54.8283 seconds (93.4038 MUpdates/s)
+
+Done: 54.8144 seconds (93.4275 MUpdates/s)
+
+Done: 54.8198 seconds (93.3358 MUpdates/s)
+
+Done: 54.8154 seconds (93.5083 MUpdates/s)
+
+Done: 54.8126 seconds (93.4305 MUpdates/s)
+
+Done: 54.8227 seconds (93.3308 MUpdates/s)
+
+Done: 54.816 seconds (93.3421 MUpdates/s)
+
+Done: 54.812 seconds (93.4316 MUpdates/s)
+
+Done: 54.824 seconds (93.3285 MUpdates/s)
+
+Done: 54.8313 seconds (93.3161 MUpdates/s)
+
+Done: 54.818 seconds (93.3388 MUpdates/s)
+
+Done: 54.811 seconds (93.3507 MUpdates/s)
+Run 3 with 16 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 54.8263 seconds (93.3246 MUpdates/s)
+
+Done: 54.8347 seconds (93.3103 MUpdates/s)
+
+Done: 54.8254 seconds (93.4086 MUpdates/s)
+
+Done: 54.8357 seconds (93.3086 MUpdates/s)
+
+Done: 54.8303 seconds (93.4003 MUpdates/s)
+
+Done: 54.8218 seconds (93.4975 MUpdates/s)
+
+Done: 54.821 seconds (93.3336 MUpdates/s)
+
+Done: 54.8321 seconds (93.3972 MUpdates/s)
+
+Done: 54.835 seconds (93.3099 MUpdates/s)
+
+Done: 54.8163 seconds (93.3416 MUpdates/s)
+
+Done: 54.8363 seconds (93.3076 MUpdates/s)
+
+Done: 54.8172 seconds (93.4226 MUpdates/s)
+
+Done: 54.82 seconds (93.3354 MUpdates/s)
+
+Done: 54.8246 seconds (93.41 MUpdates/s)
+
+Done: 54.8407 seconds (93.3002 MUpdates/s)
+
+Done: 54.8221 seconds (93.4143 MUpdates/s)
+Run 4 with 16 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 54.8535 seconds (93.2784 MUpdates/s)
+
+Done: 54.8514 seconds (93.3644 MUpdates/s)
+
+Done: 54.8547 seconds (93.2762 MUpdates/s)
+
+Done: 54.8412 seconds (93.4643 MUpdates/s)
+
+Done: 54.8498 seconds (93.3672 MUpdates/s)
+
+Done: 54.8462 seconds (93.3733 MUpdates/s)
+
+
+Done: 54.8515 seconds (93.2818 MUpdates/s)
+
+Done: 54.8459 seconds (93.2912 MUpdates/s)
+
+Done: 54.8474 seconds (93.2887 MUpdates/s)
+Done: 54.8519 seconds (93.281 MUpdates/s)
+
+Done: 54.853 seconds (93.2792 MUpdates/s)
+
+Done: 54.8407 seconds (93.3001 MUpdates/s)
+
+Done: 54.8352 seconds (93.3919 MUpdates/s)
+
+Done: 54.848 seconds (93.3701 MUpdates/s)
+
+Done: 54.8528 seconds (93.2795 MUpdates/s)
+
+Done: 54.8415 seconds (93.3812 MUpdates/s)
+Run 5 with 16 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 54.8964 seconds (93.2055 MUpdates/s)
+
+Done: 54.9126 seconds (93.1779 MUpdates/s)
+
+
+Done: 54.9167 seconds (93.171 MUpdates/s)
+
+Done: 54.9118 seconds (93.2617 MUpdates/s)
+
+Done: 54.9104 seconds (93.1818 MUpdates/s)
+Done: 54.8867 seconds (93.3868 MUpdates/s)
+
+Done: 54.9112 seconds (93.2627 MUpdates/s)
+
+Done: 54.9019 seconds (93.1961 MUpdates/s)
+
+Done: 54.9014 seconds (93.2794 MUpdates/s)
+
+Done: 54.8956 seconds (93.2069 MUpdates/s)
+
+Done: 54.895 seconds (93.2902 MUpdates/s)
+
+Done: 54.9091 seconds (93.1839 MUpdates/s)
+
+Done: 54.894 seconds (93.2095 MUpdates/s)
+
+Done: 54.8951 seconds (93.29 MUpdates/s)
+
+Done: 54.8998 seconds (93.1997 MUpdates/s)
+
+Done: 54.894 seconds (93.2919 MUpdates/s)
+Running with 32 ranks and 2 threads...
+Run 1 with 32 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 108.33 seconds (47.2628 MUpdates/s)
+
+Done: 108.415 seconds (47.2258 MUpdates/s)
+
+Done: 108.292 seconds (47.2798 MUpdates/s)
+
+Done: 108.407 seconds (47.2296 MUpdates/s)
+
+
+Done: 108.421 seconds (47.2232 MUpdates/s)
+
+Done: 108.372 seconds (47.2447 MUpdates/s)
+
+Done: 108.072 seconds (47.3757 MUpdates/s)
+
+Done: 108.35 seconds (47.2544 MUpdates/s)
+Done: 108.434 seconds (47.2177 MUpdates/s)
+
+Done: 108.54 seconds (47.1715 MUpdates/s)
+
+Done: 108.249 seconds (47.2983 MUpdates/s)
+
+Done: 108.175 seconds (47.3307 MUpdates/s)
+
+Done: 108.429 seconds (47.2196 MUpdates/s)
+
+Done: 108.437 seconds (47.2162 MUpdates/s)
+
+Done: 108.359 seconds (47.2504 MUpdates/s)
+
+Done: 108.393 seconds (47.2353 MUpdates/s)
+
+Done: 108.385 seconds (47.239 MUpdates/s)
+
+Done: 108.271 seconds (47.2886 MUpdates/s)
+
+Done: 108.38 seconds (47.241 MUpdates/s)
+
+Done: 108.463 seconds (47.2051 MUpdates/s)
+
+Done: 108.388 seconds (47.2376 MUpdates/s)
+
+Done: 108.394 seconds (47.2353 MUpdates/s)
+
+Done: 108.202 seconds (47.3191 MUpdates/s)
+
+Done: 108.47 seconds (47.2021 MUpdates/s)
+
+Done: 108.472 seconds (47.2012 MUpdates/s)
+
+Done: 108.456 seconds (47.2081 MUpdates/s)
+
+Done: 108.479 seconds (47.1982 MUpdates/s)
+
+Done: 108.491 seconds (47.193 MUpdates/s)
+
+Done: 108.412 seconds (47.2272 MUpdates/s)
+
+Done: 108.373 seconds (47.2444 MUpdates/s)
+
+Done: 108.391 seconds (47.2365 MUpdates/s)
+
+Done: 108.388 seconds (47.2377 MUpdates/s)
+Run 2 with 32 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 108.471 seconds (47.2017 MUpdates/s)
+
+Done: 108.541 seconds (47.1709 MUpdates/s)
+
+Done: 108.37 seconds (47.2457 MUpdates/s)
+
+
+Done: 108.666 seconds (47.117 MUpdates/s)
+
+Done: 108.328 seconds (47.2636 MUpdates/s)
+
+Done: 108.094 seconds (47.366 MUpdates/s)
+
+Done: 108.199 seconds (47.3203 MUpdates/s)
+Done: 108.641 seconds (47.1279 MUpdates/s)
+
+
+Done: 108.489 seconds (47.1936 MUpdates/s)
+Done: 108.687 seconds (47.1077 MUpdates/s)
+
+Done: 108.38 seconds (47.2413 MUpdates/s)
+
+Done: 108.64 seconds (47.1281 MUpdates/s)
+
+Done: 108.605 seconds (47.1431 MUpdates/s)
+
+Done: 108.658 seconds (47.1202 MUpdates/s)
+
+Done: 108.57 seconds (47.1587 MUpdates/s)
+
+Done: 108.73 seconds (47.089 MUpdates/s)
+
+Done: 108.538 seconds (47.1726 MUpdates/s)
+
+Done: 108.506 seconds (47.1862 MUpdates/s)
+
+Done: 108.587 seconds (47.1513 MUpdates/s)
+
+Done: 108.477 seconds (47.1988 MUpdates/s)
+
+Done: 108.659 seconds (47.1199 MUpdates/s)
+
+Done: 108.738 seconds (47.0856 MUpdates/s)
+
+Done: 108.661 seconds (47.1191 MUpdates/s)
+
+Done: 108.681 seconds (47.1102 MUpdates/s)
+
+Done: 108.375 seconds (47.2434 MUpdates/s)
+
+Done: 108.705 seconds (47.0998 MUpdates/s)
+
+Done: 108.663 seconds (47.1182 MUpdates/s)
+
+Done: 108.593 seconds (47.1487 MUpdates/s)
+
+Done: 108.534 seconds (47.1741 MUpdates/s)
+
+Done: 108.631 seconds (47.132 MUpdates/s)
+
+Done: 108.602 seconds (47.1448 MUpdates/s)
+
+Done: 108.567 seconds (47.1599 MUpdates/s)
+Run 3 with 32 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+
+Done: 108.511 seconds (47.1842 MUpdates/s)
+
+Done: 108.328 seconds (47.2638 MUpdates/s)
+
+Done: 108.53 seconds (47.1758 MUpdates/s)
+
+Done: 108.719 seconds (47.094 MUpdates/s)
+
+Done: 108.568 seconds (47.1592 MUpdates/s)
+
+Done: 108.542 seconds (47.1705 MUpdates/s)
+
+Done: 108.456 seconds (47.2079 MUpdates/s)
+
+Done: 108.563 seconds (47.1616 MUpdates/s)
+
+Done: 108.503 seconds (47.1874 MUpdates/s)
+
+Done: 108.685 seconds (47.1088 MUpdates/s)
+
+Done: 108.26 seconds (47.2937 MUpdates/s)
+
+Done: 108.497 seconds (47.1902 MUpdates/s)
+
+Done: 108.582 seconds (47.1533 MUpdates/s)
+Done: 108.404 seconds (47.2307 MUpdates/s)
+
+Done: 108.464 seconds (47.2045 MUpdates/s)
+
+Done: 108.266 seconds (47.291 MUpdates/s)
+
+Done: 108.441 seconds (47.2145 MUpdates/s)
+
+Done: 108.258 seconds (47.2944 MUpdates/s)
+
+Done: 108.453 seconds (47.2093 MUpdates/s)
+
+Done: 108.743 seconds (47.0835 MUpdates/s)
+
+Done: 108.502 seconds (47.188 MUpdates/s)
+
+Done: 108.677 seconds (47.1121 MUpdates/s)
+
+Done: 108.738 seconds (47.0855 MUpdates/s)
+
+Done: 108.613 seconds (47.14 MUpdates/s)
+
+Done: 108.52 seconds (47.1802 MUpdates/s)
+
+Done: 108.717 seconds (47.0949 MUpdates/s)
+
+Done: 108.513 seconds (47.1832 MUpdates/s)
+
+Done: 108.197 seconds (47.3213 MUpdates/s)
+
+Done: 108.505 seconds (47.1866 MUpdates/s)
+
+Done: 108.68 seconds (47.1109 MUpdates/s)
+
+Done: 108.707 seconds (47.0989 MUpdates/s)
+
+Done: 108.708 seconds (47.0985 MUpdates/s)
+Run 4 with 32 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 108.11 seconds (47.3594 MUpdates/s)
+
+
+Done: 108.658 seconds (47.1205 MUpdates/s)
+
+
+Done: 108.668 seconds (47.1159 MUpdates/s)
+
+Done: 108.418 seconds (47.2245 MUpdates/s)
+
+Done: 108.467 seconds (47.2033 MUpdates/s)
+
+Done: 108.618 seconds (47.1375 MUpdates/s)
+Done: 108.596 seconds (47.1471 MUpdates/s)
+
+Done: 108.624 seconds (47.135 MUpdates/s)
+Done: 108.566 seconds (47.1601 MUpdates/s)
+
+Done: 108.509 seconds (47.1852 MUpdates/s)
+
+Done: 108.427 seconds (47.2208 MUpdates/s)
+
+Done: 108.406 seconds (47.2297 MUpdates/s)
+
+Done: 108.667 seconds (47.1162 MUpdates/s)
+
+Done: 108.614 seconds (47.1396 MUpdates/s)
+
+Done: 108.344 seconds (47.257 MUpdates/s)
+
+Done: 108.583 seconds (47.1527 MUpdates/s)
+
+Done: 108.567 seconds (47.1598 MUpdates/s)
+
+Done: 108.521 seconds (47.1796 MUpdates/s)
+
+Done: 108.629 seconds (47.1328 MUpdates/s)
+
+Done: 108.659 seconds (47.1199 MUpdates/s)
+
+Done: 108.57 seconds (47.1584 MUpdates/s)
+
+Done: 108.479 seconds (47.1982 MUpdates/s)
+
+Done: 108.559 seconds (47.1634 MUpdates/s)
+
+Done: 108.425 seconds (47.2216 MUpdates/s)
+
+Done: 108.701 seconds (47.1016 MUpdates/s)
+
+Done: 108.528 seconds (47.1767 MUpdates/s)
+
+Done: 108.472 seconds (47.201 MUpdates/s)
+
+Done: 108.509 seconds (47.1851 MUpdates/s)
+
+Done: 108.433 seconds (47.2183 MUpdates/s)
+
+Done: 108.51 seconds (47.1844 MUpdates/s)
+
+
+Done: 108.533 seconds (47.1747 MUpdates/s)
+Done: 108.7 seconds (47.102 MUpdates/s)
+Run 5 with 32 MPI ranks and 2 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 108.281 seconds (47.2845 MUpdates/s)
+
+Done: 107.943 seconds (47.4324 MUpdates/s)
+
+Done: 108.309 seconds (47.2722 MUpdates/s)
+
+
+Done: 108.397 seconds (47.2338 MUpdates/s)
+Done: 108.302 seconds (47.2751 MUpdates/s)
+
+Done: 108.278 seconds (47.2856 MUpdates/s)
+
+
+Done: 107.114 seconds (47.7994 MUpdates/s)
+Done: 106.802 seconds (47.9391 MUpdates/s)
+
+Done: 108.289 seconds (47.2807 MUpdates/s)
+
+Done: 108.3 seconds (47.2761 MUpdates/s)
+
+Done: 107.835 seconds (47.4801 MUpdates/s)
+
+Done: 108.317 seconds (47.2686 MUpdates/s)
+
+Done: 108.138 seconds (47.3468 MUpdates/s)
+
+Done: 108.023 seconds (47.3974 MUpdates/s)
+
+
+Done: 107.162 seconds (47.7779 MUpdates/s)
+Done: 107.394 seconds (47.675 MUpdates/s)
+
+Done: 108.392 seconds (47.2359 MUpdates/s)
+
+Done: 107.378 seconds (47.6821 MUpdates/s)
+
+Done: 106.939 seconds (47.8779 MUpdates/s)
+
+Done: 107.703 seconds (47.538 MUpdates/s)
+
+Done: 108.355 seconds (47.2521 MUpdates/s)
+
+
+Done: 107.365 seconds (47.6876 MUpdates/s)
+
+Done: 108.479 seconds (47.198 MUpdates/s)
+Done: 108.452 seconds (47.2096 MUpdates/s)
+
+Done: 108.176 seconds (47.3304 MUpdates/s)
+
+Done: 108.026 seconds (47.3961 MUpdates/s)
+
+Done: 108.094 seconds (47.3662 MUpdates/s)
+
+Done: 108.282 seconds (47.2842 MUpdates/s)
+
+Done: 108.343 seconds (47.2572 MUpdates/s)
+
+Done: 108.323 seconds (47.266 MUpdates/s)
+
+Done: 108.55 seconds (47.1674 MUpdates/s)
+
+Done: 108.294 seconds (47.2789 MUpdates/s)
+Running with 1 ranks and 4 threads...
+Run 1 with 1 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+
+Done: 54.4961 seconds (187.903 MUpdates/s)
+Run 2 with 1 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+
+Done: 54.3048 seconds (188.565 MUpdates/s)
+Run 3 with 1 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+
+Done: 54.4107 seconds (188.198 MUpdates/s)
+Run 4 with 1 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+
+Done: 54.4806 seconds (187.957 MUpdates/s)
+Run 5 with 1 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 2.5 m, 2.5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (1600 x 1600 = 2560000 grid points)
+ - number of time steps: 4000
+
+Done: 54.1793 seconds (189.002 MUpdates/s)
+Running with 2 ranks and 4 threads...
+Run 1 with 2 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 67.599 seconds (151.382 MUpdates/s)
+
+Done: 67.5835 seconds (151.417 MUpdates/s)
+Run 2 with 2 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+
+Done: 67.6933 seconds (151.171 MUpdates/s)
+Done: 67.7444 seconds (151.057 MUpdates/s)
+Run 3 with 2 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 67.5589 seconds (151.472 MUpdates/s)
+
+Done: 67.5573 seconds (151.476 MUpdates/s)
+Run 4 with 2 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 67.6765 seconds (151.209 MUpdates/s)
+
+Done: 67.7295 seconds (151.091 MUpdates/s)
+Run 5 with 2 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 68.0357 seconds (150.411 MUpdates/s)
+
+Done: 67.9755 seconds (150.544 MUpdates/s)
+Running with 4 ranks and 4 threads...
+Run 1 with 4 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 109.248 seconds (93.7315 MUpdates/s)
+
+Done: 109.251 seconds (93.7289 MUpdates/s)
+
+Done: 109.246 seconds (93.7338 MUpdates/s)
+
+Done: 109.249 seconds (93.7313 MUpdates/s)
+Run 2 with 4 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 109.299 seconds (93.6879 MUpdates/s)
+
+Done: 109.343 seconds (93.6505 MUpdates/s)
+
+Done: 109.319 seconds (93.6706 MUpdates/s)
+
+Done: 109.322 seconds (93.6685 MUpdates/s)
+Run 3 with 4 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 109.237 seconds (93.7414 MUpdates/s)
+
+Done: 109.237 seconds (93.7411 MUpdates/s)
+
+Done: 109.243 seconds (93.7362 MUpdates/s)
+
+Done: 109.239 seconds (93.7391 MUpdates/s)
+Run 4 with 4 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 109.43 seconds (93.5757 MUpdates/s)
+
+Done: 109.435 seconds (93.5714 MUpdates/s)
+
+Done: 109.432 seconds (93.5739 MUpdates/s)
+
+Done: 109.436 seconds (93.5709 MUpdates/s)
+Run 5 with 4 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 109.585 seconds (93.4438 MUpdates/s)
+
+Done: 109.585 seconds (93.4433 MUpdates/s)
+
+Done: 109.586 seconds (93.443 MUpdates/s)
+
+Done: 109.587 seconds (93.4415 MUpdates/s)
+Running with 8 ranks and 4 threads...
+Run 1 with 8 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 110.909 seconds (92.3085 MUpdates/s)
+
+Done: 110.921 seconds (92.2981 MUpdates/s)
+
+Done: 110.919 seconds (92.2588 MUpdates/s)
+
+Done: 110.894 seconds (92.3211 MUpdates/s)
+
+
+Done: 110.912 seconds (92.2646 MUpdates/s)
+Done: 110.911 seconds (92.3882 MUpdates/s)
+
+Done: 110.903 seconds (92.2722 MUpdates/s)
+
+Done: 110.894 seconds (92.3615 MUpdates/s)
+Run 2 with 8 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 110.819 seconds (92.3834 MUpdates/s)
+
+Done: 110.824 seconds (92.3787 MUpdates/s)
+
+Done: 110.791 seconds (92.4069 MUpdates/s)
+
+Done: 110.822 seconds (92.3399 MUpdates/s)
+
+Done: 110.798 seconds (92.4828 MUpdates/s)
+
+Done: 110.825 seconds (92.3375 MUpdates/s)
+
+Done: 110.811 seconds (92.3494 MUpdates/s)
+
+Done: 110.809 seconds (92.4323 MUpdates/s)
+Run 3 with 8 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 110.846 seconds (92.3609 MUpdates/s)
+
+Done: 110.841 seconds (92.3645 MUpdates/s)
+
+Done: 110.821 seconds (92.3817 MUpdates/s)
+
+Done: 110.846 seconds (92.3202 MUpdates/s)
+
+Done: 110.841 seconds (92.3239 MUpdates/s)
+
+Done: 110.814 seconds (92.4691 MUpdates/s)
+
+Done: 110.832 seconds (92.3317 MUpdates/s)
+
+Done: 110.822 seconds (92.4212 MUpdates/s)
+Run 4 with 8 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 110.573 seconds (92.5885 MUpdates/s)
+
+Done: 110.553 seconds (92.6058 MUpdates/s)
+
+Done: 110.572 seconds (92.549 MUpdates/s)
+
+Done: 110.549 seconds (92.6085 MUpdates/s)
+
+Done: 110.571 seconds (92.5496 MUpdates/s)
+
+Done: 110.54 seconds (92.6982 MUpdates/s)
+
+Done: 110.55 seconds (92.5667 MUpdates/s)
+
+Done: 110.544 seconds (92.6537 MUpdates/s)
+Run 5 with 8 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 110.922 seconds (92.2974 MUpdates/s)
+
+Done: 110.912 seconds (92.3061 MUpdates/s)
+
+Done: 110.924 seconds (92.2548 MUpdates/s)
+
+Done: 110.903 seconds (92.3136 MUpdates/s)
+
+Done: 110.916 seconds (92.2618 MUpdates/s)
+
+Done: 110.884 seconds (92.4104 MUpdates/s)
+
+Done: 110.9 seconds (92.2748 MUpdates/s)
+
+Done: 110.905 seconds (92.3523 MUpdates/s)
+Running with 16 ranks and 4 threads...
+Run 1 with 16 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 219.578 seconds (46.635 MUpdates/s)
+
+Done: 219.412 seconds (46.6702 MUpdates/s)
+
+Done: 219.417 seconds (46.6691 MUpdates/s)
+
+
+Done: 219.274 seconds (46.6995 MUpdates/s)
+
+Done: 219.438 seconds (46.6648 MUpdates/s)
+Done: 219.481 seconds (46.6556 MUpdates/s)
+
+Done: 219.463 seconds (46.6593 MUpdates/s)
+
+Done: 219.367 seconds (46.6797 MUpdates/s)
+
+Done: 219.377 seconds (46.6777 MUpdates/s)
+
+Done: 219.527 seconds (46.6458 MUpdates/s)
+
+
+Done: 219.279 seconds (46.6986 MUpdates/s)
+
+Done: 219.276 seconds (46.6991 MUpdates/s)
+
+Done: 219.46 seconds (46.66 MUpdates/s)
+
+Done: 219.531 seconds (46.6448 MUpdates/s)
+
+Done: 219.17 seconds (46.7217 MUpdates/s)
+Done: 219.329 seconds (46.6878 MUpdates/s)
+Run 2 with 16 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+
+Done: 218.984 seconds (46.7614 MUpdates/s)
+
+Done: 218.8 seconds (46.8007 MUpdates/s)
+
+Done: 218.992 seconds (46.7597 MUpdates/s)
+
+Done: 218.839 seconds (46.7923 MUpdates/s)
+
+Done: 218.96 seconds (46.7665 MUpdates/s)
+
+Done: 218.789 seconds (46.8031 MUpdates/s)
+
+Done: 218.791 seconds (46.8027 MUpdates/s)
+Done: 218.856 seconds (46.7888 MUpdates/s)
+
+Done: 218.98 seconds (46.7622 MUpdates/s)
+
+Done: 218.687 seconds (46.825 MUpdates/s)
+
+Done: 218.806 seconds (46.7993 MUpdates/s)
+
+Done: 219.061 seconds (46.745 MUpdates/s)
+
+Done: 218.853 seconds (46.7894 MUpdates/s)
+
+Done: 218.892 seconds (46.7811 MUpdates/s)
+
+
+Done: 219.024 seconds (46.7529 MUpdates/s)
+Done: 218.64 seconds (46.8351 MUpdates/s)
+Run 3 with 16 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 219.648 seconds (46.6201 MUpdates/s)
+
+Done: 219.734 seconds (46.6017 MUpdates/s)
+
+Done: 219.888 seconds (46.5692 MUpdates/s)
+
+
+Done: 219.797 seconds (46.5884 MUpdates/s)
+
+Done: 219.621 seconds (46.6258 MUpdates/s)
+Done: 219.551 seconds (46.6406 MUpdates/s)
+
+Done: 219.672 seconds (46.6149 MUpdates/s)
+
+Done: 219.78 seconds (46.5921 MUpdates/s)
+
+Done: 219.828 seconds (46.5819 MUpdates/s)
+
+Done: 219.561 seconds (46.6385 MUpdates/s)
+
+Done: 219.845 seconds (46.5783 MUpdates/s)
+
+Done: 219.514 seconds (46.6484 MUpdates/s)
+
+
+Done: 219.488 seconds (46.654 MUpdates/s)
+
+Done: 219.752 seconds (46.5981 MUpdates/s)
+Done: 219.485 seconds (46.6547 MUpdates/s)
+
+Done: 219.483 seconds (46.6551 MUpdates/s)
+Run 4 with 16 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 219.261 seconds (46.7023 MUpdates/s)
+
+Done: 219.279 seconds (46.6985 MUpdates/s)
+
+
+Done: 219.132 seconds (46.7299 MUpdates/s)
+
+Done: 219.162 seconds (46.7234 MUpdates/s)
+
+Done: 219.139 seconds (46.7283 MUpdates/s)
+
+Done: 219.112 seconds (46.7341 MUpdates/s)
+
+Done: 218.787 seconds (46.8035 MUpdates/s)
+
+Done: 219.078 seconds (46.7414 MUpdates/s)
+
+Done: 219.159 seconds (46.724 MUpdates/s)
+
+Done: 218.937 seconds (46.7715 MUpdates/s)
+
+Done: 219.097 seconds (46.7372 MUpdates/s)
+
+Done: 219.107 seconds (46.7351 MUpdates/s)
+
+Done: 219.176 seconds (46.7205 MUpdates/s)
+
+Done: 218.985 seconds (46.7613 MUpdates/s)
+
+Done: 218.846 seconds (46.7909 MUpdates/s)
+Done: 219.124 seconds (46.7315 MUpdates/s)
+Run 5 with 16 MPI ranks and 4 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 218.777 seconds (46.8057 MUpdates/s)
+
+
+Done: 218.953 seconds (46.7679 MUpdates/s)
+Done: 218.961 seconds (46.7663 MUpdates/s)
+
+
+Done: 218.922 seconds (46.7746 MUpdates/s)
+Done: 218.982 seconds (46.7618 MUpdates/s)
+
+
+Done: 218.764 seconds (46.8084 MUpdates/s)
+
+Done: 218.741 seconds (46.8134 MUpdates/s)
+Done: 218.731 seconds (46.8156 MUpdates/s)
+
+Done: 218.946 seconds (46.7695 MUpdates/s)
+
+Done: 218.935 seconds (46.7719 MUpdates/s)
+
+Done: 218.819 seconds (46.7967 MUpdates/s)
+
+Done: 218.749 seconds (46.8117 MUpdates/s)
+
+Done: 218.777 seconds (46.8057 MUpdates/s)
+
+Done: 218.901 seconds (46.7792 MUpdates/s)
+
+Done: 218.845 seconds (46.7911 MUpdates/s)
+
+Done: 218.687 seconds (46.8248 MUpdates/s)
+Running with 1 ranks and 8 threads...
+Run 1 with 1 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 110.026 seconds (186.016 MUpdates/s)
+Run 2 with 1 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 109.889 seconds (186.248 MUpdates/s)
+Run 3 with 1 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 109.871 seconds (186.278 MUpdates/s)
+Run 4 with 1 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 109.911 seconds (186.21 MUpdates/s)
+Run 5 with 1 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.76777 m, 1.76777 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (2262 x 2262 = 5116644 grid points)
+ - number of time steps: 4000
+
+Done: 110.054 seconds (185.969 MUpdates/s)
+Running with 2 ranks and 8 threads...
+Run 1 with 2 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 132.107 seconds (155.026 MUpdates/s)
+
+Done: 132.125 seconds (155.004 MUpdates/s)
+Run 2 with 2 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 132.221 seconds (154.892 MUpdates/s)
+
+Done: 132.26 seconds (154.847 MUpdates/s)
+Run 3 with 2 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 132.226 seconds (154.887 MUpdates/s)
+
+Done: 132.244 seconds (154.865 MUpdates/s)
+Run 4 with 2 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 132.443 seconds (154.632 MUpdates/s)
+
+Done: 132.331 seconds (154.764 MUpdates/s)
+Run 5 with 2 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 1.25 m, 1.25 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (3200 x 3200 = 10240000 grid points)
+ - number of time steps: 4000
+
+Done: 131.714 seconds (155.488 MUpdates/s)
+
+Done: 131.696 seconds (155.51 MUpdates/s)
+Running with 4 ranks and 8 threads...
+Run 1 with 4 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+
+
+Done: 436.388 seconds (46.8999 MUpdates/s)
+Done: 436.342 seconds (46.9257 MUpdates/s)
+
+Done: 436.439 seconds (46.9152 MUpdates/s)
+Done: 437.263 seconds (46.8475 MUpdates/s)
+Run 2 with 4 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 435.724 seconds (46.9922 MUpdates/s)
+
+
+Done: 435.864 seconds (46.9978 MUpdates/s)
+
+Done: 435.749 seconds (46.9687 MUpdates/s)
+Done: 435.741 seconds (46.9903 MUpdates/s)
+Run 3 with 4 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 435.826 seconds (46.9812 MUpdates/s)
+
+Done: 435.822 seconds (46.9609 MUpdates/s)
+
+Done: 435.923 seconds (46.9915 MUpdates/s)
+
+Done: 435.78 seconds (46.9862 MUpdates/s)
+Run 4 with 4 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 434.828 seconds (47.0891 MUpdates/s)
+
+Done: 434.877 seconds (47.0629 MUpdates/s)
+
+Done: 434.943 seconds (47.0974 MUpdates/s)
+
+Done: 434.872 seconds (47.0843 MUpdates/s)
+Run 5 with 4 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.883883 m, 0.883883 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4525 x 4525 = 20475625 grid points)
+ - number of time steps: 4000
+
+Done: 435.261 seconds (47.0214 MUpdates/s)
+
+
+Done: 435.225 seconds (47.0461 MUpdates/s)
+
+Done: 435.241 seconds (47.0444 MUpdates/s)
+Done: 435.254 seconds (47.0637 MUpdates/s)
+Running with 8 ranks and 8 threads...
+Run 1 with 8 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 440.224 seconds (46.5217 MUpdates/s)
+
+
+Done: 440.961 seconds (46.444 MUpdates/s)
+
+
+Done: 440.207 seconds (46.5235 MUpdates/s)
+Done: 440.089 seconds (46.536 MUpdates/s)
+
+
+Done: 440.23 seconds (46.5211 MUpdates/s)
+
+Done: 440.226 seconds (46.5215 MUpdates/s)
+Done: 440.176 seconds (46.5268 MUpdates/s)
+Done: 440.398 seconds (46.5034 MUpdates/s)
+Run 2 with 8 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 439.549 seconds (46.5932 MUpdates/s)
+
+Done: 439.49 seconds (46.5995 MUpdates/s)
+
+Done: 440.563 seconds (46.486 MUpdates/s)
+
+Done: 439.679 seconds (46.5795 MUpdates/s)
+
+
+Done: 439.517 seconds (46.5966 MUpdates/s)
+
+Done: 439.754 seconds (46.5714 MUpdates/s)
+
+Done: 439.573 seconds (46.5907 MUpdates/s)
+Done: 440.019 seconds (46.5434 MUpdates/s)
+Run 3 with 8 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 440.634 seconds (46.4785 MUpdates/s)
+
+Done: 439.679 seconds (46.5794 MUpdates/s)
+
+Done: 439.473 seconds (46.6013 MUpdates/s)
+
+Done: 439.915 seconds (46.5544 MUpdates/s)
+
+Done: 439.673 seconds (46.5801 MUpdates/s)
+
+
+
+Done: 439.447 seconds (46.604 MUpdates/s)
+Done: 439.581 seconds (46.5898 MUpdates/s)
+Done: 439.736 seconds (46.5734 MUpdates/s)
+Run 4 with 8 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 440.988 seconds (46.4412 MUpdates/s)
+
+Done: 441.693 seconds (46.367 MUpdates/s)
+
+Done: 440.687 seconds (46.4729 MUpdates/s)
+
+
+Done: 440.741 seconds (46.4671 MUpdates/s)
+
+Done: 441.15 seconds (46.4241 MUpdates/s)
+
+Done: 440.763 seconds (46.4649 MUpdates/s)
+
+Done: 440.868 seconds (46.4539 MUpdates/s)
+Done: 440.897 seconds (46.4508 MUpdates/s)
+Run 5 with 8 MPI ranks and 8 threads...
+Parameters:
+ - grid spacing (dx, dy): 0.625 m, 0.625 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (6400 x 6400 = 40960000 grid points)
+ - number of time steps: 4000
+
+Done: 439.879 seconds (46.5583 MUpdates/s)
+
+
+Done: 440.678 seconds (46.4739 MUpdates/s)
+
+Done: 439.735 seconds (46.5735 MUpdates/s)
+
+Done: 440.013 seconds (46.5441 MUpdates/s)
+
+
+Done: 440.079 seconds (46.5371 MUpdates/s)
+Done: 440.209 seconds (46.5234 MUpdates/s)
+
+Done: 439.959 seconds (46.5498 MUpdates/s)
+Done: 440.123 seconds (46.5324 MUpdates/s)
