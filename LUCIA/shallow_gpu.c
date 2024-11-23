@@ -339,10 +339,10 @@ int main(int argc, char **argv)
       SET(&h_interp_v, i, j, h_v);
     }
   }
-  
+  double start = GET_TIME();
   #pragma omp target data map(tofrom:eta.values[0:nx*ny], u.values[0:(nx+1)*ny], v.values[0:nx*(ny+1)]) map(to:h_interp_u.values[0:(nx+1)*ny], h_interp_v.values[0:nx*(ny+1)])
   {
-    double start = GET_TIME();
+
 
     for(int n = 0; n < nt; n++) {
 
@@ -391,10 +391,10 @@ int main(int argc, char **argv)
       #pragma omp target teams distribute parallel for collapse(2)
       for(int j = 0; j < ny; j++) {
           for(int i = 0; i < nx; i++) {
-              double eta_ij = GET(&eta, i, j)
-                - param.dt / param.dx * (GET(&h_interp_u, i+1, j) * GET(&u, i + 1, j) - GET(&h_interp_u, i, j) * GET(&u, i, j))
-                - param.dt / param.dy * (GET(&h_interp_v, i, j+1) * GET(&v, i, j + 1) - GET(&h_interp_v, i, j) * GET(&v, i, j));
-              SET(&eta, i, j, eta_ij);
+              double eta_ij = (eta).values[eta.nx*j + i]
+                - param.dt / param.dx * ((h_interp_u).values[(h_interp_u).nx * (j) + (i+1)] * (u).values[(u).nx * (j) + (i+1)] - h_interp_u.values[h_interp_u.nx*j+i] * u.values[u.nx*j+i])
+                - param.dt / param.dy * ((h_interp_v).values[(h_interp_v).nx * (j+1) + (i)] * (v).values[(v).nx * (j+1) + (i)] - h_interp_v.values[h_interp_v.nx*j+i] * v.values[v.nx*j+i]);
+              eta.values[eta.nx*j+i] = eta_ij;
           }
       }
 
@@ -403,15 +403,15 @@ int main(int argc, char **argv)
           for(int i = 0; i < nx; i++) {
               double c1 = param.dt * param.g;
               double c2 = param.dt * param.gamma;
-              double eta_ij = GET(&eta, i, j);
-              double eta_imj = GET(&eta, (i == 0) ? 0 : i - 1, j);
-              double eta_ijm = GET(&eta, i, (j == 0) ? 0 : j - 1);
-              double u_ij = (1. - c2) * GET(&u, i, j)
+              double eta_ij = (eta).values[eta.nx*j + i];
+              double eta_imj = (i == 0) ? (eta).values[eta.nx*j] : (eta).values[eta.nx*j + i - 1];
+              double eta_ijm = (j == 0) ? (eta).values[i] : (eta).values[eta.nx*(j-1) + i];
+              double u_ij = (1. - c2) * u.values[u.nx*j+i]
                 - c1 / param.dx * (eta_ij - eta_imj);
-              double v_ij = (1. - c2) * GET(&v, i, j)
+              double v_ij = (1. - c2) * v.values[v.nx*j+i]
                 - c1 / param.dy * (eta_ij - eta_ijm);
-              SET(&u, i, j, u_ij);
-              SET(&v, i, j, v_ij);
+              u.values[u.nx*j+i] = u_ij;
+              v.values[v.nx*j+i] = v_ij;
           }
       }
     }
