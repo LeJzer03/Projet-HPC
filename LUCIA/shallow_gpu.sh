@@ -18,13 +18,6 @@ export OMP_TARGET_OFFLOAD=MANDATORY
 
 # Compile the source file
 clang -O3 -fopenmp -fopenmp-targets=nvptx64-nvidia-cuda -o shallow_gpu shallow_gpu.c -lm
-for
-    ./shallow_gpu param_simple_no_output.txt
-# Run the executable with the parameter file
-#./shallow_gpu param_simple_no_output.txt
+./shallow_gpu param_simple_no_output.txt
 
-
-# To submit a job interactively, you can use the following command:
-# srun --partition=debug-gpu --account=ulghpsc --time=01:00:00 --gpus=1 --pty $SHELL
-# This will allocate resources and open an interactive shell where you can manually run your commands.
 
