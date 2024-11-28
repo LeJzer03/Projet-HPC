@@ -30,6 +30,9 @@ struct data {
   double *values;
 };
 
+//#define GET(data, i, j) ((data)->values[(data)->nx * (j) + (i)])
+//#define SET(data, i, j, val) ((data)->values[(data)->nx * (j) + (i)] = (val))
+//test
 #define GET(data, i, j) ((data)->values[(data)->nx * (j) + (i)])
 #define SET(data, i, j, val) ((data)->values[(data)->nx * (j) + (i)] = (val))
 
@@ -339,13 +342,11 @@ int main(int argc, char **argv)
       SET(&h_interp_v, i, j, h_v);
     }
   }
+
   double start = GET_TIME();
   #pragma omp target data map(tofrom:eta.values[0:nx*ny], u.values[0:(nx+1)*ny], v.values[0:nx*(ny+1)]) map(to:h_interp_u.values[0:(nx+1)*ny], h_interp_v.values[0:nx*(ny+1)])
   {
-
-
     for(int n = 0; n < nt; n++) {
-
       if(n && (n % (nt / 10)) == 0) {
         double time_sofar = GET_TIME() - start;
         double eta = (nt - n) * time_sofar / n;
@@ -353,15 +354,22 @@ int main(int argc, char **argv)
         fflush(stdout);
       }
 
+
       // output solution
+      /*
       if(param.sampling_rate && !(n % param.sampling_rate)) {
+        #pragma omp target update from(eta)
         write_data_vtk(&eta, "water elevation", param.output_eta_filename, n);
         //write_data_vtk(&u, "x velocity", param.output_u_filename, n);
         //write_data_vtk(&v, "y velocity", param.output_v_filename, n);
       }
-
+      */
+      
       // impose boundary conditions
       double t = n * param.dt;
+
+
+      /*
       if(param.source_type == 1) {
         // sinusoidal velocity on top boundary
         double A = 5;
@@ -375,60 +383,76 @@ int main(int argc, char **argv)
             SET(&u, nx, j, 0.);
         }
       }
-      else if(param.source_type == 2) {
+      */
+
+
+      
+      if(param.source_type == 1) {
+        // sinusoidal velocity on top boundary
+        double A = 5;
+        double f = 1. / 20.;
+        #pragma omp target teams distribute parallel for
+        for(int i = 0; i < nx; i++) {
+          (v).values[(v).nx * (ny) + i] = A * sin(2 * M_PI * f * t); // Remplacer SET(&v, i, ny, A * sin(2 * M_PI * f * t))
+          (v).values[(v).nx * (0) + i] = 0.; // Remplacer SET(&v, i, 0, 0.)
+        }
+        #pragma omp target teams distribute parallel for
+        for(int j = 0; j < ny; j++) {
+          (u).values[(u).nx * (j) + 0] = 0.; // Remplacer SET(&u, 0, j, 0.)
+          (u).values[(u).nx * (j) + nx] = 0.; // Remplacer SET(&u, nx, j, 0.)
+        }
+      }
+      
+      
+      else if(param.source_type == 2) { //////////////////////////// pas encore adapté
         // sinusoidal elevation in the middle of the domain
         double A = 5;
         double f = 1. / 20.;
-        SET(&eta, nx / 2, ny / 2, A * sin(2 * M_PI * f * t));
+        #pragma omp target teams distribute parallel for
+        for(int i = 0; i < 1; i++) { // Single iteration to set the value
+          eta.values[(ny / 2) * eta.nx + (nx / 2)] = A * sin(2 * M_PI * f * t); // Remplacer SET(&eta, nx / 2, ny / 2, A * sin(2 * M_PI * f * t))
+        }
       }
       else {
         // TODO: add other sources
         printf("Error: Unknown source type %d\n", param.source_type);
         exit(0);
       }
-
+      
+      
       // Offloading compute-intensive loops to the GPU
       #pragma omp target teams distribute parallel for collapse(2)
       for(int j = 0; j < ny; j++) {
-          for(int i = 0; i < nx; i++) {
-              double eta_ij = (eta).values[eta.nx*j + i]
-                - param.dt / param.dx * ((h_interp_u).values[(h_interp_u).nx * (j) + (i+1)] * (u).values[(u).nx * (j) + (i+1)] - h_interp_u.values[h_interp_u.nx*j+i] * u.values[u.nx*j+i])
-                - param.dt / param.dy * ((h_interp_v).values[(h_interp_v).nx * (j+1) + (i)] * (v).values[(v).nx * (j+1) + (i)] - h_interp_v.values[h_interp_v.nx*j+i] * v.values[v.nx*j+i]);
-              eta.values[eta.nx*j+i] = eta_ij;
-          }
+        for(int i = 0; i < nx; i++) {
+          double eta_ij = (eta).values[eta.nx*j + i]
+            - param.dt / param.dx * ((h_interp_u).values[(h_interp_u).nx * (j) + (i+1)] * (u).values[(u).nx * (j) + (i+1)] - h_interp_u.values[h_interp_u.nx*j+i] * u.values[u.nx*j+i])
+            - param.dt / param.dy * ((h_interp_v).values[(h_interp_v).nx * (j+1) + (i)] * (v).values[(v).nx * (j+1) + (i)] - h_interp_v.values[h_interp_v.nx*j+i] * v.values[v.nx*j+i]);
+          eta.values[eta.nx*j+i] = eta_ij;
+        }
       }
-
+      
       #pragma omp target teams distribute parallel for collapse(2)
       for(int j = 0; j < ny; j++) {
-          for(int i = 0; i < nx; i++) {
-              double c1 = param.dt * param.g;
-              double c2 = param.dt * param.gamma;
-              double eta_ij = (eta).values[eta.nx*j + i];
-              double eta_imj = (i == 0) ? (eta).values[eta.nx*j] : (eta).values[eta.nx*j + i - 1];
-              double eta_ijm = (j == 0) ? (eta).values[i] : (eta).values[eta.nx*(j-1) + i];
-              double u_ij = (1. - c2) * u.values[u.nx*j+i]
-                - c1 / param.dx * (eta_ij - eta_imj);
-              double v_ij = (1. - c2) * v.values[v.nx*j+i]
-                - c1 / param.dy * (eta_ij - eta_ijm);
-              u.values[u.nx*j+i] = u_ij;
-              v.values[v.nx*j+i] = v_ij;
-          }
+        for(int i = 0; i < nx; i++) {
+          double c1 = param.dt * param.g;
+          double c2 = param.dt * param.gamma;
+          double eta_ij = (eta).values[eta.nx*j + i];
+          double eta_imj = (i == 0) ? (eta).values[eta.nx*j] : (eta).values[eta.nx*j + i - 1];
+          double eta_ijm = (j == 0) ? (eta).values[i] : (eta).values[eta.nx*(j-1) + i];
+          double u_ij = (1. - c2) * u.values[u.nx*j+i]
+            - c1 / param.dx * (eta_ij - eta_imj);
+          double v_ij = (1. - c2) * v.values[v.nx*j+i]
+            - c1 / param.dy * (eta_ij - eta_ijm);
+          u.values[u.nx*j+i] = u_ij;
+          v.values[v.nx*j+i] = v_ij;
+        }
       }
     }
+
+    double time = GET_TIME() - start;
+    printf("\nDone: %g seconds (%g MUpdates/s)\n", time, 1e-6 * (double)eta.nx * (double)eta.ny * (double)nt / time);
   }
-
-
-  write_manifest_vtk("water elevation", param.output_eta_filename,
-                     param.dt, nt, param.sampling_rate);
-  //write_manifest_vtk("x velocity", param.output_u_filename,
-  //                   param.dt, nt, param.sampling_rate);
-  //write_manifest_vtk("y velocity", param.output_v_filename,
-  //                   param.dt, nt, param.sampling_rate);
-
-  double time = GET_TIME() - start;
-  printf("\nDone: %g seconds (%g MUpdates/s)\n", time,
-         1e-6 * (double)eta.nx * (double)eta.ny * (double)nt / time);
-
+  
   free_data(&h_interp_u);
   free_data(&h_interp_v);
   free_data(&eta);
@@ -436,4 +460,5 @@ int main(int argc, char **argv)
   free_data(&v);
 
   return 0;
+  
 }

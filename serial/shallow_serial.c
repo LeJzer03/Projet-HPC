@@ -451,7 +451,7 @@ int main(int argc, char **argv)
       for(int i = 0; i < nx ; i++) {
         // TODO: this does not evaluate h at the correct locations
     
-      //double val = interpolate_data(&h, x, y);   //bilinear_interpolation_with_edge_handling
+        //double val = interpolate_data(&h, x, y);   //bilinear_interpolation_with_edge_handling
 
         double eta_ij = GET(&eta, i, j)
           - param.dt / param.dx * (GET(&h_interp_u,i+1,j)*GET(&u, i + 1, j) - GET(&h_interp_u,i,j)*GET(&u, i, j))
