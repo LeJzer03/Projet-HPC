@@ -4,9 +4,9 @@
 #SBATCH --partition=hmem
 #SBATCH --mem=0
 #SBATCH --output=strong_mpi.out
-#SBATCH --time=48:00:00
+#SBATCH --time=2:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=64  # Set the number of tasks per node
+#SBATCH --ntasks-per-node=64  
 
 module load OpenMPI
 
@@ -24,17 +24,39 @@ mkdir -p ${EXEC_DIR}
 # Compilation step
 mpicc -O3 -Wall -o ${EXEC_FILE} ${SOURCE_FILE} -lm
 
-PROCS=(64 32 16 8 4 2 1)  # Define your process count here
-
 # Loop over the different process counts
-for PROCS_NUM in "${PROCS[@]}"; do
-    echo "Running with ${PROCS_NUM} processes ..."
-
-    # Inner loop to run the program multiple times for each configuration
-    for ((i=1; i<=5; i++)); do
-        echo "Run ${i} ..."
-
-        # Run the MPI program with the current number of processes
-        mpirun -np ${PROCS_NUM} ${EXEC_FILE} ${PARAM_FILE}
-    done
+echo "Running with 64 processes ..."
+for ((i=1; i<=5; i++)); do
+    echo "Run ${i} ..."
+    mpirun -np 64 ${EXEC_FILE} ${PARAM_FILE}
+done
+echo "Running with 32 processes ..."
+for ((i=1; i<=5; i++)); do
+    echo "Run ${i} ..."
+    mpirun -np 32 ${EXEC_FILE} ${PARAM_FILE}
+done
+echo "Running with 16 processes ..."
+for ((i=1; i<=5; i++)); do
+    echo "Run ${i} ..."
+    mpirun -np 16 ${EXEC_FILE} ${PARAM_FILE}
+done
+echo "Running with 8 processes ..."
+for ((i=1; i<=5; i++)); do
+    echo "Run ${i} ..."
+    mpirun -np 8 ${EXEC_FILE} ${PARAM_FILE}
+done
+echo "Running with 4 processes ..."
+for ((i=1; i<=5; i++)); do
+    echo "Run ${i} ..."
+    mpirun -np 4 ${EXEC_FILE} ${PARAM_FILE}
+done
+echo "Running with 2 processes ..."
+for ((i=1; i<=5; i++)); do
+    echo "Run ${i} ..."
+    mpirun -np 2 ${EXEC_FILE} ${PARAM_FILE}
+done
+echo "Running with 1 processes ..."
+for ((i=1; i<=5; i++)); do
+    echo "Run ${i} ..."
+    mpirun -np 1 ${EXEC_FILE} ${PARAM_FILE}
 done

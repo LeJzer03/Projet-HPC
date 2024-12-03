@@ -4,8 +4,8 @@
 #SBATCH --partition=hmem
 #SBATCH --mem=0
 #SBATCH --output=strong_omp.out
-#SBATCH --time=24:00:00
-#SBATCH --nodes=2
+#SBATCH --time=2:00:00
+#SBATCH --nodes=1
 
 PROJECT_DIR="${HOME}/project_info0939"
 EXEC_DIR="${PROJECT_DIR}/bin"
