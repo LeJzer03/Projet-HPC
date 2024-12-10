@@ -346,7 +346,7 @@ int main(int argc, char **argv)
   }
 
   double start = GET_TIME();
-  #pragma omp target data map(tofrom:eta->values[0:nx*ny], u->values[0:(nx+1)*ny], v->values[0:nx*(ny+1)]) map(to:h_interp_u->values[0:(nx+1)*ny], h_interp_v->values[0:nx*(ny+1)])
+  #pragma omp target data map(tofrom:eta[0:1], u[0:1], v[0:1]) map(to:h_interp_u[0:1], h_interp_v[0:1],param)
   {
     for(int n = 0; n < nt; n++) {
       if(n && (n % (nt / 10)) == 0) {
@@ -359,7 +359,7 @@ int main(int argc, char **argv)
 
 
       if(param.sampling_rate && !(n % param.sampling_rate)) {
-        #pragma omp target update from(eta->values[0:nx*ny])
+        #pragma omp target update from(eta[0:1])
         write_data_vtk(eta, "water elevation", param.output_eta_filename, n);
         //write_data_vtk(&u, "x velocity", param.output_u_filename, n);
         //write_data_vtk(&v, "y velocity", param.output_v_filename, n);
@@ -409,10 +409,9 @@ int main(int argc, char **argv)
         // sinusoidal elevation in the middle of the domain
         double A = 5;
         double f = 1. / 20.;
-        #pragma omp target teams distribute parallel for
-        for(int i = 0; i < 1; i++) { // Single iteration to set the value
-          SET(eta, nx / 2, ny / 2, A * sin(2 * M_PI * f * t));
-        }
+        #pragma omp target data map(from:eta[0:1]) 
+        SET(eta, nx / 2, ny / 2, A * sin(2 * M_PI * f * t));
+        #pragma omp target data map(to:eta[0:1]) 
       }
       else {
         // TODO: add other sources
