@@ -30,9 +30,8 @@ struct data {
   double *values;
 };
 
-//#define GET(data, i, j) ((data)->values[(data)->nx * (j) + (i)])
-//#define SET(data, i, j, val) ((data)->values[(data)->nx * (j) + (i)] = (val))
-//test
+#pragma omp declare mapper(struct data data) map(data) map(data.values[0:data.nx*data.ny])
+
 #define GET(data, i, j) ((data)->values[(data)->nx * (j) + (i)])
 #define SET(data, i, j, val) ((data)->values[(data)->nx * (j) + (i)] = (val))
 
