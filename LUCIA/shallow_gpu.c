@@ -407,11 +407,12 @@ int main(int argc, char **argv)
       
       else if(param.source_type == 2) { //////////////////////////// pas encore adapté
         // sinusoidal elevation in the middle of the domain
+        #pragma omp target update from(eta[0:1])
         double A = 5;
         double f = 1. / 20.;
-        #pragma omp target data map(from:eta[0:1]) 
+
         SET(eta, nx / 2, ny / 2, A * sin(2 * M_PI * f * t));
-        #pragma omp target data map(to:eta[0:1]) 
+        #pragma omp target update to(eta[0:1]) 
       }
       else {
         // TODO: add other sources
@@ -464,6 +465,11 @@ int main(int argc, char **argv)
   free_data(eta);
   free_data(u);
   free_data(v);
+  free(h_interp_u);
+  free(h_interp_v);
+  free(eta);
+  free(u);
+  free(v);
 
   return 0;
   
