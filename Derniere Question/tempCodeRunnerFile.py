@@ -1,0 +1,1 @@
+data = pd.read_csv(r"C:\Users\colli\OneDrive - Universite de Liege\Documents\Projet HPC\Projet-HPC\Derniere Question\Mean depth rainbow colour (no land).csv")

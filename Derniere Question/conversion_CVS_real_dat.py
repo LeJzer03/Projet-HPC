@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 # Charger les données CSV
-data = pd.read_csv('/path/to/your/file.csv')  # Mettez ici le chemin de votre fichier CSV
+data = pd.read_csv(r"C:\Users\colli\OneDrive - Universite de Liege\Documents\Projet HPC\Projet-HPC\Derniere Question\Mean depth rainbow colour (no land).csv")  # Mettez ici le chemin de votre fichier CSV
 
 # Constantes
 RADIUS_EARTH = 6371000  # Rayon moyen de la Terre en mètres
