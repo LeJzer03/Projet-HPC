@@ -1,0 +1,6 @@
+latitude,longitude,elevation,value_count,cdi_index,interpolation_flag,elevation_max,elevation_min,stdev
+degrees_north,degrees_east,m,,,,m,m,m
+42.8598958333097,10.549479166656123,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+42.8598958333097,10.550520833322791,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+42.860937499976366,10.549479166656123,-17.146,4,20211,0,-13.384,-22.5,3.652
+42.860937499976366,10.550520833322791,-20.876,5,20211,0,-14.428,-25.6,3.814
