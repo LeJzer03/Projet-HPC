@@ -40,5 +40,5 @@ def analyze_execution_times(file_path):
     return mean_df
 
 # Example usage
-file_path = r'C:\École\BAC - 3\Q1\High Perf. Sci. Computing\analyse .out\weak_omp.out'
+file_path = r"C:\École\BAC - 3\Q1\High Perf. Sci. Computing\Scalability\weak_open_mp\weak_omp.out"
 mean_df = analyze_execution_times(file_path)
