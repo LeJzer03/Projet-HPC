@@ -255,6 +255,7 @@ double interpolate_data(const struct data *data, double x, double y)
 
 double interpolate_data_perso(const struct data *data, double x, double y)
 {
+  //perso interpolation function
   int i = (int)(x / data->dx);
   int j = (int)(y / data->dy);
   if(i < 0) i = 0;
@@ -386,9 +387,14 @@ int main(int argc, char **argv)
       exit(0);
     }
 
-    #pragma omp parallel //will split the work loop between the threads
+    /////////////////////////////
+    //The parallel part of the code starts here
+    /////////////////////////////
+
+
+    #pragma omp parallel //will split the work loop between the threads using the default scheduling
     {
-      #pragma omp for //schedule(dynamic) //collapse(2) 
+      #pragma omp for //schedule(dynamic) //collapse(2)   //best configuration found for parallelization(for CPU)
       // update eta
       for(int j = 0; j < ny; j++) {
         for(int i = 0; i < nx ; i++) {
@@ -417,11 +423,11 @@ int main(int argc, char **argv)
         }
       }
 
-    }
+    } //end of parallel region
   }
 
 
-
+  //write vtk file for visualization
   write_manifest_vtk("water elevation", param.output_eta_filename,
                      param.dt, nt, param.sampling_rate);
   //write_manifest_vtk("x velocity", param.output_u_filename,
