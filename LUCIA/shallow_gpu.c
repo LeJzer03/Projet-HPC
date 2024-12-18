@@ -30,6 +30,7 @@ struct data {
   double *values;
 };
 
+//Mapper here so OpenMP can give the "data" structure to the GPU
 #pragma omp declare mapper(struct data data) map(data) map(data.values[0:data.nx*data.ny])
 
 #define GET(data, i, j) ((data)->values[(data)->nx * (j) + (i)])
@@ -242,8 +243,7 @@ void free_data(struct data *data)
 
 double interpolate_data(const struct data *data, double x, double y)
 {
-  // TODO: this returns the nearest neighbor, should implement actual
-  // interpolation instead
+  // IMPORTANT : This is the old version. The new version used in the code is below
   int i = (int)(x / data->dx);
   int j = (int)(y / data->dy);
   if(i < 0) i = 0;
@@ -346,6 +346,8 @@ int main(int argc, char **argv)
   }
 
   double start = GET_TIME();
+
+  //Mapping the pointers to the structure so that, when updating the values, OpenMP knows where to put them
   #pragma omp target data map(tofrom:eta[0:1], u[0:1], v[0:1]) map(to:h_interp_u[0:1], h_interp_v[0:1],param)
   {
     for(int n = 0; n < nt; n++) {
@@ -365,33 +367,14 @@ int main(int argc, char **argv)
         //write_data_vtk(&v, "y velocity", param.output_v_filename, n);
       }
 
-      
-      // impose boundary conditions
       double t = n * param.dt;
 
-
-      /*
       if(param.source_type == 1) {
-        // sinusoidal velocity on top boundary
+        
         double A = 5;
         double f = 1. / 20.;
-        for(int i = 0; i < nx; i++) {
-          SET(&v, i, ny, A * sin(2 * M_PI * f * t));
-          SET(&v, i, 0, 0.);
-        }
-        for(int j = 0; j < ny; j++) {
-            SET(&u, 0, j, 0.);
-            SET(&u, nx, j, 0.);
-        }
-      }
-      */
 
-
-      
-      if(param.source_type == 1) {
-        // sinusoidal velocity on top boundary
-        double A = 5;
-        double f = 1. / 20.;
+        //Putting the parallel for clause so that the data used is the one contained in the GPU
         #pragma omp target teams distribute parallel for
         for(int i = 0; i < nx; i++) {
           SET(v, i, ny, A * sin(2 * M_PI * f * t));
@@ -405,14 +388,14 @@ int main(int argc, char **argv)
       }
       
       
-      else if(param.source_type == 2) { //////////////////////////// pas encore adapté
-        // sinusoidal elevation in the middle of the domain
+      else if(param.source_type == 2) {
         #pragma omp target update from(eta[0:1])
         double A = 5;
         double f = 1. / 20.;
 
         SET(eta, nx / 2, ny / 2, A * sin(2 * M_PI * f * t));
         #pragma omp target update to(eta[0:1]) 
+        // Two updates done to retrieve and then change the value in eta
       }
       else {
         // TODO: add other sources
@@ -421,7 +404,8 @@ int main(int argc, char **argv)
       }
       
       
-      // Offloading compute-intensive loops to the GPU
+      // Main loops over the whole domain
+      // collapse clause here is to better offload the loop
       #pragma omp target teams distribute parallel for collapse(2)
       for(int j = 0; j < ny; j++) {
         for(int i = 0; i < nx; i++) {
