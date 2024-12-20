@@ -293,7 +293,7 @@ double interpolate_data_perso(const struct data *data, double x, double y)
 
 int main(int argc, char **argv)
 {
-  MPI_Init(&argc, &argv); // Initialize MPI
+  MPI_Init(&argc, &argv); // Initialize MPI environment
 
   int world_size, rank; // Number of processes, rank of the process
   MPI_Comm_size(MPI_COMM_WORLD, &world_size); // Get the number of processes
@@ -309,8 +309,8 @@ int main(int argc, char **argv)
 
   int periods[2] = {0, 0}; // Non-periodic grid
   int reorder = 0; // No reordering of processes
-  MPI_Comm cart_comm; // Cartesian communicator
-  MPI_Cart_create(MPI_COMM_WORLD, 2, dims, periods, reorder, &cart_comm);
+  MPI_Comm cart_comm; // Cartesian communicator for the grid
+  MPI_Cart_create(MPI_COMM_WORLD, 2, dims, periods, reorder, &cart_comm); // Create Cartesian communicator
 
   // Get Cartesian rank and coordinates
   int cart_rank;
@@ -318,7 +318,7 @@ int main(int argc, char **argv)
   MPI_Comm_rank(cart_comm, &cart_rank);
   MPI_Cart_coords(cart_comm, cart_rank, 2, coords);
 
-  printf("Rank = %d, Cartesian Rank = %d, Coords = (%d, %d)\n", rank, cart_rank, coords[0], coords[1]);
+  //printf("Rank = %d, Cartesian Rank = %d, Coords = (%d, %d)\n", rank, cart_rank, coords[0], coords[1]);
 
   if(argc != 2) {
     printf("Usage: %s parameter_file\n", argv[0]);
@@ -331,6 +331,8 @@ int main(int argc, char **argv)
     MPI_Finalize();
     return 1;
   }
+
+  //For the futture, when we do if(rank == 0), it means that the instruction is only executed by the master node
   if(rank == 0){
     print_parameters(&param);
   } 
@@ -359,12 +361,13 @@ int main(int argc, char **argv)
   int local_nx = nx / dims[0] + (coords[0] < nx % dims[0]);
   int local_ny = ny / dims[1] + (coords[1] < ny % dims[1]);
 
+  // Initialize local data structures
   struct data local_eta, local_u, local_v;
   init_data(&local_eta, local_nx, local_ny, param.dx, param.dx, 0.);
   init_data(&local_u, local_nx + 1, local_ny, param.dx, param.dy, 0.);
   init_data(&local_v, local_nx, local_ny + 1, param.dx, param.dy, 0.);
 
-  // Interpolate bathymetry
+  // Interpolate bathymetry with personal function
   struct data local_h_interp_u, local_h_interp_v;
   init_data(&local_h_interp_u, local_nx + 1, local_ny, param.dx, param.dy, 0.);
   init_data(&local_h_interp_v, local_nx, local_ny + 1, param.dx, param.dy, 0.);
@@ -392,10 +395,12 @@ int main(int argc, char **argv)
 
   double start = GET_TIME();
 
+  //Place 1 if the process has a neighbor, 0 otherwise
   int up, down, left, right;
   MPI_Cart_shift(cart_comm, 0, 1, &left, &right);
   MPI_Cart_shift(cart_comm, 1, 1, &down, &up);
 
+  // Allocate buffers for sending and receiving data
   double *buffer_send_right = (right != MPI_PROC_NULL ? malloc(sizeof(double) * local_ny) : NULL);
   if(!buffer_send_right && right != MPI_PROC_NULL){
     free_data(&local_h_interp_u);
@@ -500,7 +505,7 @@ int main(int argc, char **argv)
     return 1;
   }
 
-  printf("My rank is %d \r Neighbor on the right : %d \r Neighbor on the left : %d \r Neighbor above : %d \r Neighbor below : %d \r",rank,(right != MPI_PROC_NULL),(left != MPI_PROC_NULL),(up != MPI_PROC_NULL),(down != MPI_PROC_NULL));
+  //printf("My rank is %d \r Neighbor on the right : %d \r Neighbor on the left : %d \r Neighbor above : %d \r Neighbor below : %d \r",rank,(right != MPI_PROC_NULL),(left != MPI_PROC_NULL),(up != MPI_PROC_NULL),(down != MPI_PROC_NULL));
 
   for(int n = 0; n < nt; n++) {
     if(n && (n % (nt / 10)) == 0) {
@@ -510,8 +515,7 @@ int main(int argc, char **argv)
       fflush(stdout);
     }
 
-    // Fill buffers
-    // pas exactement sur de ou mettre cette partie
+    // Fill buffers for sending data to neighbors
     for(int i = 0; i < local_nx; i++){
       if(down != MPI_PROC_NULL)
         buffer_send_down_v[i] = GET(&local_v,i,0);
@@ -524,9 +528,11 @@ int main(int argc, char **argv)
       if(right != MPI_PROC_NULL){
         buffer_send_right[j] = GET(&local_eta,local_nx-1,j);
       }
-      
     }
+
     //output data each sampling rate steps
+    //NB: our implementation only works for a square grid (ex: 2*2). 
+    //We did not have time to implement it for a rectangular grid since it would have required to change the way we manage the data. 
     if (param.sampling_rate && !(n % param.sampling_rate)) {
         // Allocate memory for the gathered data on the root process
         double *global_eta = NULL;
@@ -540,27 +546,38 @@ int main(int argc, char **argv)
         }
       
   
-      // Gather local_eta data from all processes to the root process (0)
+      // Gather local_eta data from all processes to the mster node (0)
       MPI_Gather(local_eta.values, local_nx * local_ny, MPI_DOUBLE,
                   global_eta, local_nx * local_ny, MPI_DOUBLE,
                   0, MPI_COMM_WORLD);
 
-      // Write the gathered data to a VTK file on the root process
+      // Write the gathered data to a VTK file on the mster node (0)
       if (rank == 0) {
           struct data global_eta_data;
           init_data(&global_eta_data,nx,ny,param.dx,param.dy,0.);
           int prev_i = 0;
+
+          // Loop over all processes to reconstruct the global grid
           for (int px = 0; px < dims[0]; px++) {
+            // Calculate the number of rows for the current process in the x direction
             int local_rows = nx / dims[0] + (px < nx % dims[0]);
+
             for (int i = 0; i < local_rows; i++) {
               int prev_j = 0;
               for (int py = 0; py < dims[1]; py++) {
+                // Calculate the number of columns for the current process in the y direction
                 int local_cols = nx / dims[0] + (px < nx % dims[0]);
+
                 for (int j = 0; j < local_cols; j++) { 
+                  // Determine the rank of the process responsible for the current (px, py) coordinates
                   int coordxy[2] = {py, px};
                   int process_rank;
-                  MPI_Cart_rank(cart_comm, coordxy, &process_rank);  
+                  MPI_Cart_rank(cart_comm, coordxy, &process_rank); 
+
+                  // Calculate the offset for the current process in the global eta array
                   int offset = process_rank * local_rows * local_cols;
+
+                  // Set the value in the global eta data structure at the correct position
                   SET(&global_eta_data,j+prev_j,i+prev_i,global_eta[offset + i * local_cols + j]);
                 }
                 prev_j += local_cols;
@@ -568,6 +585,8 @@ int main(int argc, char **argv)
             }
             prev_i += local_rows;
           }
+
+          // Write the gathered data to a VTK file on the master node (rank 0)
           write_data_vtk(&global_eta_data, "water elevation", param.output_eta_filename, n);
           free_data(&global_eta_data);
           free(global_eta);
@@ -576,6 +595,7 @@ int main(int argc, char **argv)
 
     double t = n * param.dt;
 
+    // Set the source term
     if(param.source_type == 1) {
         if (down == MPI_PROC_NULL) { // Check if the process is in the top row
             double A = 5;
@@ -618,6 +638,8 @@ int main(int argc, char **argv)
         return 1;
     }
 
+
+    // Exchange data with neighbors. After this step, the buffers contain the data received from the neighbors
     for(int i = 0; i < local_nx; i++) {
       if(down != MPI_PROC_NULL)
         buffer_send_down_v[i] = GET(&local_v, i, 0);
@@ -631,12 +653,16 @@ int main(int argc, char **argv)
         buffer_send_right[j] = GET(&local_eta, local_nx - 1, j);
     }
   
-    MPI_Request requests[8];
+    MPI_Request requests[8]; 
 
-     if (up != MPI_PROC_NULL) {
+    //if the process has a neighbor, it sends the data to the neighbor and receives the data from the neighbor
+
+    if (up != MPI_PROC_NULL) {  
         MPI_Isend(buffer_send_up, local_nx, MPI_DOUBLE, up, 0, cart_comm, &requests[0]);       
         MPI_Irecv(buffer_recv_up_v, local_nx, MPI_DOUBLE, up, 1, cart_comm, &requests[4]);
-    } else {
+    } 
+      //if the process does not have a neighbor, it sets the request to MPI_REQUEST_NULL
+      else {
         requests[0] = MPI_REQUEST_NULL;
         requests[4] = MPI_REQUEST_NULL;
     }
@@ -666,12 +692,13 @@ int main(int argc, char **argv)
     }
 
 
+    // Wait for all the requests to be completed
     MPI_Waitall(8, requests, MPI_STATUSES_IGNORE);
 
     // Parallelize the computation using OpenMP
-    #pragma omp parallel 
+    #pragma omp parallel //will split the work loop between the threads using the default scheduling
     {
-      #pragma omp for //collapse(2)
+      #pragma omp for //collapse(2)  //best configuration found for parallelization(for CPU)
       for(int j = 0; j < local_ny; j++) {
         for(int i = 0; i < local_nx; i++) {
 
@@ -682,7 +709,7 @@ int main(int argc, char **argv)
         }
       }
 
-      #pragma omp for //collapse(2)
+      #pragma omp for //collapse(2)  //parallelize the loop for the update of u and v
       for(int j = 0; j < local_ny; j++) {
         for(int i = 0; i < local_nx; i++) {
           double c1 = param.dt * param.g;
@@ -696,9 +723,12 @@ int main(int argc, char **argv)
             - c1 / param.dy * (eta_ij - eta_ijm);
           SET(&local_u, i, j, u_ij);
           SET(&local_v, i, j, v_ij);
+
+          //if the curent loop is on the last row, we update the value of the buffer_recv_up_v
           if(j == local_ny - 1 && up != MPI_PROC_NULL)
             SET(&local_v,i,local_ny,buffer_recv_up_v[i]);
         }
+        //if the curent loop is on the last column, we update the value of the buffer_recv_right_u
         if(right != MPI_PROC_NULL)
           SET(&local_u,local_nx,j,buffer_recv_right_u[j]);
       }
@@ -727,6 +757,7 @@ int main(int argc, char **argv)
     write_manifest_vtk("water elevation", param.output_eta_filename, param.dt, nt, param.sampling_rate);
   }
 
+  // Free memory (not forgetting to free the buffers)
   free_data(&local_h_interp_u);
   free_data(&local_h_interp_v);
   free_data(&local_eta);

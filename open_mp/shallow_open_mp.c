@@ -405,7 +405,7 @@ int main(int argc, char **argv)
         }
       }
 
-      #pragma omp for //schedule(dynamic) //collapse(2)  
+      #pragma omp for //schedule(dynamic) //collapse(2)   //parallelize the loop for the update of u and v
       // update u and v
       for(int j = 0; j < ny; j++) {
         for(int i = 0; i < nx; i++) {
