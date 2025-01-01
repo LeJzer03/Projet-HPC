@@ -1,0 +1,23 @@
+S=C=A=N: Wed Jan  1 18:26:11 2025: Collect start
+/opt/cecisw/arch/easybuild/2021b/software/OpenMPI/4.1.1-GCC-11.2.0/bin/mpirun -np 2 /home/ulg/info0939/jcollign/project_info0939/bin/basic_mpi /home/ulg/info0939/jcollign/project_info0939/example_inputs/simple/param_simple_no_output.txt
+World size = 2, Grid dimensions = (2, 1)
+Rank = 1, Cartesian Rank = 1, Coords = (1, 0)
+Rank = 0, Cartesian Rank = 0, Coords = (0, 0)
+Parameters:
+ - grid spacing (dx, dy): 5 m, 5 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'h_simple.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (800 x 800 = 640000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 7.06162 seconds)     Computing step 400/4000 (ETA: 7.02357 seconds)     Computing step 800/4000 (ETA: 6.26798 seconds)     Computing step 800/4000 (ETA: 6.25272 seconds)     Computing step 1200/4000 (ETA: 5.48175 seconds)     Computing step 1200/4000 (ETA: 5.47351 seconds)     Computing step 1600/4000 (ETA: 4.6962 seconds)     Computing step 1600/4000 (ETA: 4.70169 seconds)     Computing step 2000/4000 (ETA: 3.91647 seconds)     Computing step 2000/4000 (ETA: 3.92012 seconds)     Computing step 2400/4000 (ETA: 3.13434 seconds)     Computing step 2400/4000 (ETA: 3.13694 seconds)     Computing step 2800/4000 (ETA: 2.35308 seconds)     Computing step 2800/4000 (ETA: 2.35141 seconds)     Computing step 3200/4000 (ETA: 1.56818 seconds)     Computing step 3200/4000 (ETA: 1.56721 seconds)     Computing step 3600/4000 (ETA: 0.783854 seconds)     Computing step 3600/4000 (ETA: 0.783419 seconds)     
+Done: 7.83749 seconds (163.318 MUpdates/s)
+
+Done: 7.83352 seconds (163.4 MUpdates/s)
+S=C=A=N: Wed Jan  1 18:26:21 2025: Collect done (status=0) 10s

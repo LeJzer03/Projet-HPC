@@ -1,0 +1,41 @@
+S=C=A=N: Wed Jan  1 18:35:45 2025: Collect start
+/opt/cecisw/arch/easybuild/2021b/software/OpenMPI/4.1.1-GCC-11.2.0/bin/mpirun -np 8 /home/ulg/info0939/jcollign/project_info0939/bin/strong_mpi /home/ulg/info0939/jcollign/project_info0939/example_inputs/simple_perso/param_simple_perso.txt
+World size = 8, Grid dimensions = (4, 2)
+Rank = 3, Cartesian Rank = 3, Coords = (1, 1)
+Rank = 4, Cartesian Rank = 4, Coords = (2, 0)
+Rank = 5, Cartesian Rank = 5, Coords = (2, 1)
+Rank = 6, Cartesian Rank = 6, Coords = (3, 0)
+Rank = 7, Cartesian Rank = 7, Coords = (3, 1)
+Rank = 0, Cartesian Rank = 0, Coords = (0, 0)
+Rank = 1, Cartesian Rank = 1, Coords = (0, 1)
+Rank = 2, Cartesian Rank = 2, Coords = (1, 0)
+Parameters:
+ - grid spacing (dx, dy): 1 m, 1 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'custom_terrain_Gaussian_2.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4000 x 4000 = 16000000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 37.9717 seconds)     Computing step 400/4000 (ETA: 37.782 seconds)     Computing step 400/4000 (ETA: 37.7173 seconds)     Computing step 400/4000 (ETA: 37.9095 seconds)     Computing step 400/4000 (ETA: 37.6978 seconds)     Computing step 400/4000 (ETA: 37.8465 seconds)     Computing step 400/4000 (ETA: 37.5767 seconds)     Computing step 400/4000 (ETA: 38.0093 seconds)     Computing step 800/4000 (ETA: 33.4988 seconds)     Computing step 800/4000 (ETA: 33.5921 seconds)     Computing step 800/4000 (ETA: 33.5243 seconds)     Computing step 800/4000 (ETA: 33.4643 seconds)     Computing step 800/4000 (ETA: 33.5926 seconds)     Computing step 800/4000 (ETA: 33.3983 seconds)     Computing step 800/4000 (ETA: 33.5522 seconds)     Computing step 800/4000 (ETA: 33.4464 seconds)     Computing step 1200/4000 (ETA: 29.2709 seconds)     Computing step 1200/4000 (ETA: 29.3014 seconds)     Computing step 1200/4000 (ETA: 29.2896 seconds)     Computing step 1200/4000 (ETA: 29.3492 seconds)     Computing step 1200/4000 (ETA: 29.2247 seconds)     Computing step 1200/4000 (ETA: 29.3392 seconds)     Computing step 1200/4000 (ETA: 29.3191 seconds)     Computing step 1200/4000 (ETA: 29.2446 seconds)     Computing step 1600/4000 (ETA: 25.0984 seconds)     Computing step 1600/4000 (ETA: 25.1409 seconds)     Computing step 1600/4000 (ETA: 25.1163 seconds)     Computing step 1600/4000 (ETA: 25.089 seconds)     Computing step 1600/4000 (ETA: 25.1058 seconds)     Computing step 1600/4000 (ETA: 25.0598 seconds)     Computing step 1600/4000 (ETA: 25.1296 seconds)     Computing step 1600/4000 (ETA: 25.053 seconds)     Computing step 2000/4000 (ETA: 20.9454 seconds)     Computing step 2000/4000 (ETA: 20.9148 seconds)     Computing step 2000/4000 (ETA: 20.9254 seconds)     Computing step 2000/4000 (ETA: 20.9096 seconds)     Computing step 2000/4000 (ETA: 20.9193 seconds)     Computing step 2000/4000 (ETA: 20.8824 seconds)     Computing step 2000/4000 (ETA: 20.8822 seconds)     Computing step 2000/4000 (ETA: 20.9343 seconds)     Computing step 2400/4000 (ETA: 16.7312 seconds)     Computing step 2400/4000 (ETA: 16.7368 seconds)     Computing step 2400/4000 (ETA: 16.7107 seconds)     Computing step 2400/4000 (ETA: 16.7562 seconds)     Computing step 2400/4000 (ETA: 16.7342 seconds)     Computing step 2400/4000 (ETA: 16.745 seconds)     Computing step 2400/4000 (ETA: 16.7403 seconds)     Computing step 2400/4000 (ETA: 16.7075 seconds)     Computing step 2800/4000 (ETA: 12.5495 seconds)     Computing step 2800/4000 (ETA: 12.5509 seconds)     Computing step 2800/4000 (ETA: 12.5526 seconds)     Computing step 2800/4000 (ETA: 12.5351 seconds)     Computing step 2800/4000 (ETA: 12.5662 seconds)     Computing step 2800/4000 (ETA: 12.5579 seconds)     Computing step 2800/4000 (ETA: 12.5544 seconds)     Computing step 2800/4000 (ETA: 12.5308 seconds)     Computing step 3200/4000 (ETA: 8.36735 seconds)     Computing step 3200/4000 (ETA: 8.36897 seconds)     Computing step 3200/4000 (ETA: 8.3679 seconds)     Computing step 3200/4000 (ETA: 8.37752 seconds)     Computing step 3200/4000 (ETA: 8.37209 seconds)     Computing step 3200/4000 (ETA: 8.35783 seconds)     Computing step 3200/4000 (ETA: 8.36961 seconds)     Computing step 3200/4000 (ETA: 8.35441 seconds)     Computing step 3600/4000 (ETA: 4.18397 seconds)     Computing step 3600/4000 (ETA: 4.18461 seconds)     Computing step 3600/4000 (ETA: 4.18873 seconds)     Computing step 3600/4000 (ETA: 4.1841 seconds)     Computing step 3600/4000 (ETA: 4.17916 seconds)     Computing step 3600/4000 (ETA: 4.18597 seconds)     Computing step 3600/4000 (ETA: 4.18471 seconds)     Computing step 3600/4000 (ETA: 4.17736 seconds)     
+Done: 41.8425 seconds (191.193 MUpdates/s)
+
+Done: 41.8475 seconds (191.17 MUpdates/s)
+
+Done: 41.8873 seconds (190.989 MUpdates/s)
+
+Done: 41.8428 seconds (191.192 MUpdates/s)
+
+Done: 41.795 seconds (191.41 MUpdates/s)
+
+Done: 41.8597 seconds (191.115 MUpdates/s)
+
+Done: 41.847 seconds (191.173 MUpdates/s)
+
+Done: 41.7752 seconds (191.501 MUpdates/s)
+S=C=A=N: Wed Jan  1 18:36:29 2025: Collect done (status=0) 44s

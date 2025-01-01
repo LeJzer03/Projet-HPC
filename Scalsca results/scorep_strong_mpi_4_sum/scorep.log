@@ -1,0 +1,29 @@
+S=C=A=N: Wed Jan  1 19:51:50 2025: Collect start
+/opt/cecisw/arch/easybuild/2021b/software/OpenMPI/4.1.1-GCC-11.2.0/bin/mpirun -np 4 /home/ulg/info0939/jcollign/project_info0939/bin/strong_mpi /home/ulg/info0939/jcollign/project_info0939/example_inputs/simple_perso/param_simple_perso.txt
+World size = 4, Grid dimensions = (2, 2)
+Rank = 0, Cartesian Rank = 0, Coords = (0, 0)
+Rank = 3, Cartesian Rank = 3, Coords = (1, 1)
+Rank = 2, Cartesian Rank = 2, Coords = (1, 0)
+Rank = 1, Cartesian Rank = 1, Coords = (0, 1)
+Parameters:
+ - grid spacing (dx, dy): 1 m, 1 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'custom_terrain_Gaussian_2.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4000 x 4000 = 16000000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 74.0851 seconds)     Computing step 400/4000 (ETA: 74.6938 seconds)     Computing step 400/4000 (ETA: 74.5657 seconds)     Computing step 400/4000 (ETA: 75.0249 seconds)     Computing step 800/4000 (ETA: 65.839 seconds)     Computing step 800/4000 (ETA: 66.1628 seconds)     Computing step 800/4000 (ETA: 66.1004 seconds)     Computing step 800/4000 (ETA: 66.2888 seconds)     Computing step 1200/4000 (ETA: 57.5911 seconds)     Computing step 1200/4000 (ETA: 57.8075 seconds)     Computing step 1200/4000 (ETA: 57.7688 seconds)     Computing step 1200/4000 (ETA: 57.8684 seconds)     Computing step 1600/4000 (ETA: 49.3703 seconds)     Computing step 1600/4000 (ETA: 49.529 seconds)     Computing step 1600/4000 (ETA: 49.5015 seconds)     Computing step 1600/4000 (ETA: 49.5586 seconds)     Computing step 2000/4000 (ETA: 41.1607 seconds)     Computing step 2000/4000 (ETA: 41.2793 seconds)     Computing step 2000/4000 (ETA: 41.259 seconds)     Computing step 2000/4000 (ETA: 41.2929 seconds)     Computing step 2400/4000 (ETA: 33.0053 seconds)     Computing step 2400/4000 (ETA: 32.9328 seconds)     Computing step 2400/4000 (ETA: 33.0208 seconds)     Computing step 2400/4000 (ETA: 33.026 seconds)     Computing step 2800/4000 (ETA: 24.6988 seconds)     Computing step 2800/4000 (ETA: 24.7616 seconds)     Computing step 2800/4000 (ETA: 24.7505 seconds)     Computing step 2800/4000 (ETA: 24.762 seconds)     Computing step 3200/4000 (ETA: 16.4651 seconds)     Computing step 3200/4000 (ETA: 16.5051 seconds)     Computing step 3200/4000 (ETA: 16.498 seconds)     Computing step 3200/4000 (ETA: 16.5037 seconds)     Computing step 3600/4000 (ETA: 8.23173 seconds)     Computing step 3600/4000 (ETA: 8.25094 seconds)     Computing step 3600/4000 (ETA: 8.24765 seconds)     Computing step 3600/4000 (ETA: 8.24987 seconds)     
+Done: 82.3082 seconds (194.391 MUpdates/s)
+
+Done: 82.4638 seconds (194.025 MUpdates/s)
+
+Done: 82.4945 seconds (193.952 MUpdates/s)
+
+Done: 82.4805 seconds (193.985 MUpdates/s)
+S=C=A=N: Wed Jan  1 19:53:16 2025: Collect done (status=0) 86s

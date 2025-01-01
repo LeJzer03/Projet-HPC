@@ -1,0 +1,23 @@
+S=C=A=N: Wed Jan  1 18:38:06 2025: Collect start
+/opt/cecisw/arch/easybuild/2021b/software/OpenMPI/4.1.1-GCC-11.2.0/bin/mpirun -np 2 /home/ulg/info0939/jcollign/project_info0939/bin/strong_mpi /home/ulg/info0939/jcollign/project_info0939/example_inputs/simple_perso/param_simple_perso.txt
+World size = 2, Grid dimensions = (2, 1)
+Rank = 0, Cartesian Rank = 0, Coords = (0, 0)
+Rank = 1, Cartesian Rank = 1, Coords = (1, 0)
+Parameters:
+ - grid spacing (dx, dy): 1 m, 1 m
+ - time step (dt): 0.05 s
+ - maximum time (max_t): 200 s
+ - gravitational acceleration (g): 9.81 m/s^2
+ - dissipation coefficient (gamma): 2e-05 1/s
+ - source type: 1
+ - sampling rate: 0
+ - input bathymetry (h) file: 'custom_terrain_Gaussian_2.dat'
+ - output elevation (eta) file: 'eta_simple'
+ - output velocity (u, v) files: 'u_simple', 'v_simple'
+ - grid size: 4000 m x 4000 m (4000 x 4000 = 16000000 grid points)
+ - number of time steps: 4000
+Computing step 400/4000 (ETA: 184.344 seconds)     Computing step 400/4000 (ETA: 182.631 seconds)     Computing step 800/4000 (ETA: 163.379 seconds)     Computing step 800/4000 (ETA: 162.574 seconds)     Computing step 1200/4000 (ETA: 142.808 seconds)     Computing step 1200/4000 (ETA: 142.311 seconds)     Computing step 1600/4000 (ETA: 122.195 seconds)     Computing step 1600/4000 (ETA: 121.861 seconds)     Computing step 2000/4000 (ETA: 101.84 seconds)     Computing step 2000/4000 (ETA: 101.605 seconds)     Computing step 2400/4000 (ETA: 81.4796 seconds)     Computing step 2400/4000 (ETA: 81.3157 seconds)     Computing step 2800/4000 (ETA: 61.1079 seconds)     Computing step 2800/4000 (ETA: 60.998 seconds)     Computing step 3200/4000 (ETA: 40.7389 seconds)     Computing step 3200/4000 (ETA: 40.6717 seconds)     Computing step 3600/4000 (ETA: 20.3725 seconds)     Computing step 3600/4000 (ETA: 20.3409 seconds)     
+Done: 203.748 seconds (157.056 MUpdates/s)
+
+Done: 203.45 seconds (157.287 MUpdates/s)
+S=C=A=N: Wed Jan  1 18:41:36 2025: Collect done (status=0) 210s
