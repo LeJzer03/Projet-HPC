@@ -652,7 +652,7 @@ int main(int argc, char **argv)
       if(right != MPI_PROC_NULL)
         buffer_send_right[j] = GET(&local_eta, local_nx - 1, j);
     }
-  
+    //test
     MPI_Request requests[8]; 
 
     //if the process has a neighbor, it sends the data to the neighbor and receives the data from the neighbor
